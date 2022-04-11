@@ -4,7 +4,7 @@
  * @Author: ZhangKe
  * @Date: 2022-04-11 23:58:55
  * @LastEditors: ZhangKe
- * @LastEditTime: 2022-04-12 00:25:02
+ * @LastEditTime: 2022-04-12 07:38:48
  * @FilePath: \18_Ajax\92_提交历史和版本回退.html
 -->
 <!DOCTYPE html>
@@ -29,7 +29,7 @@
         // #  %h 提交的简写哈希值  %an作者名字  %ar作者修订日期，按多久以前的方式显示  %s提交说明
         // git log -2 --pretty=format:"%h | %an | %ar | %s"
 
-        // 回退到指定的版本: (git reflog --pretty=oneline) (git reset --hard <CommitID>)
+        // 回退到指定的版本: (git log --pretty=oneline) (git reflog --pretty=oneline) (git reset --hard <CommitID>)
         // # 在一行上展示所有的提交历史
         // git log --pretty=oneline
         // # 使用 git reset --hard 命令，根据指定的提交 ID 回退到指定版本
