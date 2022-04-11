@@ -4,7 +4,7 @@
  * @Author: ZhangKe
  * @Date: 2022-04-11 12:51:52
  * @LastEditors: ZhangKe
- * @LastEditTime: 2022-04-11 13:04:08
+ * @LastEditTime: 2022-04-11 15:23:31
  * @FilePath: \18_Ajax\87_修改并提交修改的文件.html
 -->
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
     <title>Document</title>
 
     <script>
-        // 对已提交的文件进行修改
+        // 对已提交的文件进行修改: 
         // 目前, index.html 已经被 Git 跟踪, 并且工作区和 Git 仓库中的 index.html 文件内容保持一致, 当我们修改了工作区中的 index.html 的内容之后, 再次运行 git status -s 和 git status 命令之后, 会看到:
         // 文件 index.html 出现在 Change not staged for commit 这行下面, 说明已跟踪文件的内容发生了变化, 但还没有放到暂存区
         // 注意: 修改过的, 没有放入暂存区的文件前面有红色的 M 标记.
@@ -28,7 +28,7 @@
         // 2. 把已跟踪的, 且已修改的文件放到暂存区;
         // 3. 把有冲突的文件标记为已解决状态;
 
-        // 提交已暂存的文件
+        // 提交已暂存的文件: (git commit -m "提交的消息")
         // 再次运行 git commit -m "提交的消息" 命令, 即可将暂存区中记录的 index.html 的快照, 提交到 Git 仓库中进行保存.
     </script>
 </head>
