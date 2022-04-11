@@ -1,0 +1,46 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-08 14:02:14
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-08 14:13:02
+ * @FilePath: \18_Ajax\62_了解同源和同源策略.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // 什么是同源?
+            // 如果两个页面的协议, 域名和端口都相同, 则两个页面具有相同的源;
+            // 例如, 下表给出了 http://www.test.com/index.html 页面的同源检测:
+            // http://www.test.com/other.html 同源
+            // https://www.test.com/about.html 协议不同
+            // http://blog.test.com/movie.html 域名不同
+            // http://www.test.com:7001/home.html 端口不同
+            // http://www.test.com:80/main.html  同源
+
+
+            // 什么是同源策略?
+            // 同源策略(英文全称: Same origin policy) 是浏览器提供的一个安全功能.
+            // 通俗的理解: 浏览器规定, A 网站的 JavaScript, 不允许和非同源的网站 C 之间, 进行资源的交互, 例如:
+            // 1. 无法读取非同源王爷的 Coolie, LocalStrong, IndexedDB;
+            // 2. 无法接触非同源网页的 DOM;
+            // 3. 无法向非同源地址发送 Ajax 请求;
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

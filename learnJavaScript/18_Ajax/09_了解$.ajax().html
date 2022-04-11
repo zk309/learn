@@ -1,0 +1,42 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-01 07:34:00
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-01 07:39:43
+ * @FilePath: \18_Ajax\09_了解$.ajax().html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // $.ajax() 函数的语法:
+            // 相比于 $.get() 和 $.post() 函数, jQuery 中提供的 $.ajax() 函数, 是一个功能比较综合的函数,
+            // 它允许我们对 Ajax 请求进行更详细的配置.
+
+            // $.ajax() 函数的基本语法:
+            $.ajax({
+                type: "", // 请求的方式, 例如 GET 或 POST
+                url: "", // 请求的 URL 地址
+                data: {}, // 这次请求要携带的数据
+                success: function (res) {} // 请求之后的回调函数
+            })
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

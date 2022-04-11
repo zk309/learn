@@ -1,0 +1,101 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-06 13:35:24
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-07 09:33:15
+ * @FilePath: \learnJavaScript\13-DOM\39_删除留言案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 100px;
+        }
+
+        textarea {
+            width: 200px;
+            height: 100px;
+            border: 1px solid pink;
+            outline: none;
+            resize: none;
+        }
+
+        ul {
+            margin-top: 50px;
+        }
+
+        li {
+            width: 300px;
+            padding: 5px;
+            background-color: pink;
+            color: red;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+
+        a {
+            float: right;
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="" id="text" cols="30" rows="10"></textarea>
+    <button>发布</button>
+    <ul>
+        <li>li<a href="javascipt:void(0);">删除</a></li>
+    </ul>
+
+    <script>
+        // 1. 获取元素
+        var text = document.querySelector('#text');
+        var btn = document.querySelector('button');
+        var ul = document.querySelector('ul');
+
+        // 2. 注册事件
+        // 3. 处理程序
+        btn.onclick = function () {
+            // console.log(1);
+            // 判断 textarea 的值不为空
+            if (text.value == '') {
+                alert('内容不能为空.');
+                return false;
+            } else {
+                // 1. 创建 newLi 标签
+                var newLi = document.createElement('li');
+                // 2. newLi 标签的值为 textarea 的值
+                newLi.innerHTML = text.value + '<a href="javascript:;">删除</a>';
+                // 3. newLi 添加到 ul 子元素的前面
+                ul.insertBefore(newLi, ul.children[0]);
+                text.value = '';
+                // 4. 删除留言 
+                var gatherA = document.querySelectorAll('a');
+                console.log(gatherA);
+                for (var i = 0; i < gatherA.length; i++) {
+                    // 忘记 gather[i] 的 [].
+                    gatherA[i].onclick = function () {
+                        // console.log(1);
+                        ul.removeChild(this.parentNode);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-12 00:16:49
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-12 00:27:09
+ * @FilePath: \learnJavaScript\14_事件高级\17_模拟京东按键输入内容.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <script>
+        // 核心思路：检测用户是否按下 s 键，如果按下，就把光标定位到搜索框里面；
+        // 使用键盘事件对象的 keyCode, 判断用户按下的是否是 s 键;
+        // 搜索框获得焦点：js的 focus() 方法；
+        const input = document.querySelector('input');
+
+        document.addEventListener('keyup', function (evt) {
+            // console.log(evt.keyCode);
+            if (evt.keyCode === 83) {
+                input.focus();
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-24 11:08:27
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-05 10:07:52
+ * @FilePath: \learnJavaScript\11-内置对象-String\09-替换字符串以及转换为数组.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. 替换字符 replace('替换的字符', '替换为的字符'), 它只替换第一个字符.
+        var str = 'foxf ';
+        console.log(str.replace('f', 'd')); // doxf
+        // 有一个字符串 '哦加哦加哦西安你能从近啊', 要求把里面所有的 '哦' 替换为 'i';
+        var str1 = '哦加哦加哦西安你能从近啊';
+        while (str1.indexOf('哦') !== -1) {
+            str1 = str1.replace('哦', 'i');
+        };
+        console.log(str1); // i加i加i西安你能从近啊
+
+
+
+        // 2. 字符转换为数组 split('分隔符'), 前面我们学过 join() 把数组转换为字符串.
+        var str3 = 'red,pink,blue';
+        console.log(str3.split(',')); // (3) ['red', 'pink', 'blue']
+        var str4 = 'red&green&blue&pink';
+        console.log(str4.split('&')); // (4) ['red', 'green', 'blue', 'pink']
+
+        var arr = str4.split('&');
+        console.log(arr.reverse().join(',')); // pink,blue,green,red
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

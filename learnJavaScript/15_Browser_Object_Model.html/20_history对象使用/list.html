@@ -1,0 +1,36 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-14 13:05:11
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-14 13:22:12
+ * @FilePath: \learnJavaScript\15_Browser_Object_Model.html\20_history对象使用\list.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.addEventListener('load', function () {
+
+            const btn = document.querySelector('button');
+            btn.addEventListener('click', function () {
+                history.back();
+                // history.go(-1);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <a href="index.html">点击我，跳转到首页。</a>
+    <button>后退</button>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-15 20:15:20
+ * @LastEditTime: 2021-09-17 01:08:50
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \04-CSS案例\18-背景位置-方位名词.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 300px;
+      height: 300px;
+      background-color: pink;
+      background-image: url(images/logo.png);
+      background-repeat: no-repeat;
+      /* 
+      * background-position: 方位名词;
+      * 如果是方位名词, right center 和 center right 效果是等价的, 跟顺序没有关系.
+      * 
+       */
+      /* background-position: right center; */
+      /* background-position: center right; */
+      /* background-position: center center; */
+      /* 此时, 水平一定是 x 轴, 第二个参数省略 y 轴是垂直居中显示 */
+      /* background-position: right; */
+      /* 此时, 第一个参数一定是 y 轴,第二个参数省略 x 轴,水平居中显示 */
+      background-position: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+</body>
+
+</html>

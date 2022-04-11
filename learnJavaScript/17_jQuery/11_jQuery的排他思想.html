@@ -1,0 +1,44 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-23 08:20:37
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-23 08:24:38
+ * @FilePath: \learnJavaScript\17_jQuery\11_jQuery的排他思想.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        $(function () {
+
+            // 隐士迭代
+            $("button").click(function () {
+                // 当前 button 的背景颜色变化
+                $(this).css("background", "pink");
+                // 其余的 button 的背景颜色取消
+                $(this).siblings("button").css("background", "");
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+</body>
+
+</html>

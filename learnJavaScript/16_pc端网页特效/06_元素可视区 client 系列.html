@@ -1,0 +1,60 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-16 14:46:38
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-16 15:01:37
+ * @FilePath: \learnJavaScript\16_pc端网页特效\06_元素可视区 client 系列.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            margin: 0 auto;
+            padding: 10px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 2px solid #ccc;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function () {
+
+            // client 翻译过来就是客户端，使用 client 系列的相关属性来获取元素可视区的相关信息。
+            // 通过 client 系列的相关属性可以动态地得到该元素的边框大小，元素大小等。
+
+            // client 系列属性
+            // element.clientTop  返回元素上边框的大小
+            // element.clientLeft  返回元素的左边框距离
+            const box = document.querySelector('.box');
+            console.log(box.clientTop); // 2
+            console.log(box.clientLeft); // 2
+
+
+            // element.clientWidth  返回自身包括 padding, 内容区的宽度，不含边框，返回数值不带单位。
+            // element.clientHeight 返回自身包括 padding, 内容区的高度，不含边框，返回数值不带单位。
+            console.log(box.clientWidth); // 220
+            console.log(box.clientHeight); // 220
+        })
+    </script>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

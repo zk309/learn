@@ -1,0 +1,41 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-25 10:44:04
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-25 10:58:41
+ * @FilePath: \learnJavaScript\17_jQuery\29_返回指定的祖先元素parents().html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        $(function () {
+
+            // parents() 返回指定的祖先元素
+            // console.log($(".four").parent().parent().parent());
+            console.log($(".four").parents());
+            console.log($(".four").parents(".one"));
+        })
+    </script>
+</head>
+
+<body>
+    <div class="one">
+        <div class="two">
+            <div class="three">
+                <div class="four">我不容易</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

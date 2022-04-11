@@ -1,0 +1,40 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-02-27 16:36:38
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-02-27 16:52:29
+ * @FilePath: \learnJavaScript\13-DOM\05_事件三要素.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">唐伯虎</button>
+
+    <script>
+        // 事件三要素：
+        // 1. 事件源； 2. 事件类型； 3.事件处理程序；
+
+        // 1. 事件源：事件被触发的对象。
+        var btn = document.getElementById('btn');
+
+        // 2. 事件类型：如何触发，什么事件。
+        // btn.onclick
+
+        // 3. 事件处理程序：程序通过函数赋值的方式完成。
+        btn.onclick = function () {
+            alert('点秋香。')
+        }
+    </script>
+</body>
+
+</html>

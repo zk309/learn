@@ -1,0 +1,41 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-21 09:46:58
+ * @LastEditTime: 2021-09-21 09:51:50
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \05-CSS案例\21-清除内外边距.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /*
+    * 这句话也是我们CSS代码的第一行.
+    */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    span {
+      background-color: pink;
+      margin: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  123
+  <ul>
+    <li>abcd</li>
+  </ul>
+  <span>行内元素尽量只设置左右的内外边距</span>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2021-11-29 23:11:26
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-25 22:20:46
+ * @FilePath: \learnJavaScript\01-JavaScript基础\05.变量的语法扩展.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 1. 更新变量
+    var myName = 'pink';
+    console.log(myName); // pink
+    myName = 'orange';
+    console.log(myName); // orange
+    // 2. 声明多个变量
+    var age = 18,
+      address = '火影村',
+      mony = 2000;
+    console.log(age); // 18
+    console.log(address); // 火影村
+    console.log(mony); // 2000
+    // 3. 声明变量的特殊情况
+    // 3.1 只声明不赋值, 结果是? (undefined), 程序也不知道里面存的是什么, 所以结果是 undefined, 未定义.
+    var sex;
+    console.log(sex); // undefined
+    // 3.2 不声明,不赋值,直接使用某个变量会报错
+    // console.log(tel);
+    // 3.3 不声明直接赋值
+    qq = 100;
+    console.log(qq); // 100
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

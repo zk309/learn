@@ -1,0 +1,55 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-15 13:52:10
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-02-25 23:25:19
+ * @FilePath: \learnJavaScript\07-对象\12-函数作业(02).html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 简易计算器
+        function calculator() {
+            var pro = prompt('欢迎使用简易计算器\n1.加法运算:\n2.减法运算:\n3.乘法运算:\n4.除法运算:\n5.退出:\n请输入您的选项:');
+
+            if (pro == '5' || pro == '') {
+                return;
+            }
+            // console.log(pro);
+            var num1 = parseInt(prompt('请输入第一个数:'));
+            var num2 = parseInt(prompt('请输入第二个数:'));
+
+            switch (pro) {
+                case '1':
+                    alert(num1 + '➕' + num2 + '=' + (num1 + num2));
+                    return;
+                case '2':
+                    alert(num1 + '➖' + num2 + '=' + (num1 - num2));
+                    return;
+                case '3':
+                    alert(num1 + '✖' + num2 + '=' + (num1 * num2));
+                    return;
+                case '4':
+                    alert(num1 + '➗' + num2 + '=' + (num1 / num2));
+                    return;
+                default:
+                    return;
+            }
+        };
+        calculator();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

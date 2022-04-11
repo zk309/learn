@@ -1,0 +1,55 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-07 00:37:56
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-07 00:51:11
+ * @FilePath: \18_Ajax\48_JSON和js对象的关系以及相互转换.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // JSON 和 JS对象 的关系:
+            // JSON 是 JS 对象的字符串表示法, 它使用文本表示一个 JS对象的信息, 本质是一个字符串, 
+            // demo:
+            // 这是一个对象
+            // var obj = {a: 'hello', b: 'World'};
+            // 这是一个 JSON 字符串, 本质是一个字符串
+            // var json = '{"a": "hello", "b": "world"}';
+
+            // JSON 和 JS对象 的互转:
+            // 要实现从 JSON 字符串转换为 JS 对象, 使用 JSON.parse() 方法:
+            var obj = JSON.parse('{"a": "hello", "b": "world"}');
+            console.log(obj); // {a: 'hello', b: 'world'}
+
+            // 要实现从 JS 对象转换为 JSON 字符串, 使用 JSON.stringify() 方法:
+            var json = JSON.stringify({
+                a: 'hello',
+                b: 'World'
+            });
+            console.log(json); // {"a":"hello","b":"World"}
+
+            // 序列化和反序列化:
+            // 把数据对象转换为字符串的过程, 叫做序列化, 例如: 调用 JSON.stringify() 函数的操作, 叫做 JSON 序列化;
+            // 把字符串转换为数据对象的过程, 叫做反序列化, 例如: 调用 JSON.parse() 函数的操作, 叫做 JSON 反序列化;
+
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

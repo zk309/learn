@@ -1,0 +1,65 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-19 10:57:33
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-19 11:09:34
+ * @FilePath: \learnJavaScript\10-内置对象-Array\06-数组排序.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 数组排序:
+
+    // reverse() 方法将数组中元素的位置颠倒，并返回该数组。
+    // 数组的第一个元素会变成最后一个，数组的最后一个元素变成第一个。
+    // 该方法会改变原数组。
+    var arr1 = [1, 2, 3, 4];
+    console.log(arr1.reverse()); // (4) [4, 3, 2, 1]
+    console.log(arr1); // (4) [4, 3, 2, 1]
+
+
+
+    // sort() 方法用原地算法对数组的元素进行排序，并返回数组。
+    // 默认排序顺序是在将元素转换为字符串，然后比较它们的UTF-16代码单元值序列时构建的
+
+    // 单位数写法:
+    var arr2 = [9, 8, 7, 6];
+    console.log(arr2.sort()); // (4) [6, 7, 8, 9]
+    console.log(arr2); // (4) [6, 7, 8, 9]
+    // 多位数写法一:
+    var arr3 = [9, 88, 17, 16];
+    var res1 = arr3.sort(function compare(a, b) {
+      if (a < b) { // 按某种排序标准进行比较, a 小于 b 
+        return -1;
+      }
+      if (a > b) {
+        return 1;
+      }
+      // a must be equal to b
+      return 0;
+    })
+    console.log(res1); // (4) [9, 16, 17, 88]
+    console.log(arr3); // 会改变原数组  // (4) [9, 16, 17, 88]
+    // 多位数写法二:
+    var arr4 = [9, 88, 17, 16, 69, 74, 100, 12];
+    var res2 = arr4.sort(function compareNumbers(a, b) {
+      return a - b;
+    })
+    console.log(res2); // (8) [9, 12, 16, 17, 69, 74, 88, 100]
+    console.log(arr4); // 会改变原数组 // (8) [9, 12, 16, 17, 69, 74, 88, 100]
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

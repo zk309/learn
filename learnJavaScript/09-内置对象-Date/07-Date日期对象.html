@@ -1,0 +1,39 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-17 09:35:32
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-17 09:43:18
+ * @FilePath: \learnJavaScript\08-内置对象-Math\07-Date日期对象.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // Date() 日期对象是一个构造函数, 必须使用 new 来调用创建我们的日期对象
+    // 构造函数创建一个对象的过程, 称之为对象的实例化.
+    var arr = new Array(); // 创建一个数组对象
+    var obj = new Object(); // 创建一个对象实例
+
+    // 1. 使用 Date 如果没有参数, 返回当前系统的当前时间
+    var date = new Date();
+    console.log(date); // Mon Jan 17 2022 09:41:41 GMT+0800 (GMT+08:00)
+    // 2. 参数的写法: 数字型 或者 字符串型
+    var date1 = new Date(2019, 10, 1);
+    console.log(date1); // Fri Nov 01 2019 00:00:00 GMT+0800 (GMT+08:00)
+    var date2 = new Date('2019-10-1');
+    console.log(date2); // Tue Oct 01 2019 00:00:00 GMT+0800 (GMT+08:00)
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

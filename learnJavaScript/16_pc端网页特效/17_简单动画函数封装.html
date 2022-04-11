@@ -1,0 +1,68 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-18 09:48:43
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-18 11:13:23
+ * @FilePath: \learnJavaScript\16_pc端网页特效\17_简单动画函数封装.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+
+        .box1 {
+            top: 150px;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function () {
+
+            // 简单动画函数封装, 需要传递两个参数: 动画对象 和 动画移动到的距离
+            function animate(obj, distance) {
+                var timer = setInterval(function () {
+                    if (obj.offsetLeft >= distance) {
+                        clearInterval(timer);
+                    }
+                    obj.style.left = obj.offsetLeft + 1 + 'px';
+                }, 30)
+            }
+
+
+            var box = document.querySelector('.box');
+            animate(box, 300);
+
+            var box1 = document.querySelector('.box1');
+            animate(box1, 350);
+
+            console.dir(box);
+        })
+    </script>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="box1"></div>
+</body>
+
+</html>

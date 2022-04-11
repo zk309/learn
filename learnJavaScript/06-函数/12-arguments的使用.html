@@ -1,0 +1,42 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-06 15:22:16
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-26 16:06:04
+ * @FilePath: \learnJavaScript\06-函数\12-arguments的使用.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 当不确定实参的个数时, 可以使用 arguments
+    // arguments对象, 只有函数才有 arguments 对象, 每个函数都内置了 arguments
+    function fn() {
+      // 里面存储了所有传递的参数
+      // 我们可以按照数组的方式遍历 arguments
+      console.log(arguments);
+      for (var i = 0; i < arguments.length; i++) {
+        console.log(arguments[i]);
+      }
+    }
+    fn(1, 2, 3);
+    fn(1, 2);
+    // arguments 伪数组, 并不是真正意义上的数组
+    // 1. 具有数组的 Length 属性;
+    // 2. 按照索引的方式进行存储的;
+    // 3. 它没有真正数组的一些方法 pop() push()
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

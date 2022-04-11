@@ -1,0 +1,61 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-02 14:48:27
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-02-24 22:00:41
+ * @FilePath: \learnJavaScript\05-数组Array\13-冒泡排序.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 冒泡排序:
+        // 一个泡, 一个泡, 慢慢往上冒.
+
+        // 案例一：
+        var arr = [5, 4, 3, 2, 1, 0];
+        for (var i = 0; i <= arr.length - 1; i++) { // arr.length-1:   趟数
+            for (var j = 0; j <= arr.length - i - 1; j++) { // arr-length-1: 每一趟最多交换次数
+                // 内部交换两个变量
+                // 前一个和后一个数组元素相比较 
+                if (arr[j] > arr[j + 1]) {
+                    var temp = null;
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        console.log(arr); // (6) [0, 1, 2, 3, 4, 5]
+
+
+        // 案例二：
+        var arr1 = [5, 4, 12, 52, 51, 7, 0, 1, 21, 65, 84, 5, 3, 2, 1, 0];
+        for (var i = 0; i <= arr1.length - 1; i++) { // arr1.length-1: 趟数 
+            for (var j = 0; j <= arr1.length - i - 1; j++) { // arr1-length-1: 每一趟最多交换次数
+                if (arr1[j] < arr1[j + 1]) {
+                    var temp = null;
+                    temp = arr1[j];
+                    arr1[j] = arr1[j + 1];
+                    arr1[j + 1] = temp;
+                }
+            }
+        }
+        console.log(
+            arr1); // (16) [84, 65, 52, 51, 21, 12, 7, 5, 5, 4, 3, 2, 1, 1, 0, 0]0: 841: 652: 523: 514: 215: 126:
+        // 77: 58: 59: 410: 311: 212: 113: 114: 015: 0 length: 16[[Prototype]]: Array(0)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

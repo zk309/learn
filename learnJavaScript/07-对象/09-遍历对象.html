@@ -1,0 +1,39 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-15 11:25:29
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-15 11:33:27
+ * @FilePath: \learnJavaScript\07-对象\09-遍历对象.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    var obj = {
+      uname: 'pink老师',
+      age: '18岁',
+      get: function (aru) {
+        console.log(aru);
+      }
+    };
+
+    // var k 是默认的书写规范.
+    for (var k in obj) {
+      console.log(k); // uname, age, get
+      console.log(obj[k]);
+    }
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

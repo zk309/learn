@@ -1,0 +1,70 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-23 19:24:37
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-02-26 09:34:34
+ * @FilePath: \learnJavaScript\11-内置对象-String\08-拼接以及截取字符串.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 拼接以及截取字符串常用方法:
+
+        // 1. str.concat(str2, [, ...strN]), 合并字符串
+        let hello = 'Hello, '
+        console.log(hello.concat('Kevin', '. Have a nice day.')); // Hello, Kevin. Have a nice day.
+
+        // 2. str.substr(start[, length]), 截取字符串, 返回截取的字符串.
+        var str = '0123456789';
+        console.log(str.substr(1, 2)); //12
+        console.log(str.substr(-3, 3)); // 789
+
+        // 3. slice() 方法提取某个字符串的一部分，并返回一个新的字符串，且不会改动原字符串。
+        // str.slice(beginIndex[, endIndex])
+        const str3 = 'The quick brown fox jumps over the lazy dog.';
+        console.log(str3.slice(31));
+        // expected output: "the lazy dog."
+        console.log(str3.slice(4, 19));
+        // expected output: "quick brown fox"
+        console.log(str3.slice(-4));
+        // expected output: "dog."
+        console.log(str3.slice(-9, -5));
+        // expected output: "lazy"
+
+        console.log('--------------------------');
+        // 4. substring() 方法返回一个字符串在开始索引到结束索引之间的一个子集, 或从开始索引直到字符串的末尾的一个子集。
+        // str.substring(indexStart[, indexEnd])
+        var anyString = "Mozilla";
+        // 输出 "Moz"
+        console.log(anyString.substring(0, 3)); // Moz
+        console.log(anyString.substring(3, 0));
+        console.log(anyString.substring(3, -3));
+        console.log(anyString.substring(3, NaN));
+        console.log(anyString.substring(-2, 3));
+        console.log(anyString.substring(NaN, 3));
+        // 输出 "lla"
+        console.log(anyString.substring(4, 7));
+        console.log(anyString.substring(7, 4));
+        // 输出 ""
+        console.log(anyString.substring(4, 4));
+        // 输出 "Mozill"
+        console.log(anyString.substring(0, 6));
+        // 输出 "Mozilla"
+        console.log(anyString.substring(0, 7));
+        console.log(anyString.substring(0, 10));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

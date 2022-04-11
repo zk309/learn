@@ -1,0 +1,41 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-13 15:40:36
+ * @LastEditTime: 2021-10-11 15:51:29
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \04-CSS案例\07-并集选择器.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /*
+    * 熊大,熊二, 猪爸爸 文字颜色为 pink.
+    */
+    div,
+    p,
+    .pig>.father {
+      color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div>熊大</div>
+  <p>熊二</p>
+  <span>光头强</span>
+  <ul class="pig">
+    <li>小猪佩奇</li>
+    <li class="father">猪爸爸</li>
+    <li>猪妈妈</li>
+  </ul>
+
+</body>
+
+</html>

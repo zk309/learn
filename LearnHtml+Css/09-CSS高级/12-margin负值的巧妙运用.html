@@ -1,0 +1,100 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-11-17 10:32:59
+ * @LastEditTime: 2022-02-05 15:35:01
+ * @LastEditors: ZhangKe
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \LearnHtml+Css\09-CSS高级\12-margin负值的巧妙运用.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      margin-left: 300px;
+    }
+
+    ul li {
+      position: relative;
+      float: left;
+      list-style: none;
+      width: 150px;
+      height: 200px;
+      border: 1px solid red;
+      margin-left: -1px;
+    }
+
+    ul li:nth-child(3) {
+      margin-left: -1px;
+      border-left: 0;
+    }
+
+    /* ul li:hover {
+     1.如果盒子没有定位, 则鼠标经过添加相对定位即可
+     position: relative;
+     border: 1px solid blue;
+     } */
+
+    ul li:hover {
+      /* 2.如果 li 都有定位, 则利用 z-index 提高层级 */
+      z-index: 1;
+      border: 1px solid blue;
+    }
+
+
+
+    /* ul li:nth-child(3):hover {
+      border-left: 0;
+    } */
+
+    /* css 不能控制父级元素, 
+    ~ 只能控制兄弟元素，可以控制后面的所有兄弟元素，不用是相邻的元素
+    用+号控制兄弟元素，但是只能控制一个元素，并且是相邻的后面的兄弟元素
+
+    ul li:nth-child(3):hover~ul>li.two {
+      z-index: 5;
+      border-right: 1px solid blue;
+      background-color: pink;
+    } */
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li class="two">2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+
+  <script>
+    var three = document.getElementsByTagName('li')[2];
+    // console.log(three);
+    var two = document.getElementsByClassName('two')[0];
+    // console.log(two);
+
+    three.onmouseover = function () {
+      // console.log(1);
+      this.setAttribute('style', ' border-left: 0;');
+      two.setAttribute('style', 'border-right: 1px solid blue;background - color: pink;');
+    };
+
+    three.onmouseout = function () {
+      this.setAttribute('style', '');
+      two.setAttribute('style', '');
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-24 13:47:48
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-02-26 10:08:40
+ * @FilePath: \learnJavaScript\11-内置对象-String\10-练习.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 给定一个字符串, 如 'abaasdffggghhjjkkgfddsssss3444343', 问题如下:
+        var str = 'abaasdffggghhjjkkgfddsssss3444343';
+        console.log('原数组为 ' + str); // 原数组为 abaasdffggghhjjkkgfddsssss3444343
+
+        // 1. 字符串的长度
+        console.log(str.length); // 33
+
+        // 2. 取出指定位置的字符, 如 0.3,5,9 等  (str[index], H5新增的)
+        function getIndex2(str, index) {
+            return str[index];
+        };
+        var res2 = getIndex2(str, 9);
+        console.log(res2); // g
+
+        // 3. 查找指定指定字符是否在以上字符串中存在, 如 i,c,b 等  (str.index())
+        function getStr(str, chars) {
+            if (str.indexOf(chars) !== -1) { // 只能用 -1 来判断, 注意 0 并不会被当成 true ，-1 不会被当成 false 。
+                return chars + '在' + str + '中存在.'
+            } else {
+                return chars + '在' + str + '中不存在.'
+            }
+        }
+        var res3 = getStr(str, 'i');
+        console.log(res3); // i在abaasdffggghhjjkkgfddsssss3444343中不存在.
+
+        // 4. 替换指定的字符, 如 g替换为22, ss替换为 b 等操作. (str.indexOf() 和 str.replace())
+        function getReplace(str, chars, newChars) {
+            while (str.indexOf(chars) !== -1) {
+                str = str.replace(chars, newChars)
+            }
+            return str;
+        }
+        var res4 = getReplace(str, 'g', '22');
+        console.log(res4); // abaasdff222222hhjjkk22fddsssss3444343
+        var res4 = getReplace(str, 'ss', 'b');
+        console.log(res4); // abaasdffggghhjjkkgfddbbs3444343
+
+        // 5. 截取指定开始位置到结束位置的字符串, 如 取得1-5的字符串  (str.substr())
+        function getSubstr(str, begin, end) {
+            var res = str.substr(begin, end);
+            return res;
+        };
+        var res5 = getSubstr(str, 1, 5);
+        console.log(res5); // baasd
+
+        // 6. 找出以上字符串中出现次数最多的字符和出现的次数  ({}, str.charAt(), for...in)
+        // 先封装到对象
+        var obj6 = {};
+        for (var i = 0; i < str.length; i++) {
+            // console.log(str[i]);
+            // 忘记使用 String.prototype.charAt() 来查找字符串中的每一个字符
+            var chars = str.charAt(i) // 每一个字符
+            if (obj6[chars]) {
+                obj6[chars]++;
+            } else {
+                obj6[chars] = 1;
+            }
+        }
+        console.log(obj6); // {3: 3, 4: 4, a: 3, b: 1, s: 6, d: 3, f: 3, …}
+        // 然后 for...in 遍历对象, 找出出现次数最多的字符和出现的次数
+        var max = null; // 出现最多的字符
+        var count = null; // 出现的次数
+        for (var k in obj6) {
+            if (obj6[k] > count) {
+                max = k;
+                count = obj6[k];
+            }
+        }
+        console.log(max + ',' + count); // s,6
+
+        // 6. 找出以上字符串中出现次数最多的字符和出现的次数 ({}, str.charAt(), for...in)
+        // 先封装对象
+        var obj7 = {};
+        for (var i = 0; i < str.length; i++) {
+            // 查找字符串中的每一个字符
+            var chars = str.charAt(i);
+            if (obj7[chars]) {
+                obj7[chars]++;
+            } else {
+                obj7[chars] = 1;
+            }
+        }
+        // 字符
+        var max1;
+        // 次数
+        var count1 = null; // 相信我，count1 必须 = null;
+        for (var k in obj7) {
+            if (obj7[k] > count1) {
+                count1 = obj7[k];
+                max1 = k;
+            }
+        }
+        console.log(max1 + ',' + count1); // s,6
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-09 17:34:31
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-09 18:08:50
+ * @FilePath: \learnJavaScript\14_事件高级\04_删除事件兼容性解决方案.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            margin: 20px auto;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+    <script>
+        // 这个函数是为了兼容IE, 但是有一点需要注意 GlobalEventHandlers.onclick 和 element.removeEventListener() 解除事件的方式不同
+        // 简单来说，
+        // GlobalEventHandlers.onclick 只能通过 element.onclick = null; 解除
+        // element.removeEventListener() 只能通过 element.removeEventListener('click', fn); 解除
+        // 而这个函数方法只要浏览器支持 removeEventListener() 就只会用 removeEventListener()
+        // 故这个方法是个 loser.
+        function removeEventListener(element, eventName, fn) {
+            // 判断当前浏览器是否支持 removeEventListener 方法
+            if (element.removeEventListener) {
+                element.removeEventListener(eventName, fn); // 第三个参数默认是 false;
+            } else if (element.detachEvent) {
+                element.detachEvent('on' + eventName, fn);
+            } else {
+                // 相当于 element.onclick = null;
+                element['on' + eventName] = null;
+            }
+            // 这段是自己加上的。
+            if (element['on' + eventName]) {
+                element['on' + eventName] = null;
+            }
+        }
+
+        const div = document.querySelector('div');
+        div.onclick = function fn() {
+            console.log(1);
+            removeEventListener(div, 'click');
+        }
+
+        // div.addEventListener('click', function fn() {
+        //     console.log(1);
+        //     removeEventListener(this, 'click', fn);
+        // })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-26 12:11:10
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-26 17:26:11
+ * @FilePath: \learnJavaScript\17_jQuery\33_jQuery位置方法.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .father {
+            position: relative;
+            margin: 100px;
+            overflow: hidden;
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+        }
+
+        .son {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 150px;
+            height: 150px;
+            background-color: purple;
+        }
+    </style>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        $(function () {
+
+            // 1. offset() 设置或获取元素偏移
+            //  offset() 方法设置或返回被选元素相对于文档的偏移坐标, 跟父级没有关系;
+            // 该方法有2个属性 left, top. offset().top 用于获取距离文档顶部的距离, offset().left 用于获取距离文档左侧的距离
+            // 可以设置元素的偏移: offset({top:10, left:30});
+            console.log($(".son").offset());
+            console.log($(".son").offset().top);
+            $(".son").offset({
+                top: 200,
+                left: 200
+            });
+            console.log($(".son").offset());
+
+            console.log('-----------------------');
+
+            // 2.  position() 获取元素偏移
+            // position() 方法设置或返回被选元素相对于带有定位的父级的偏移坐标, 如果父级都没有定位, 则以文档为准;
+            // 该方法有2个属性 left, top. position().top 用于获取距离文档顶部的距离, position().left 用于获取距离文档左侧的距离
+            // 不可以设置元素的偏移: offset({top:10, left:30});
+            console.log($(".son").position());
+            console.log($(".son").position().top);
+
+            console.log('---------------');
+
+            // 3. scrollTop() / scrollLeft()
+            // 获取匹配元素相对滚动条顶部的偏移。
+            // 此方法对可见和隐藏元素均有效。
+            $(window).scroll(function () {
+                console.log($(document).scrollTop());
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+
+</html>

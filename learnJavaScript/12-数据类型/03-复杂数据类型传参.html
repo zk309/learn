@@ -1,0 +1,44 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-28 15:52:54
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-02-26 10:29:56
+ * @FilePath: \learnJavaScript\12-数据类型\03-复杂数据类型传参.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 构造函数创建对象
+        function Person(name) {
+            this.name = name;
+        };
+
+        function f1(x) {
+            console.log(x.name); // 刘德华
+            x.name = '张学友';
+            console.log(x.name); // 张学友
+        }
+
+        // 对象的实例化
+        var p = new Person('刘德华');
+        console.log(p.name); // 刘德华
+
+        f1(p); // 将对象作为参数传递过去.
+
+        console.log(p.name); // 张学友
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

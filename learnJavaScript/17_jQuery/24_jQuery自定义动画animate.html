@@ -1,0 +1,57 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-24 07:44:47
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-24 08:05:34
+ * @FilePath: \learnJavaScript\17_jQuery\24_jQuery自定义动画animated.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            position: relative;
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            border-radius: 10px;
+        }
+    </style>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        $(function () {
+
+            $("button").click(function () {
+                $("div").animate({
+                    width: '200px',
+                    height: '200px',
+                    top: '200px',
+
+                    // 只有数字值可创建动画（比如 "margin:30px"）。字符串值无法创建动画（比如 "background-color:red"）。
+                    // backgroundColor: 'skyblue'
+                }, 1000)
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button>自定义动画</button>
+    <div></div>
+</body>
+
+</html>

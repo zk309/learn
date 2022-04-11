@@ -1,0 +1,44 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-12 22:38:13
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-12 22:48:22
+ * @FilePath: \learnJavaScript\15_Browser_Object_Model.html\10_清除定时器clearInterval.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.addEventListener('load', function () {
+
+            const begin = document.querySelector('.begin');
+            const end = document.querySelector('.end');
+
+            var timer1 = null;
+            begin.addEventListener('click', function () {
+                timer1 = setInterval(function () {
+                    console.log(12);
+                }, 1000)
+            })
+
+            end.addEventListener('click', function () {
+                clearInterval(timer1)
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button class="begin">开启定时器</button>
+    <button class="end">结束定时器</button>
+</body>
+
+</html>

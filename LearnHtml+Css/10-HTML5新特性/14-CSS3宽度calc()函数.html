@@ -1,0 +1,69 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-02-08 09:00:16
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-02-08 09:49:40
+ * @FilePath: \LearnHtml+Css\10-HTML5新特性\14-CSS3宽度calc()函数.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .father {
+      margin: 0 auto;
+      width: 300px;
+      height: 300px;
+      background-color: pink;
+    }
+
+    .son {
+      width: calc(100% - 20px);
+      height: 20px;
+      background-color: skyblue;
+    }
+
+    input {
+      display: block;
+      margin: 10px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="father">
+    <div class="son"></div>
+  </div>
+  <input type="button" value="点击按钮, 父盒子的宽度增大20px">
+
+  <!-- script  -->
+  <script>
+    var input = document.getElementsByTagName('input')[0];
+    var father = document.getElementsByClassName('father')[0];
+    // console.log(input);
+
+    input.onclick = function () {
+      // console.log(1);
+
+      // 1. 获取 .father盒子 的宽度.
+      var width = father.offsetWidth;
+      console.log(width);
+
+      // 2. 重新设置盒子的宽度.
+      father.setAttribute('style', 'width:' + (width + 20) + 'px');
+    }
+  </script>
+</body>
+
+</html>

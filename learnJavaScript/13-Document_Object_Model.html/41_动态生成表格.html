@@ -1,0 +1,151 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-07 11:45:42
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-19 17:21:28
+ * @FilePath: \learnJavaScript\13-Document_Object_Model.html\41_动态生成表格.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td,
+        th {
+            border: 1px solid #333;
+        }
+
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+
+        a {
+            text-decoration: none;
+            color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        // 1. 因为里面的学生数据都是动态的，我们需要js动态生成。这里我们模拟数据，自己定义好数据。数据我们采取 data 对象形式存储。
+        // 2. 所有的数据都是放到 tbody 里面的行里面；
+        // 3. 因为行很多，我们需要 for 循环创建多个行（对应多少人）；
+        // 4. 每个行里面又有很多单元格（对应里面的数据），我们还继续使用 for...in 循环创建多个单元格，并把数据存入里面；
+        // 5. 最后一列单元格是删除，需要单独创建单元格；
+
+        // 1. 创建学生数据
+        var data = [{
+                name: '刘一',
+                object: 'JavaScript',
+                score: 100
+            },
+            {
+                name: '陈二',
+                object: 'JavaScript',
+                score: 100
+            },
+            {
+                name: '张三',
+                object: 'JavaScript',
+                score: 100
+            },
+            {
+                name: '李四',
+                object: 'JavaScript',
+                score: 100
+            },
+            {
+                name: '王五',
+                object: 'JavaScript',
+                score: 100
+            },
+            {
+                name: '赵六',
+                object: 'JavaScript',
+                score: 100
+            },
+            {
+                name: '孙七',
+                object: 'JavaScript',
+                score: 100
+            },
+            {
+                name: '周八',
+                object: 'JavaScript',
+                score: 100
+            },
+            {
+                name: '吴九',
+                object: 'JavaScript',
+                score: 100
+            },
+            {
+                name: '郑十',
+                object: 'JavaScript',
+                score: 100
+            }
+        ]
+
+        // 2. 创建行
+        for (var i = 0; i < data.length; i++) {
+            var tbody = document.querySelector('tbody');
+            var tr = document.createElement('tr');
+            // 3. 创建单元格
+            for (var k in data[i]) {
+                var td = document.createElement('td');
+                td.innerHTML = data[i][k];
+                tr.appendChild(td);
+            }
+            // 4. 创建删除单元格
+            var tdDel = document.createElement('td');
+            tdDel.innerHTML = '<a href="javascript:;">删除</a>';
+            tr.appendChild(tdDel);
+
+            tbody.appendChild(tr);
+        }
+        // 5. 删除操作
+        var getA = document.querySelectorAll('a');
+        // console.log(getA);
+        for (var i = 0; i < getA.length; i++) {
+            getA[i].onclick = function () {
+                // console.log(1);
+                var tbody = document.querySelector('tbody');
+                tbody.removeChild(this.parentNode.parentNode);
+            }
+        }
+    </script>
+</body>
+
+</html>

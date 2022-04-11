@@ -1,0 +1,154 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-17 14:24:34
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-20 16:44:00
+ * @FilePath: \learnJavaScript\16_pc端网页特效\25_带有动画的返回顶部案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .w {
+            width: 1200px;
+            margin: 10px auto;
+        }
+
+        .header {
+            height: 150px;
+            background-color: pink;
+        }
+
+        .banner {
+            height: 250px;
+            background-color: skyblue;
+        }
+
+        .main {
+            height: 1000px;
+            background-color: hotpink;
+        }
+
+        /* 侧边导航条 */
+        .slider-bar {
+            position: absolute;
+            left: 50%;
+            top: 300px;
+            margin-left: 600px;
+            width: 45px;
+            height: 130px;
+            background-color: rgba(72, 141, 132, 0.979);
+        }
+
+        a {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            text-decoration: none;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function () {
+
+            // 获取元素
+            const slider_bar = document.querySelector('.slider-bar');
+            const header = document.querySelector('.header');
+            const main = document.querySelector('.main');
+            const goBack = document.querySelector('.goBack');
+            // 侧边导航条变成固定定位, 距离顶部的值:
+            var fixed_top = slider_bar.offsetTop - header.offsetHeight;
+            // console.log(fixed_top);
+            // 主体部分距离顶部的距离:
+            var main_top = main.offsetTop;
+
+            document.addEventListener('scroll', function () {
+                // 如果页面滚动到 banner 区域 , slider_bar 就会变成 固定定位.
+                // 指定位置:
+                var top = header.offsetHeight;
+                // console.log(top);
+                if (window.pageYOffset >= top) {
+                    slider_bar.style.position = 'fixed';
+                    slider_bar.style.top = fixed_top + 'px';
+                } else {
+                    slider_bar.style.position = 'absolute';
+                    slider_bar.style.top = '300px';
+                }
+
+                // 如果页面滚动到 main 区域, 回到顶部按钮显示
+                if (window.pageYOffset >= main_top) {
+                    goBack.style.display = 'block';
+                } else {
+                    goBack.style.display = 'none';
+                }
+            })
+
+            // 带有动画的返回顶部;
+            // 此时可以继续使用我们的封装函数的动画函数 animated.js;
+            // 只需要把所有的 left 相关的值 改为 页面垂直滚动距离相关的值 就可以了;
+            // 页面滚动了多少, 可以通过 window.pageYOffset 得到;
+            // 最后是页面滚动, 使用 window.scroll(x, y);
+
+            // 利用动画函数, 实现缓动返回顶部动画效果;
+            goBack.addEventListener('click', function (evt) {
+                // alert(1);
+                animate(window, 0);
+            })
+
+            // 动画函数封
+            function animate(obj, distance, callback) {
+                // console.log(callback);
+                // 2. 清除上一轮的定时器, 只执行一个定时器
+                clearInterval(obj.timer);
+                // 1. 给当前对象添加属性;
+                obj.timer = setInterval(function () {
+                    // 缓动动画的核心算法: (目标值 - 现在的位置) / 10 = 每次移动的距离步长
+                    var step = (distance - window.pageYOffset) / 20;
+
+                    // 动画函数多个目标值之间移动;
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    // console.log(step);
+
+                    // 注意此处是 ==
+                    if (window.pageYOffset == distance) {
+                        clearInterval(obj.timer);
+                        // 回调函数写的位置: 定时器结束的位置.
+                        // if (callback) {
+                        // callback();
+                        // }
+                        // 上面的代码可以用 逻辑中断应用
+                        callback && callback();
+                    }
+                    // obj.style.left = obj.offsetLeft + step + 'px';
+                    // window.scroll(x, y); 方法
+                    obj.scroll(0, window.pageYOffset + step);
+                }, 15);
+            };
+        })
+    </script>
+</head>
+
+<body>
+    <div class="slider-bar">
+        <a href="javaScript:;" class="goBack">返回顶部</a>
+    </div>
+    <div class="header w" id="top">头部区域</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主体部分</div>
+</body>
+
+</html>

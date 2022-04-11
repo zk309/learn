@@ -1,0 +1,46 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-06 10:32:21
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-06 10:40:18
+ * @FilePath: \18_Ajax\44_对URL进行编码与解码.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // 浏览器提供了 URL 编码与解码的 API，分别是：
+            // encodeURL() 编码的函数
+            // decodeURL() 解码的函数
+
+            // demo:
+            var enCode = encodeURI('神曲(天堂)');
+            console.log(enCode); // %E7%A5%9E%E6%9B%B2(%E5%A4%A9%E5%A0%82)
+
+            var deCode = decodeURI('%E7%A5%9E%E6%9B%B2');
+            console.log(deCode); // 神曲
+
+            // URL 编码的注意事项:
+            // 由于浏览器会自动对 URL 地址进行编码操作, 因此, 大多数情况下, 程序员不需要关心 URL 地址的编码与解码操作.
+            // 更多关于 URL 编码的知识, 请参考如下博客:
+            // https://blog.csdn.net/Lxd_0111/article/details/78028889
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

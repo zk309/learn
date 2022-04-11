@@ -1,0 +1,40 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-19 12:57:04
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-19 13:35:56
+ * @FilePath: \learnJavaScript\10-内置对象-Array\07-获取数组索引号方法.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 返回数组元素索引号方法: 
+
+    // indexOf()方法返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1。
+    const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
+    console.log(beasts.indexOf('ant')); // 0
+    console.log(beasts.indexOf('ant', 2)); // -1
+    console.log(beasts.indexOf('ant', -5)); // 0
+
+    // lastIndexOf() 方法返回指定元素（也即有效的 JavaScript 值或变量）在数组中的最后一个的索引，
+    // 如果不存在则返回 -1。从数组的后面向前查找，从 fromIndex 处开始。
+    var array = ['red', 'green', 'blue', 'pink'];
+    console.log(array.lastIndexOf('pink')); // 3
+    console.log(array.lastIndexOf('blue')); // 2
+    console.log(array.lastIndexOf('blue', 3)); // 2
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

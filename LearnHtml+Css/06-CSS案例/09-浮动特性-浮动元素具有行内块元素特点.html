@@ -1,0 +1,58 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-23 22:18:57
+ * @LastEditTime: 2021-10-13 16:01:59
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \06-CSS案例\09-浮动特性-浮动元素具有行内块元素特点.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /*
+    * 任何元素都可以浮动, 不管原先是什么模式的元素, 添加浮动之后具有行内块元素* 相似的特性
+    */
+    span,
+    div {
+      float: left;
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+
+    /*
+    * 如果行内元素有了浮动, 则不需要转换块级/行内块级元素就可以直接给高度和宽* 度
+    */
+    p {
+      float: right;
+      height: 200px;
+      background-color: pink;
+    }
+
+    .test {
+      float: right;
+      height: 100px;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <span>1</span><span>2</span>
+  <div>div</div>
+  <p>ppppp</p>
+  <span class="test">span,span,span</span>
+</body>
+
+</html>

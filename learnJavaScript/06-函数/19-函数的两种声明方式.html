@@ -1,0 +1,42 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-07 10:02:03
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-07 10:12:21
+ * @FilePath: \learnJavaScript\06-函数\19-函数的两种声明方式.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 1. 利用函数关键字自定义函数 (命名函数)
+    function fn() {
+
+    }
+
+    // 2. 函数表达式 (匿名函数)
+    // var 变量名 = function() {};
+    var fun = function (aru) {
+      console.log('我是函数表达式.');
+      console.log(aru);
+    }
+    fun('pink');
+
+    // (1) fun是变量名, 不是函数名;
+    // (2) 函数表达式声明方式跟声明变量差不多, 只不过变量里面存的是值, 而函数表达式里面存的是函数;
+    // (3) 函数表达式也可以进行传递参数;
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

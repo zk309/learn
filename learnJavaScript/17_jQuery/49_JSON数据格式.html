@@ -1,0 +1,50 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-30 18:58:49
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-30 19:18:18
+ * @FilePath: \learnJavaScript\17_jQuery\49_JSON数据格式.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            var todoList = [{
+                title: '我今天吃了八个馒头.',
+                done: false
+            }, {
+                title: '我今天吃了12个馒头.',
+                done: true
+            }]
+
+            // 1. 本地存储里面只能存储字符串的数据格式, 把我们的数组对象转化为字符串格式 JSON.stringify()
+            // localStorage.setItem('todo', todoList);
+            localStorage.setItem('todo', JSON.stringify(todoList));
+            var data = localStorage.getItem('todo');
+            console.log(typeof data); // string
+
+            // 2. 获取本地存储的数据, 需要把里面的字符串数据转换为 对象格式 JSON.parse()
+            data = JSON.parse(data);
+            console.log(data);
+            console.log(data[0].title); // 我今天吃了八个馒头.
+
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

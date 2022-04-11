@@ -1,0 +1,47 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-23 17:50:20
+ * @LastEditTime: 2021-10-13 15:58:08
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \06-CSS案例\08-浮动特性-浮动盒子一行显示.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      width: 200px;
+      height: 200px;
+      float: left;
+    }
+
+    div:nth-of-type(odd) {
+      background-color: pink;
+      /* height: 500px; */
+    }
+
+    div:nth-of-type(even) {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+</body>
+
+</html>

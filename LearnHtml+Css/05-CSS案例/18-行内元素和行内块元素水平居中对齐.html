@@ -1,0 +1,42 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-21 00:23:37
+ * @LastEditTime: 2021-10-13 10:00:09
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \05-CSS案例\18-行内元素和行内块元素水平居中对齐.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /*
+    * 行内元素或者行内块元素水平居中给其父元素添加 text-align: center 即可.
+    */
+    .header {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+      margin: 100px auto;
+      text-align: center;
+    }
+
+    .header>span {
+      display: inline-block;
+      background-color: #f00;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <span>文字文字文字</span>
+  </div>
+</body>
+
+</html>

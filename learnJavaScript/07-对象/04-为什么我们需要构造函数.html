@@ -1,0 +1,50 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-12 11:47:58
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-14 19:25:10
+ * @FilePath: \learnJavaScript\07-对象\04-为什么我们需要构造函数.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 为什么需要构造函数
+    // 因为我们前两种创建对象的方式, 一次只能创建一次.
+
+    // 1. 利用字面量创建对象
+    var zxy = {
+      uname: '张学友',
+      age: 10,
+      sing: function () {
+        console.log('<吻别>');
+      }
+    }
+
+    // 2. 利用 new 关键字创建对象
+    var gfc = new Object;
+    gfc.uname = '郭富城';
+    gfc.age = 9;
+    gfc.film = function () {
+      console.log('<父子>');
+    }
+
+    // 因为我们一次创建一个对象, 里面很多属性和方法是大量相同的, 我们只能复制;
+    // 因为我们可以利用函数的方法, 重复这些相同的代码, 我们就把函数称之为构造函数;
+    // 因为这个函数不一样, 里面封装的不是普通的代码, 而是对象;
+    // 构造函数, 就是把我们对象里面一些相同的属性和方法抽象出来封装到函数里面;
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

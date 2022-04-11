@@ -1,0 +1,40 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-03 18:18:59
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-26 15:28:52
+ * @FilePath: \learnJavaScript\06-函数\09-求数组中的最大值(函数版).html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 利用函数求数组中的最大值
+    function getArrMax(arr) {
+      var max = arr[0];
+      for (var i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+          max = arr[i];
+        }
+      }
+      return max;
+    }
+
+    // 在我们实际开发里面, 我们经常用一个变量来接收函数的返回值, 使用更简单
+    var re = getArrMax([21, 52, 6, 21, 41, 21]);
+    console.log(re); // 52
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

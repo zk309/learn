@@ -1,0 +1,56 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-07 10:54:23
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-07 11:09:50
+ * @FilePath: \18_Ajax\53_设置HTTP请求时限.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // 设置 HTTP 请求时限
+            // 有时, Ajax 操作很耗时, 而且无法预知要花多少时间, 如果网速很慢, 用户可能要等很久, 新版本的 XMLHTTPRequest 对象,
+            // 增加了 timeout 属性, 可以设置 HTTP 请求的时限:
+            // xhr.timeout = 3000;
+            // 上面的语句, 将最长等待事件设为 3000 毫秒, 过了这个时限, 就自动停止 HTTP 请求, 与之配套的还有一个 timeout 事件, 用来指定回调函数:
+            // xhr.ontimeout = function (evt) {
+            //     alert('请求超时!!');
+            // }
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.timeout = 30;
+            xhr.ontimeout = function (evt) {
+                alert('请求超时!!');
+            };
+
+            xhr.open('GET', 'http://www.liulongbin.top:3006/api/getbooks');
+            xhr.send();
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var res = JSON.parse(xhr.responseText);
+                    console.log(res);
+                }
+            }
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-26 11:15:01
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-26 11:56:00
+ * @FilePath: \learnJavaScript\17_jQuery\32_jQuery元素大小.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px;
+            border: 15px solid red;
+            margin: 20px;
+        }
+    </style>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        $(function () {
+
+            // 1. width() / height() 获取设置元素 width和height大小
+            console.log($("div").width()); // 200
+            console.log($("div").height()); // 200
+            console.log('------------');
+
+            // 2. innerWidth() / innerHeight() 获取设置元素 width和height + padding 大小
+            console.log($("div").innerWidth()); // 220
+            console.log($("div").innerHeight()); // 220
+            console.log('------------');
+
+            // 3. outerWidth() / outerHeight() 获取设置元素 width和height + padding + border 大小
+            console.log($("div").outerWidth()); // 250
+            console.log($("div").outerHeight()); // 250
+            console.log('------------');
+
+            // 4. outerWidth(true) / outerHeight(true) 获取设置 width和height + padding + border + margin
+            console.log($("div").outerWidth(true)); // 290
+            console.log($("div").outerHeight(true)); // 290
+            console.log('------------');
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

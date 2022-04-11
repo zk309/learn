@@ -1,0 +1,83 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-10 15:26:04
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-28 23:58:01
+ * @FilePath: \learnJavaScript\14_事件高级\05_DOM事件流三个阶段.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .father {
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .son {
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        父盒子
+        <div class="son">子盒子</div>
+    </div>
+
+    <script>
+        // DOM 事件流三个阶段：事件捕获 目标阶段  事件冒泡
+        // 注意：
+        // 1. JS代码只能执行捕获或者冒泡其中的一个阶段；
+        // 2. onclick 和 attachEvent(ie支持) 只能得到冒泡阶段
+        // 3. addEventListener(type, listener[, useCapture]) 第三个参数如果是 true,表示事件捕获阶段调用事件处理程序；
+        //    如果是 false(不写默认就是 false), 表示在事件冒泡阶段调用事件处理程序；
+        // 4. 实际开发中，我们很少使用事件捕获，我们更关注事件冒泡。
+        // 5. 有些事件是没有冒泡的，比如 onblur, onfocus, onmouseenter, onmouseleave;
+        // 6. 事件冒泡有时候会带来麻烦，有时候又会帮助我们很巧妙的做某些事件。
+
+        // 1. 获取元素
+        const father = document.querySelector('.father');
+        const son = document.querySelector('.son');
+
+        // 事件捕获：2-1
+        father.addEventListener('click', function () {
+            console.log(2);
+        }, true);
+        son.addEventListener('click', function () {
+            console.log(1);
+            console.log('------------');
+        }, true);
+
+
+        // 事件冒泡：1-2
+        father.addEventListener('click', function () {
+            console.log(2);
+        }, false);
+        son.addEventListener('click', function () {
+            console.log(1);
+        }, false);
+    </script>
+</body>
+
+</html>

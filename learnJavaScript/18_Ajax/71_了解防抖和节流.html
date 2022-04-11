@@ -1,0 +1,56 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-09 18:31:11
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-10 09:49:26
+ * @FilePath: \18_Ajax\71_了解防抖和节流.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // 什么是防抖?
+            // 防抖策略 (debounce) 是当事件被触发后, 延迟 n 秒后再执行回调, 如果在这 n 秒内事件又被触发, 则重新计时.
+            // 防抖的应用场景:
+            // 用户在输入框中连续输入一串字符串时, 可以通过防抖策略, 只在输入完后, 才执行查询的请求, 这样可以有效减少请求的次数, 节约请求的资源;
+
+
+            // 什么是节流?
+            // 节流策略(throttle), 顾名思义, 可以减少一段时间内事件的触发频率.
+            // 节流的应用场景:
+            // 1. 鼠标连续不断的触发某事件(如点击), 只在单位时间内触发一次;
+            // 2. 懒加载是要监听计算滚动条的位置, 但不必每次滑动都触发, 可以降低计算的频率, 而不必去浪费 CPU 资源;
+
+            // 节流阀的概念:
+            // 高铁卫生间是否被占用， 有红绿灯控制，红灯表示被占用， 绿灯表示可使用；
+            // 假设每个人上卫生间都需要花费5分钟， 则5分钟之内，被占用的卫生间无法被其他人使用；
+            // 上一个人使用完毕之后，需要将红灯重置为绿灯，表示下一个人可以使用卫生间；
+            // 下一个人在使用卫生间之前，需要先判断控制是否为绿灯，来知晓能否上卫生间；
+
+            // 节流阀为空，表示可以执行下次操作；不为空，表示不能执行下次操作；
+            // 当前操作执行完毕，必须将节流阀重置为空，表示可以执行下次操作；
+            // 每次执行操作前，必须先判断节流阀是否为空；
+
+            // 防抖和节流的区别：
+            // 防抖：如果事件被频繁触发，防抖能保证只有最后一次触发生效，前面 N 多次的触发都会被忽略。
+            // 节流：如果事件被频繁触发，节流能够减少事件触发的频率，因此，节流是有选择的执行一部分事件。
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

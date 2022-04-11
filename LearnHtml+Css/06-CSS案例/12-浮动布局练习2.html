@@ -1,0 +1,70 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-24 05:55:51
+ * @LastEditTime: 2021-09-24 06:08:18
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \06-CSS案例\12-浮动布局练习2.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 1532px;
+      height: 768px;
+      background-color: pink;
+    }
+
+    .left {
+      width: 269px;
+      height: 768px;
+      background-color: red;
+      float: left;
+    }
+
+    .right {
+      width: 1241px;
+      height: 768px;
+      background-color: green;
+      float: left;
+    }
+
+    .right>div {
+      width: 296px;
+      height: 347px;
+      background-color: blue;
+      float: left;
+      margin: 0 0 44px 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="left">左青龙</div>
+    <div class="right">
+      <!--右白虎-->
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+  </div>
+</body>
+
+</html>

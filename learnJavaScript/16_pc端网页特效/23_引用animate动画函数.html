@@ -1,0 +1,87 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-18 16:25:15
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-18 16:56:59
+ * @FilePath: \learnJavaScript\16_pc端网页特效\23_引用animate动画函数.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .sliderbar {
+            position: fixed;
+            right: 0;
+            bottom: 100px;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        span {
+            display: block;
+            background-color: #f8aebb;
+            border-radius: 20px;
+        }
+
+        .con {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 150px;
+            height: 40px;
+            background-color: pink;
+            z-index: -1;
+            text-indent: -50px;
+            border-radius: 20px;
+        }
+    </style>
+
+    <script src="./22_animate.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+
+            // 获取元素
+            const sliderbar = document.querySelector('.sliderbar');
+            const con = document.querySelector('.con');
+
+            sliderbar.addEventListener('mouseenter', function () {
+                // animate(obj, distance, callback)
+                animate(con, -110, function () {
+                    // 把 <- 变成 ->
+                    sliderbar.children[0].innerHTML = '→';
+                });
+            });
+            sliderbar.addEventListener('mouseleave', function () {
+                // animate(obj, distance, callback)
+                animate(con, 0, function () {
+                    sliderbar.children[0].innerHTML = '←';
+                });
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="sliderbar">
+        <span>←</span>
+        <div class="con">问题反馈</div>
+    </div>
+</body>
+
+</html>

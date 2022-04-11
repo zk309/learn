@@ -1,0 +1,118 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-24 13:11:05
+ * @LastEditTime: 2021-10-13 19:51:56
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \06-CSS案例\13-浮动布局练习3.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      background-color: pink;
+      margin-bottom: 10px;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    /*第一行*/
+    .top {
+      height: 50px;
+    }
+
+    /*第二行*/
+    .banner {
+      width: 980px;
+      height: 150px;
+      margin: 0 auto 10px;
+    }
+
+    /*第三行*/
+    .box1 {
+      width: 980px;
+      /* 方法一: */
+      /* height: 300px; */
+      /* 方法二:  */
+      overflow: hidden;
+      margin: 0 auto 10px;
+    }
+
+    .box1>ul>li {
+      width: 237px;
+      height: 300px;
+      background-color: rgb(214, 42, 42);
+      float: left;
+      margin-right: 10px;
+    }
+
+    .box1>ul>.last {
+      margin-right: 0px;
+    }
+
+    /*第四行*/
+    .box2 {
+      width: 980px;
+      /* 方法一: */
+      /* height: 150px; */
+      /* 方法二: */
+      overflow: hidden;
+      margin: 0 auto 10px;
+      background-color: rgb(192, 132, 132);
+    }
+
+    .box2>ul>li {
+      width: 237px;
+      height: 150px;
+      background-color: gray;
+      float: left;
+      margin-right: 10px;
+    }
+
+    .box2>ul>.last2 {
+      margin-right: 0px;
+    }
+
+    /*第五行*/
+    .footer {
+      height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top">top</div>
+  <div class="banner">banner</div>
+  <div class="box1">
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li class="last">4</li>
+    </ul>
+  </div>
+  <div class="box2">
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li class="last2">4</li>
+    </ul>
+  </div>
+  <div class="footer">footer</div>
+</body>
+
+</html>

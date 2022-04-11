@@ -1,0 +1,59 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-23 17:23:36
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-23 17:29:42
+ * @FilePath: \learnJavaScript\17_jQuery\22_jQuery效果之淡入与淡出.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 150px;
+            height: 300px;
+            background-color: pink;
+            display: none;
+        }
+    </style>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        $(function () {
+
+            // 淡入效果
+            $("button").eq(0).click(function () {
+                $("div").fadeIn(1000);
+            })
+            // 淡出效果
+            $("button").eq(1).click(function () {
+                $("div").fadeOut(1000);
+            })
+            // 淡入淡出切换
+            $("button").eq(2).click(function () {
+                $("div").fadeToggle(1000);
+            })
+            // 修改透明度
+            $("button").eq(3).click(function () {
+                $("div").fadeTo(1000, .5);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button>淡入效果</button>
+    <button>淡出效果</button>
+    <button>淡入淡出切换</button>
+    <button>修改透明度</button>
+    <div></div>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-11-17 14:33:10
+ * @LastEditTime: 2021-11-17 15:00:41
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \09-CSS高级\14-行内块的巧妙运用.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      text-align: center;
+    }
+
+    .box a {
+      display: inline-block;
+      padding: 5px 10px;
+      background-color: #f7f7f7;
+      border: 1px solid #ccc;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
+
+    .box input {
+      height: 36px;
+      width: 45px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    .box button {
+      width: 60px;
+      height: 36px;
+      background-color: #f7f7f7;
+      border: 1px solid #ccc;
+    }
+
+    .box .current {
+      background-color: #fff;
+      border: 1px solid #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <a href="#" class="prev">&lt;&lt;上一页</a>
+    <a href="#" class="current">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#">6</a>
+    <a href="#" class="current">...</a>
+    <a href="#" class="next">&gt;&gt;下一页</a>
+    到第
+    <input type="text">
+    页
+    <button>确定</button>
+  </div>
+</body>
+
+</html>

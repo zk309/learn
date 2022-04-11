@@ -1,0 +1,88 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-04 14:26:11
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-26 15:50:35
+ * @FilePath: \learnJavaScript\06-函数\11-函数作业.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 1.用户输入任意两个数字的任意运算(简单的计算器小功能), 并能弹出运算后的结果;
+    // function getNum(num1, sym, num2) {
+    //   switch (sym) {
+    //     case '+':
+    //       return num1 + '+' + num2 + '=' + (num1 + num2);
+    //     case '-':
+    //       return num1 + '-' + num2 + '=' + (num1 - num2);
+    //     case '*':
+    //       return num1 + '*' + num2 + '=' + (num1 * num2);
+    //     case '/':
+    //       return num1 + '/' + num2 + '=' + (num1 / num2);
+    //   }
+    // }
+    // // console.log(getNum(2, '/', 1));
+    // var num1 = parseFloat(prompt('请输入第一个数:'));
+    // var sym = prompt('请输入运算符(+,-,*,/):');
+    // var num2 = parseFloat(prompt('请输入第二个数:'));
+    // console.log(getNum(num1, sym, num2));
+
+
+
+    // // 2. 用户输入任意两个数字的最大值
+    // var num1 = parseFloat(prompt('请输入第一个数:'));
+    // var num2 = parseFloat(prompt('请输入第二个数:'));
+
+    // function getNum(num1, num2) {
+    //   return num1 > num2 ? num1 : num2;
+    // }
+    // alert('最大值为:' + getNum(num1, num2));
+
+
+
+    // // 3. 用户输入任意三个数字的最大值
+    // var num1 = parseFloat(prompt('请输入第一个数:'));
+    // var num2 = parseFloat(prompt('请输入第二个数:'));
+    // var num3 = parseFloat(prompt('请输入第三个数:'));
+
+    // function getNum(num1, num2, num3) {
+    //   if (num1 > num2 && num1 > num3) {
+    //     return num1;
+    //   } else if (num2 > num1 && num2 > num3) {
+    //     return num2;
+    //   } else {
+    //     return num3;
+    //   }
+    // }
+    // alert('最大值为:' + getNum(num1, num2, num3));
+
+
+
+    // 4. 判断是否为素数
+    function getNum(num) {
+      var count = 0;
+      for (var i = 1; i <= num; i++) {
+        if (num % i == 0) {
+          count++;
+        }
+      }
+      return count == 2 ? num + '是素数' : num + '不是素数';
+    }
+    var num = prompt('请输入一个数,判断是否是素数?');
+    alert(getNum(num));
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

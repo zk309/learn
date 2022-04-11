@@ -1,0 +1,60 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-10 18:06:08
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-10 18:39:46
+ * @FilePath: \learnJavaScript\14_事件高级\06_事件对象.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>div</div>
+
+    <script>
+        // 事件对象：
+        // 1. event 就是一个事件对象，写到侦听函数的小括号里面，当形参来看；
+        // 2. 事件对象只有有了事件才会存在，它是系统自动创建的，不需要传递参数；
+        // 3. 事件对象是事件一些列相关数据的集合；
+        // 4. 事件对象可以命名为 event, evt, e
+        // 5. 事件对象的兼容性问题, IE6~8只支持 Window.event, 兼容性的写法是 e = e || Window.event;
+
+        // 1. 获取元素：
+        const div = document.querySelector('div');
+
+        div.onclick = function (event) {
+            // console.log(event); // PointerEvent {isTrusted: true, pointerId: 1, width: 1, height: 1, pressure: 0, …}
+            // 兼容 IE6~8 的写法: 注意只能写在 onclick 中
+            event = event || Window.event;
+            console.log(event); // PointerEvent {isTrusted: true, pointerId: 1, width: 1, height: 1, pressure: 0, …}
+        }
+
+        div.addEventListener('click', function (e) {
+            console.log(e); // PointerEvent {isTrusted: true, pointerId: 1, width: 1, height: 1, pressure: 0, …}
+        })
+    </script>
+</body>
+
+</html>

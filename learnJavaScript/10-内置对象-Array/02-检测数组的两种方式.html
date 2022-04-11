@@ -1,0 +1,48 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-18 12:00:44
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-02-26 00:54:05
+ * @FilePath: \learnJavaScript\10-内置对象-Array\02-检测数组的两种方式.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 封装一个反转数组的函数 
+        function reverse(aru) {
+            var arr = [];
+            for (var i = aru.length - 1; i >= 0; i--) {
+                arr[arr.length] = aru[i];
+            }
+            return arr;
+        }
+
+        console.log(reverse([1, 2, 3, 4])); // (4) [4, 3, 2, 1]
+        console.log(reverse(1, 2, 3)); // []
+
+        // 检测是否为数组
+        // (1) instanceof 运算符, 用来检测是否为数组.
+        var arr = [];
+        var obj = {};
+        console.log(arr instanceof Array); // true
+        console.log(obj instanceof Array); // false
+        console.log(obj instanceof Object); // true
+        // (2) Array.isArray(参数); H5新增的方法, ie9以上版本支持
+        console.log(Array.isArray(arr)); // true
+        console.log(Array.isArray(obj)); // false
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

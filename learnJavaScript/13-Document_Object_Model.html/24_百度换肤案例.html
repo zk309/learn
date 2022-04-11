@@ -1,0 +1,74 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-02 19:45:25
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-02 20:10:23
+ * @FilePath: \learnJavaScript\13-DOM\24_百度换肤案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        body {
+            background: url(./images/1.jpg) no-repeat center top;
+        }
+
+        .baidu {
+            overflow: hidden;
+            margin: 50px auto;
+            width: 410px;
+            background-color: #fff;
+            padding-top: 3px;
+        }
+
+        .baidu li {
+            float: left;
+            margin: 0 1px;
+            cursor: pointer;
+        }
+
+        img {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="baidu">
+        <li><img src="./images/1.jpg" alt=""></li>
+        <li><img src="./images/2.jpg" alt=""></li>
+        <li><img src="./images/3.jpg" alt=""></li>
+        <li><img src="./images/4.jpg" alt=""></li>
+    </ul>
+
+    <script>
+        // 1. 获取元素
+        var img = document.querySelector('.baidu').querySelectorAll('img');
+        // console.log(img);
+
+        for (var i = 0; i < img.length; i++) {
+            img[i].onclick = function () {
+                // console.log(this.src);
+                document.body.style.background = 'url(' + this.src + ')';
+            }
+        }
+    </script>
+</body>
+
+</html>

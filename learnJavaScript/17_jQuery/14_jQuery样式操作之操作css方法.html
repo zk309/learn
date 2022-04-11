@@ -1,0 +1,58 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-23 10:11:51
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-23 10:23:07
+ * @FilePath: \learnJavaScript\17_jQuery\14_jQuery样式操作之操作css方法.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            margin: 10px auto;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        $(function () {
+
+            // jQuery 可以使用 css 方法来修改简单元素样式; 也可以操作类. 修改多个样式.
+
+            // 1. 参数只写属性名, 返回属性值;
+            // console.log($("div").css("height")); // 200px
+
+            // 2. 参数是属性名, 属性值, 逗号分隔, 是设置一组样式, 属性必须加引号, 值如果是数字可以不用跟单位和引号.
+            // $("div").css("width", 600);
+
+            // 3. 参数可以是对象形式, 方便设置多组样式, 属性名和属性值用冒号隔开, 属性可以不用加引号;
+            $("div").css({
+                width: 300,
+                height: 300,
+                backgroundColor: 'skyblue'
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

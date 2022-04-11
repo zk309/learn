@@ -1,0 +1,82 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-10 14:04:11
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-10 15:21:56
+ * @FilePath: \18_Ajax\77_HTTP响应消息.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // 什么是 HTTP响应消息？
+            // 响应消息就是服务器响应给客户端的消息，也叫做响应报文。
+
+            // HTTP 响应消息的组成部分：
+            // HTTP响应消息由状态行，响应头部，空行和响应体 4 个部分组成。
+
+            // 状态行
+            // 状态行由 HTTP协议版本, 状态码 和 状态码的描述文本 3 个部分组成, 它们之间使用空格隔开.
+
+            // 响应头部
+            // 响应头部用来描述服务器的基本信息. 响应头部由多行 键值对 组成, 每行的键和值之间用英文的冒号分隔.
+            // 关于更多响应头字段的描述, 可以查看 MDN 官方文档: https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers
+
+            // 空行
+            // 在最后一个响应头部字段结束之后, 会紧跟一个空行, 用来通知客户端响应头部至此结束.
+            // 响应消息中的空行, 用来分隔响应头部与响应体.
+
+            // 响应体
+            // 响应体中, 是服务器响应给客户端的资源内容.
+
+
+            $("#btnGET").on("click", function (evt) {
+                // console.log(1);
+                $.ajax({
+                    method: 'GET',
+                    url: 'http://www.liulongbin.top:3006/api/get',
+                    data: {
+                        user: '孙七',
+                        age: 52
+                    },
+                    success: function (res) {
+                        console.log(res);
+                    }
+                });
+            });
+
+            $("#btnPOST").on("click", function (evt) {
+                // console.log(1);
+                $.ajax({
+                    method: 'POST',
+                    url: 'http://www.liulongbin.top:3006/api/post',
+                    data: {
+                        location: '北京',
+                        address: '沙河'
+                    },
+                    success: function (res) {
+                        console.log(res);
+                    }
+                });
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <button id="btnGET">GET请求</button>
+    <button id="btnPOST">POST请求</button>
+</body>
+
+</html>

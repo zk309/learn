@@ -1,0 +1,122 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-07 18:22:47
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-07 19:48:19
+ * @FilePath: \18_Ajax\57_xhr_level2新特性计算上传文件速度.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-3.4.1-dist/css/bootstrap.css">
+    <style>
+        .progress-bar {
+            color: pink !important;
+        }
+    </style>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+
+            // 新版 XMLHttpRequest 对象,不仅可以发送文本信息, 还可以上传文件.
+            // 步骤:
+            // 1. 定义 UI 结构;
+            // 2. 验证是否选择了文件;
+            // 3. 向 FormData 中追加文件;
+            // 4. 使用 xhr 发起上传文件的请求;
+            // 5. 监听 onreadystatechange 事件;
+
+            // 1. 监听 xhr.upload 的 onprogress 事件;
+            // 2. 显示上传进度条;
+
+            // 2. 验证是否选择了文件;
+            var btnUpload = document.querySelector('#btnUpload');
+            btnUpload.addEventListener('click', function (evt) {
+                // console.log(1);
+                // 获取到选择的文件列表
+                var files = document.querySelector('#file').files;
+                console.log(files);
+                if (files.length <= 0) {
+                    return alert('请选择要上传的文件!!');
+                }
+
+                // 3. 向 FormData 中追加文件;
+                var fd = new FormData();
+                fd.append('avatar', files[0]);
+
+                // 4. 使用 xhr 发起上传文件的请求;
+                var xhr = new XMLHttpRequest();
+                // 监听 xhr.upload 的 onprogress 事件
+                xhr.upload.onprogress = function (e) {
+                    // e.lengthComputable 是一个布尔值, 表示当前上传的资源是否具有计算的长度
+                    if (e.lengthComputable) {
+                        // e.loaded 已传输的字节
+                        // e.total 需传输的字节
+                        var percentComplete = Math.ceil((e.loaded / e.total) * 100);
+                        console.log(percentComplete);
+                        // 设置进度条的宽度
+                        // 
+                        $('#percent').attr('style', 'width:' + percentComplete + '%').html(
+                            percentComplete + '%');
+                    }
+                };
+                // 监听上传完成的事件
+                xhr.upload.onload = function () {
+                    // 移除上传中的类样式
+                    // 添加上传完成的类样式
+                    $('#percent').removeClass().addClass('progress-bar progress-bar-success');
+                }
+                xhr.open('POST', 'http://www.liulongbin.top:3006/api/upload/avatar');
+                xhr.send(fd);
+
+
+
+                // 5. 监听 onreadystatechange 事件
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        var res = JSON.parse(xhr.responseText);
+                        console.log(res);
+                        if (res.status === 200) {
+                            // 上传成功
+                            // 将服务器返回的图片地址, 设置为 <img> 标签的 src 属性.
+                            document.querySelector('#img').src = 'http://www.liulongbin.top:3006' +
+                                res
+                                .url;
+                        } else {
+                            // 上传失败
+                            console.log(res.message);
+                        }
+
+                    }
+                };
+            });
+
+        })
+    </script>
+</head>
+
+<body>
+    <!--  1. 定义 UI 结构; -->
+    <input type="file" id="file">
+    <br>
+    <button id="btnUpload">上传文件</button>
+    <br /><br>
+    <!-- 显示上传进度条 -->
+    <div class="progress" style="width: 500px;">
+        <div class="progress-bar progress-bar-striped active" style="width: 0%;" id="percent">
+            0%
+        </div>
+    </div>
+    <!-- 显示上传到服务器的图片 -->
+    <img src="" alt="" id="img" width="800" />
+</body>
+
+</html>

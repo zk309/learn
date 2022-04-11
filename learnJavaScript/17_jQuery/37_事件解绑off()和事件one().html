@@ -1,0 +1,70 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-28 07:44:36
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-28 11:10:35
+ * @FilePath: \17_jQuery\37_事件解绑off()和事件one().html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        li {
+            cursor: pointer;
+        }
+    </style>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            $("div").on({
+                click: function () {
+                    console.log("我点击了.");
+                },
+                mouseenter: function () {
+                    console.log("我鼠标经过了.");
+                }
+            });
+
+            $("ul").on("click", "li", function () {
+                alert(11);
+            })
+
+            // 1. off() 方法可以移除通过 on() 方法添加的事件处理程序
+            // $("div").off(); // 解绑 div 元素所有事件处理程序.
+            $("div").off("click"); // 解绑 div 元素上面的点击事件
+            $("ul").off("click", "li"); // 解绑事件委派.
+
+            // 2. 如果有的事件只想触发一次, 可以使用 one() 来绑定事件.
+            $("p").one("click", function () {
+                alert(12);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+    <ul>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+    </ul>
+    <p>我是屁</p>
+</body>
+
+</html>

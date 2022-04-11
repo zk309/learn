@@ -1,0 +1,53 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-28 20:14:50
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-28 20:25:24
+ * @FilePath: \17_jQuery\41_多库共存.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // 问题概述:
+            // jQuery 使用 $ 作为标识符, 随着 jQuery 的流行, 其他 js 库也会用这 $ 作为标识符, 这样一起使用会引起冲突.
+            // 客观需求:
+            // 需要一个解决方案, 让 jQuery 和其他的 js 库不存在冲突, 可以同时存在, 这就叫做多库共存.
+            // jQuery 解决方案:
+            // 1. 把里面的 $ 符号统一改为 jQuery. 比如 jQuery("div");
+            // 2. jQuery 变量规定新的名称: $.noConflict()  --->  var xx = $.noConflict();
+
+            function $(ele) {
+                return document.querySelector(ele);
+            };
+            console.log($("div"));
+
+            // 1. 把里面的 $ 符号统一改为 jQuery. 比如 jQuery("div");
+            // $.each(); // $.each is not a function
+            jQuery.each();
+
+            // 2. jQuery 变量规定新的名称: $.noConflict() ---> var xx = $.noConflict();
+            var zK = jQuery.noConflict();
+            console.log(zK("span"));
+            zK.each();
+        })
+    </script>
+</head>
+
+<body>
+    <div>div</div>
+    <span>span</span>
+</body>
+
+</html>

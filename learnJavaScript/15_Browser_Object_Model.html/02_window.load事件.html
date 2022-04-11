@@ -1,0 +1,48 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-12 12:10:00
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-12 12:26:00
+ * @FilePath: \learnJavaScript\15_Browser_Object_Model.html\02_window.load事件.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. window.onload 事件可以让 JS 代码写到页面元素的上方，因为 onload 是等页面内容全部加载完毕，再去执行处理函数；
+        // 2. window.onload传统注册事件方式只能写一次，如果有多个，会以最后一个 window.onload 为准；
+        // window.onload = function () {
+        //     const btn = document.querySelector('button');
+        //     btn.addEventListener('click', function () {
+        //         alert(12);
+        //     })
+        // }
+        // window.onload = function () {
+        //     const btn = document.querySelector('button');
+        //     btn.addEventListener('click', function () {
+        //         alert(121);
+        //     })
+        // }
+
+        // 3. 如果使用 addEventListener则没有传统注册事件方式的限制。
+        window.addEventListener('load', function () {
+            alert(1)
+        });
+        window.addEventListener('load', function () {
+            alert(2)
+        });
+    </script>
+</head>
+
+<body>
+    <button>点击我，弹出提示框.</button>
+</body>
+
+</html>

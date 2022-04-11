@@ -1,0 +1,35 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2021-12-17 18:09:25
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2021-12-17 18:14:10
+ * @FilePath: \learnJavaScript\04-循环\08-求学生成绩案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    var num = prompt('请输入班级的总人数:');
+    var sum = null;
+    for (var i = 1; i <= num; i++) {
+      var score = prompt('请输入第' + i + '个学生成绩:');
+      // 因为从 prompt 取过来的数据是字符串型的, 需要转换为数字型.
+      sum += parseFloat(score);
+    }
+    console.log('班级的总分是:' + sum);
+    console.log('班级的总分是:' + sum / num);
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

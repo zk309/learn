@@ -1,0 +1,60 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-13 14:27:45
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-13 17:39:38
+ * @FilePath: \learnJavaScript\15_Browser_Object_Model.html\14_同步任务和异步任务的执行机制.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.addEventListener('load', function () {
+
+            // 同步任务：
+            // 同步任务都在主线程上执行，形成一个 执行栈。
+
+            // 异步任务：
+            // JS 的异步任务是通过回调函数实现的。
+            // 一般而言：异步任务有以下三种类型：
+            // 1. 普通事件，如 click, resize 等
+            // 2. 资源加载，如 load, error 等
+            // 3. 定时器，包括 setInterval, setTimeout 等
+
+            // 异步任务相关回调函数添加到 任务队列中（任务队列也称为消息队列。）
+
+
+            // JS 执行机制:
+            // 1. 先执行执行栈中的同步任务。
+            // 2. 异步任务（回调函数）放入任务队列中。
+            // 3. 一旦执行战中的所有同步任务执行完毕，系统就会依次读取任务队列中的异步任务，于是被读取的异步任务结束等待状态，
+            //    进入执行栈，开始执行。
+
+            // 例子：1-2-3
+
+            // 执行栈 --- 同步任务
+            // console.log(1)
+            // setTimeout(fn, 0)
+            // console.log(2)
+
+            // 任务队列 --- 异步任务
+            // function fn() {console.log(3)};
+
+            // 由于主线程不断地重复获得任务，执行任务，再获得任务，再执行，所以这种机制被称为事件循环(event loop);
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

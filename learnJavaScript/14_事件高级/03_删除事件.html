@@ -1,0 +1,79 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-09 15:54:02
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-09 18:02:29
+ * @FilePath: \learnJavaScript\14_事件高级\03_删除事件.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            margin: 20px auto;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+
+    <script>
+        var divs = document.querySelectorAll('div');
+
+        // 1. 传统方式删除事件
+        divs[0].onclick = function fn2() {
+            alert(10);
+            this.onclick = null;
+            // divs[0].removeEventListener('click', fn2); // NO
+        }
+
+        // 2. removeEventListener() 删除事件
+        // divs[1].addEventListener('click', fn);
+
+        // function fn() {
+        //     alert(11);
+        //     divs[1].removeEventListener('click', fn);
+        // }
+
+        divs[1].addEventListener('click', function fn() {
+            alert(11);
+            divs[1].removeEventListener('click', fn);
+            // divs[1].onclick = null; // NO
+        });
+
+
+
+        // 3. attachEvent()---detachEvent() 不推荐，IE9以前支持
+        // divs[2].attachEvent('onclick', fn1);
+
+        // function fn1() {
+        //     alert(22);
+        //     divs[2].detachEvent('onclick', fn1);
+        // }
+
+        divs[2].attachEvent('onclick', function fn1() {
+            alert(22);
+            divs[2].detachEvent('onclick', fn1);
+        });
+    </script>
+</body>
+
+</html>

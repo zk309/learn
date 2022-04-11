@@ -1,0 +1,61 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-12 14:31:25
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-12 14:54:19
+ * @FilePath: \learnJavaScript\15_Browser_Object_Model.html\06_回调函数以及5秒之后自动关闭广告.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            font-size: 100px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function () {
+            // setTimeout() 这个函数我们也称为回调函数 callback;
+            // 普通函数是按照代码顺序直接调用；
+            // 而这个函数，需要等待时间，时间到了才去调用这个函数，因此称为回调函数；
+            // 简单理解：回调，就是回头调用的意思，上一件事干完，再回头再调用这个函数；
+            // 以前我们讲的 element.onclick = function(){} 或者 element.addEventListener('click',fn) 里面的函数也是回调函数。
+
+            // 5 秒后自动关闭广告案例
+            const div = document.querySelector('div');
+            var count = 5;
+            setInterval(function () {
+                div.innerHTML = count;
+                count--;
+            }, 750)
+            setTimeout(function () {
+                div.style.display = 'none';
+            }, 5000)
+
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

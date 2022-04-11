@@ -1,0 +1,38 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-02-27 12:03:24
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-02-27 12:10:31
+ * @FilePath: \learnJavaScript\13-DOM\01_getElementById.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="time">2022-2-27</div>
+
+    <script>
+        // 1. 因为我们文档页面从上往下加载，所以先要有标签，所以我们的 script 写到标签下面.
+        // 2. get:获得  element:元素  by:通过  驼峰命名法
+        // 3. 参数 id 是大小写敏感的字符串
+        // 4. 返回的是一个元素对象
+
+        var timer = document.getElementById('time');
+        console.log(timer); // <div id="time">2022-2-27</div>
+        console.log(typeof timer); // object
+
+        // 5. console.dir 打印我们返回的元素对象，更好地查看里面的属性和方法。
+        console.dir(timer) // div#time
+    </script>
+</body>
+
+</html>

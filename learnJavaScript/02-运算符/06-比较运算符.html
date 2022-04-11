@@ -1,0 +1,43 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2021-12-10 13:47:58
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2021-12-10 14:08:42
+ * @FilePath: \02\06-比较运算符.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    console.log(3 >= 5);
+    console.log(3 <= 5);
+    // 1. 我们程序里面的等于符号是 == , 默认转换数据类型,会把字符串型的数据转换为数字型, 只要求值相等就可以.
+    console.log(3 == 5); // false
+    console.log('cax' == 'cac'); // false
+    console.log(18 == 18); // true
+    console.log(18 == '18'); // true
+    console.log(18 != '18'); // false
+    // 2. 我们程序里面有全等, 要求两侧的值和数据类型完全一致才可以
+    console.log(18 === 18); // true
+    console.log(18 === '18'); // false
+    console.log('----------------');
+    var num1 = 10;
+    var num2 = 100;
+    console.log(num1 > num2); // false
+    console.log(num1 == 11); // false
+    console.log(num1 != num2); // true
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

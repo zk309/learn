@@ -1,0 +1,43 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-14 21:40:28
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-02-25 22:12:34
+ * @FilePath: \learnJavaScript\07-对象\06-构造函数创建对象-王者荣耀案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 王者荣耀案例
+        function Hero(uname, type, blood, attack) {
+            this.uname = uname;
+            this.type = type;
+            this.blood = blood;
+            this.attack = function (aru) {
+                return aru
+            };
+        }
+
+        var re1 = new Hero('廉颇', '力量型', '500血量');
+        const type1 = re1['attack']('近战');
+        console.log(re1, type1); // Hero {uname: '廉颇', type: '力量型', blood: '500血量', attack: ƒ} '近战'
+
+        var re2 = new Hero('后羿', '射手型', '100血量');
+        const type2 = re1['attack']('远程');
+        console.log(re1, type2); // Hero {uname: '廉颇', type: '力量型', blood: '500血量', attack: ƒ} '远程'
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

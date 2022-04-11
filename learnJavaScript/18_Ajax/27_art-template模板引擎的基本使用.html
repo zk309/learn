@@ -1,0 +1,90 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-04 09:07:28
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-04 19:55:49
+ * @FilePath: \18_Ajax\27_art-template模板引擎的基本使用.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <!-- 1. 导入 art-template; -->
+    <!-- 在 window 全局，多一个函数，叫做 template('模板的Id', 需要渲染的数据对象) -->
+    <script src="./template-web.js"></script>
+
+    <!-- 3. 定义模板 -->
+    <!-- 3.1 模板的 HTML 结构，必须定义到 script 中 -->
+    <!-- 3.2 <script> 标签的 type="text/html" -->
+    <script type="text/html" id="tpl_user">
+        {{@ title }}
+        <p>姓名: {{ name }}</p>
+        <p>年龄: {{ isVIP ? 'VIP客户':'普通客户' }}</p>
+        <p>注册时间: {{ regTime | dataForm  }}</p>
+        <p>注册时间: {{ regTime | dataForm }}</p>
+        <p>{{ fn }}</p>
+        <p>会员: {{ if  isVIP }} VIP客户 {{ else if !isVIP }} 普通客户 {{ /if }}</p>
+        爱好:<ul>
+            {{ each hobby }}
+            <li>{{ $value }}</li>
+            {{ /each }}
+        </ul>
+    </script>
+
+    <script>
+        window.addEventListener('load', function (evt) {
+
+
+            // art-template 的使用步骤：
+            // 1. 导入 art-template;
+            // 2. 定义数据；
+            // 3. 定义模板；
+            // 4. 调用 template 函数；
+            // 5. 渲染 HTML 结构;
+
+            // 2. 定义数据；
+            var data = {
+                title: '<h3>用户信息</h3>',
+                name: 'zs',
+                age: 20,
+                isVIP: false,
+                regTime: new Date(),
+                fn: function () {
+                    return '我是无参函数。'
+                },
+                hobby: ['吃饭', '睡觉', '打豆豆']
+            };
+
+            // 注意： art-template 的过滤器要放在 调用 template 函数之前；
+            template.defaults.imports.dataForm = function (data) {
+                var y = data.getFullYear();
+                var m = data.getMonth() + 1;
+                var d = data.getDate();
+                return y + '-' + m + '-' + d;
+            };
+            // 4. 调用 template 函数；
+            var str = template('tpl_user', data);
+
+
+            console.log(str);
+
+            // 5. 渲染 HTML 结构;
+            $('.container').html(str);
+        })
+    </script>
+
+</head>
+
+<body>
+    <div class="container"></div>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-16 17:18:19
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-16 17:35:03
+ * @FilePath: \learnJavaScript\16_pc端网页特效\07_立即执行函数.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.addEventListener('load', function () {
+
+            // 立即执行函数：不需要调用，能够自己执行的函数
+
+            // 主要作用：创建一个独立的作用域, 里面所有的变量都是局部变量，不会有命名冲突的情况。
+            // 注意： 1. 可以传递参数； 2. 函数内的变量都是局部变量；3. 可以是匿名函数或者命名函数；
+
+            // 写法： 
+            // 1. (function() {})();
+            (function sum(a, b) {
+                console.log(a + b); // 20
+            })(10, 10);
+
+            // 2. (function() {} ());
+            (function () {
+                var num = 10;
+                console.log(num); // 10
+            }());
+
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

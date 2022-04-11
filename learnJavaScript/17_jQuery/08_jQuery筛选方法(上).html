@@ -1,0 +1,50 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-22 19:43:36
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-22 19:54:21
+ * @FilePath: \learnJavaScript\17_jQuery\08_jQuery筛选方法(上).html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        $(function () {
+
+            // 1. 父 parent() 返回的是最近一级的父级元素
+            console.log($('.son').parent());
+
+            // 2. 子 
+            // (1) children() 类似于子代选择器
+            $('.nav').children('p').css('color', 'pink');
+            // (2) find() 类似于后代选择器
+            $('.nav').find('p').css('color', 'hotpink');
+        })
+    </script>
+</head>
+
+<body>
+    <div class="yeye">
+        <div class="father">
+            <div class="son">儿子</div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <p>我是屁</p>
+        <div>
+            <p>我是p</p>
+        </div>
+    </div>
+</body>
+
+</html>

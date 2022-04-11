@@ -1,0 +1,46 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2021-12-10 19:26:43
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-26 08:39:14
+ * @FilePath: \learnJavaScript\02-运算符\09-短路运算(逻辑中断).html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 1. 123 && 456 是值或者是表达式, 参与逻辑运算符. 
+    // 2. 逻辑与短路运算,
+    //  如果 表达式1 结果为真,则返回 表达式2; 
+    //  如果 表达式1 为假, 则返回 表达式1
+    console.log(123 && 456); // 456
+    console.log(0 && 456); // 0
+    console.log(0 && 1 + 2 && 456 + 456789); // 0
+    console.log('' && 1 + 2 && 456 * 789456); // ''
+    // 如果表达式1的值为 '', 0, NaN, undefined, null ,则返回表达式1
+
+    // 3. 逻辑与短路运算
+    // 如果 表达式1 结果为真, 则返回的是表达式1,
+    // 如果 表达式1 结果为假, 则返回的是表达式2;
+    console.log(123 || 456); // 123
+    console.log(123 || 456 || 789); // 123
+    console.log(0 || '' || NaN || 741); // 741
+    // 逻辑中断很重要, 它会影响我们程序运行结果
+    var num = 0;
+    console.log(1232 || num++); // 1232
+    console.log(num); // 0
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

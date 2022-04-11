@@ -1,0 +1,41 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-14 10:53:09
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-14 11:03:12
+ * @FilePath: \learnJavaScript\15_Browser_Object_Model.html\17_location对象常见的方法.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.addEventListener('load', function () {
+
+            const btn = document.querySelector('button');
+            btn.addEventListener('click', function () {
+                // 记录浏览器历史，所以可以实现后退功能。
+                // location.assign('http://bilibili.com');
+
+                // 不记录浏览器历史，所以不实现后退功能.
+                // location.replace('http://bilibili.com');
+
+                // 重新加载页面，如果参数为 true,强制重新加载页面。
+                location.reload(true);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button>点击</button>
+</body>
+
+</html>

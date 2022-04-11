@@ -1,0 +1,56 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-10-29 21:36:31
+ * @LastEditTime: 2021-10-29 21:53:16
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \08-CSS案例\09-定位叠放次序.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+    }
+
+    .one {
+      z-index: 2;
+      background-color: pink;
+    }
+
+    .two {
+      /* z-index 来控制盒子的前后顺序(z轴) */
+      z-index: 1;
+      background-color: green;
+      top: 50px;
+      left: 50px;
+    }
+
+    .three {
+      background-color: blue;
+      top: 100px;
+      left: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="one"></div>
+  <div class="two"></div>
+  <div class="three"></div>
+</body>
+
+</html>

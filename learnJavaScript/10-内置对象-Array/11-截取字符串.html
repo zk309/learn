@@ -1,0 +1,51 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-19 20:36:22
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-02-26 08:21:04
+ * @FilePath: \learnJavaScript\10-内置对象-Array\11-截取字符串.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // slice() 方法返回一个新的数组对象，
+        // 这一对象是一个由 begin 和 end 决定的原数组的浅拷贝（包括 begin，不包括end）。
+        // 原始数组不会被改变。
+
+        const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+        console.log(animals.slice(2));
+        // expected output: Array ["camel", "duck", "elephant"]
+
+        console.log(animals.slice(2, 4));
+        // expected output: Array ["camel", "duck"]
+
+        console.log(animals.slice(1, 5));
+        // expected output: Array ["bison", "camel", "duck", "elephant"]
+
+        console.log(animals.slice(-2));
+        // expected output: Array ["duck", "elephant"]
+
+        console.log(animals.slice(2, -1));
+        // expected output: Array ["camel", "duck"]
+
+        console.log(animals.slice(2, 0)); // []
+
+        console.log(animals.slice());
+        // expected output: Array ["ant", "bison", "camel", "duck", "elephant"]
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

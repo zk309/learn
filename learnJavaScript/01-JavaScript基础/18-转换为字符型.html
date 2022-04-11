@@ -1,0 +1,40 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2021-12-09 19:36:01
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-25 22:57:29
+ * @FilePath: \learnJavaScript\01-JavaScript基础\18-转换为字符型.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 1. 把数字型转换为字符串型 变量.toString()
+    var num = 10;
+    console.log(typeof num); // number
+    // var str = num.toString();
+    // console.log(str); // 10
+    // console.log(typeof str); // string
+
+
+    // 2. 我们利用 String(变量) 函数
+    // console.log(typeof String(num)); // string
+
+
+    // 3. 利用 + 拼接字符串的方法实现转换效果, 隐式转换
+    console.log(typeof (num + '')); // string
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

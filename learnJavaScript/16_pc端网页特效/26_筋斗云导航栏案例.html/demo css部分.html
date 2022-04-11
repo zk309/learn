@@ -1,0 +1,128 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-21 08:19:57
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-21 09:20:50
+ * @FilePath: \learnJavaScript\16_pc端网页特效\26_筋斗云导航栏案例.html\demo css部分.html
+-->
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .c-nav {
+            position: relative;
+            margin: 100px auto;
+            width: 900px;
+            height: 42px;
+            background: #fff url(images/rss.png) no-repeat right center;
+            border-radius: 5px;
+        }
+
+        .c-nav ul {
+            position: absolute;
+        }
+
+        .c-nav li {
+            float: left;
+            width: 83px;
+            text-align: center;
+            line-height: 42px;
+        }
+
+        .c-nav li a {
+            color: #333;
+            text-decoration: none;
+            display: inline-block;
+            height: 42px;
+        }
+
+        .c-nav li a:hover {
+            color: green;
+        }
+
+        /* 云 */
+        .cloud {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 83px;
+            height: 42px;
+            background: url(images/cloud.gif) no-repeat;
+        }
+    </style>
+
+    <script src="./22_animate.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+
+            // 要求:
+            // 鼠标经过某个小 li, 筋斗云跟着到当前小 li 的位置;
+            // 鼠标离开这个小 li, 筋斗云复原为原来的位置;
+            // 鼠标点击了某个小 li, 筋斗云就会留在点击这个小 li 的位置;
+
+            const cloud = document.querySelector('.cloud');
+            const c_nav = document.querySelector('#c_nav');
+            const lis = c_nav.querySelectorAll('li');
+            var post = 0; // 起始位置控制器
+            // console.log(lis);
+
+            for (var i = 0; i < lis.length; i++) {
+                // 鼠标经过某个小 li, 筋斗云跟着到当前小 li 的位置;
+                lis[i].addEventListener('mouseenter', function () {
+                    // 动画函数
+                    // animate(obj, distance, callback)
+                    animate(cloud, this.offsetLeft);
+                });
+                // 鼠标离开这个小 li, 筋斗云复原为原来的位置;
+                lis[i].addEventListener('mouseleave', function () {
+                    animate(cloud, post);
+                });
+                // 鼠标点击了某个小 li, 筋斗云就会留在点击这个小 li 的位置;
+                lis[i].addEventListener('click', function () {
+                    post = this.offsetLeft;
+                    // 排他思想, 使点击的字体变色
+                    for (var i = 0; i < lis.length; i++) {
+                        lis[i].children[0].style.color = 'black';
+                    }
+                    this.children[0].style.color = 'pink';
+                })
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id="c_nav" class="c-nav">
+        <span class="cloud"></span>
+        <ul>
+            <li><a href="#">首页新闻</a></li>
+            <li><a href="#">师资力量</a></li>
+            <li><a href="#">活动策划</a></li>
+            <li><a href="#">企业文化</a></li>
+            <li><a href="#">招聘信息</a></li>
+            <li><a href="#">公司简介</a></li>
+            <li><a href="#">我是佩奇</a></li>
+            <li><a href="#">啥是佩奇</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

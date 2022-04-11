@@ -1,0 +1,71 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-02-05 15:53:24
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-02-05 16:57:56
+ * @FilePath: \LearnHtml+Css\10-HTML5新特性\04-CSS3新增属性选择器.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 必须是 input, 但是同时具有 value 这个属性, 选择这个属性, 使用[]. */
+    /* input[value] {
+      color: pink;
+    } */
+
+    /* 只选择 type=text,  选取出来.*/
+    input[type="text"] {
+      color: pink;
+    }
+
+    section[class*=ico] {
+      color: hotpink;
+    }
+
+    /* 选择首先是 div, 具有属性, 并且属性值以 icon 开头的这些元素. */
+
+    div[class^=icon] {
+      color: red;
+    }
+
+    section[class$=data] {
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 1. 利用属性选择器就可以不用借助类或者 id 选择器. -->
+  <!-- <input type="text" value="请输入用户名:" name="" id="">
+  <input type="text" name="" id=""> -->
+
+  <!-- 2. 属性选择器还可以选择 属性=属性值 的某些元素, 重点务必掌握. -->
+  <input type="text" name="" id="">
+  <input type="password" name="" id="">
+
+  <!-- 3. 属性选择器还可以选择属性值开头的某些元素. -->
+  <div class="icon1">小图标1</div>
+  <div class="icon2">小图标2</div>
+  <div class="icon3">小图标3</div>
+  <div class="icon4">小图标4</div>
+
+  <!-- 4. 属性选择器可以选择属性值结尾的某些元素. -->
+  <section class="icon1-data">我是安其拉1</section>
+  <section class="icon2-data">我是安其拉2</section>
+  <section class="icon3-ico">我是谁?</section>
+</body>
+
+</html>

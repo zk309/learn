@@ -1,0 +1,138 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-17 13:30:25
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-02-26 00:10:43
+ * @FilePath: \learnJavaScript\09-内置对象-Date\11-倒计时案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 200px;
+            height: 250px;
+            background-color: pink;
+            margin: 50px auto;
+            border-radius: 6px;
+            box-shadow: 5px 5px 5px;
+        }
+
+        .box h1 {
+            font-size: 18px;
+            line-height: 129px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .box h1 span {
+            font-size: 22px;
+            color: skyblue;
+        }
+
+        .box p {
+            text-align: center;
+            color: hotpink;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .box h3 {
+            text-align: center;
+            line-height: 151px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            // 案例分析: 
+            // (1) 核心算法: 输入的时间减去现在的时间就是剩余的时间, 即倒计时, 但是不能拿着时分秒相减, 比如05分减去25分, 结果会是负数的;
+            // (2) 用时间戳来做, 用户输入时间总的毫秒数减去现在时间总的毫秒数, 得到的就是剩余时间的毫秒数;
+            // (3) 把剩余时间总的毫秒数转换为天, 时, 分, 秒(时间戳转换为时分秒);
+            //      转换公式如下:
+            // d = parseInt(总秒数/60/60/24); // 计算天数
+            // h = parseInt(总秒数/60/60%24); // 计算小时
+            // m = parseInt(总秒数/60%60); // 计算分数
+            // s = parseInt(总秒数%60); // 计算当前秒数
+
+            // 封装计算剩余时间的函数
+            function getTimers(time) {
+                // 截止到现在的时间毫秒数
+                var nowTime = +new Date();
+                //输入时间的毫秒数
+                var schTime = +new Date(time);
+                // 剩余时间的毫秒数转化为秒数, 方便转换时间
+                var timers = (schTime - nowTime) / 1000;
+                // console.log(timers);
+
+                // 剩余的时间转化为天, 时, 分, 秒
+                var d = parseInt(timers / 60 / 60 / 24); // 计算天数
+                d = d < 10 ? '0' + d : d;
+                var h = parseInt(timers / 60 / 60 % 24); // 计算小时
+                h = h < 10 ? '0' + h : h;
+                var m = parseInt(timers / 60 % 60); // 计算分数
+                m = m < 10 ? '0' + m : m;
+                var s = parseInt(timers % 60); // 计算当前秒数
+                s = s < 10 ? '0' + s : s;
+
+                return d + '天' + h + '时' + m + '分' + s + '秒';
+            }
+
+            // var time = prompt('请输入你要判断的时间:(格式为:2023-1-17 15:00:00)')
+            var time = '2023-1-13 8:00:00';
+            // var result = getTimers(time);
+            // console.log(result);
+
+            // 定数函数
+            setInterval(function () {
+                $('p').html(getTimers(time))
+            }, 1000);
+
+            // 点击改变时间按钮, 改变查询时间
+            $('#btn1').click(function () {
+                while (true) {
+                    time = prompt('请输入你要判断的时间:(格式为:2022-1-17 15:00:00)');
+                    if (time != '') {
+                        break;
+                    } else {
+                        alert('不能为空。')
+                    }
+                }
+            });
+
+            // 点击改变姓名按钮, 改变某某某
+            $('#btn2').click(function () {
+                var uname = prompt('请输入姓名:');
+                $('#uname').html(uname);
+            });
+
+
+        })
+    </script>
+</head>
+
+<body>
+    <div id="box" class="box">
+        <h1>距离<span id="uname">某某某</span>的生日还有:</h1>
+        <p>00天00时00分00秒</p>
+        <h3>
+            <input type="button" value="改变时间" id="btn1">
+            <input type="button" value="改变姓名" id="btn2">
+        </h3>
+    </div>
+
+</body>
+
+</html>

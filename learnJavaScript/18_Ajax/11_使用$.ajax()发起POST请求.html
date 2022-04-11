@@ -1,0 +1,46 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-01 07:55:50
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-01 08:07:16
+ * @FilePath: \18_Ajax\11_使用$.ajax()发起POST请求.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            $("#getBtn").on("click", function (evt) {
+                $.ajax({
+                    type: "POST",
+                    url: "http://www.liulongbin.top:3006/api/addbook",
+                    data: {
+                        bookname: "神曲地狱篇",
+                        author: "但丁",
+                        publisher: "浙江文艺出版社"
+                    },
+                    success: function (res) {
+                        console.log(res);
+                        alert(res.msg);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button id="getBtn">使用$.ajax()发起POST请求.</button>
+</body>
+
+</html>

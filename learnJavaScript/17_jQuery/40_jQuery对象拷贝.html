@@ -1,0 +1,98 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-28 19:11:54
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-28 19:43:13
+ * @FilePath: \17_jQuery\40_jQuery对象拷贝.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // console.log(evt);
+            // 如果想要把某个对象拷贝(合并) 给另一个对象使用, 此时可以使用 $.extend() 方法.
+            // 语法: 
+            // $.extend([deep], target, obj1, [obj2], [objN]);
+            // 注意:
+            // 1. deep 如果为 true, 为深拷贝, 默认为 false 浅拷贝;
+            // 2. target 要拷贝的目标对象;
+            // 3. obj1 待拷贝的第一个对象的对象;
+            // 4. obj2 待拷贝的第二个对象的对象;
+            // 5. objN 待拷贝的第 N 个对象的对象;
+            // 6. 浅拷贝是把拷贝的对象复杂数据类型中的地址拷贝给目标对象, 修改目标对象会影响被拷贝对象;
+            // 7. 深拷贝, true, 完全克隆(拷贝的对象, 而不是地址), 修改目标对象不会影响被拷贝对象;
+
+            // var targetObj = {
+            //     id: 0
+            // };
+            // var obj = {
+            //     id: 1,
+            //     name: '刘一'
+            // };
+            // $.extend(targetObj, obj);
+            // 会覆盖targetObj 里面原来的数据
+            // console.log(targetObj); // {id: 1, name: '刘一'}
+
+            // 浅拷贝: 把原来对象里面的复杂数据类型地址拷贝给目标对象
+            // var targetObj = {
+            //     id: 0,
+            //     msg: {
+            //         sex: '男'
+            //     }
+            // };
+            // var obj = {
+            //     id: 1,
+            //     name: '刘一',
+            //     msg: {
+            //         age: 18
+            //     }
+            // };
+            // $.extend(targetObj, obj);
+            // // 会覆盖targetObj 里面原来的数据
+            // console.log(targetObj);
+            // //{id: 1, msg: {age: 18}}, name: '刘一'} 变化为: {id: 1, msg: {age: 20}, name: '刘一'}
+            // targetObj.msg.age = 20;
+            // console.log(targetObj); // {id: 1, msg: {age: 20}, name: '刘一'}
+            // console.log(obj); // {id: 1, name: '刘一', msg: {age: 20}}
+
+            // 深拷贝: 把里面的数据完全复制一份给目标对象 如果里面有不冲突的属性,会合并到一起
+            var targetObj = {
+                id: 0,
+                msg: {
+                    sex: '男'
+                }
+            };
+            var obj = {
+                id: 1,
+                name: '刘一',
+                msg: {
+                    age: 18
+                }
+            };
+            $.extend(true, targetObj, obj);
+            // 会覆盖targetObj 里面原来的数据
+            console.log(targetObj);
+            // {id: 1, msg: {sex: '男', age: 18}, name: '刘一'} 变化为: {id: 1, msg: {sex: '男', age: 20}, name: '刘一'}
+            targetObj.msg.age = 20;
+            console.log(targetObj); // {id: 1, msg: {sex: '男', age: 20}, name: '刘一'}
+            console.log(obj); // {id: 1, name: '刘一', msg: {age: 18}}
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

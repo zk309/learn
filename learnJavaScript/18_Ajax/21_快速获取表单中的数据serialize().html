@@ -1,0 +1,49 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-03 09:43:54
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-03 11:31:57
+ * @FilePath: \18_Ajax\21_快速获取表单中的数据serialize().html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="" /> -->
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // serialize() 函数
+            // 为了简化表单中数据的获取操作, jQuery 提供了 serialize() 函数
+            // 语法： $(selector).serialize();
+            // serialize() 函数的好处：可以一次性获取到列表中的所有数据。
+            // 注意： 在使用 serialize() 时，必须为每个表单元素添加 name 属性。s
+
+            // demo:
+            $("#form").on("submit", function (evt) {
+                evt.preventDefault();
+
+                var data = $(this).serialize();
+                console.log(data); // user_name=liuyi&password=123
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <form id="form">
+        <input type="text" name="user_name" />
+        <input type="password" name="password" />
+        <button type="submit">提交</button>
+    </form>
+</body>
+
+</html>

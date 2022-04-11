@@ -1,0 +1,52 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-09 07:38:29
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-09 08:39:22
+ * @FilePath: \18_Ajax\68_使用jQuery发起JSONP请求.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // 注意:
+            // 1. 默认情况下, 使用 jQuery 发起 JSONP 请求, 会自动携带一个 callback=jQueryxxxx 的参数, jQueryxxxx 是随机生成的一个回调函数名称.
+            // 2. 在使用 jQuery 发起 JSONP 请求时, 如果想要自定义 JSONP 的参数以及回调函数名称, 通过 jsonp 和 jsonpCallback 来指定;
+
+            $.ajax({
+                url: 'http://www.liulongbin.top:3006/api/jsonp',
+                data: {
+                    name: '王五',
+                    address: '昌平'
+                },
+                // 如果要使用 $.ajax() 发起 JSONP 请求, 必须指定 dataType 为 jsonp
+                dataType: 'jsonp',
+                // 发送到服务端的参数名称, 默认 callback
+                jsonp: 'callback',
+                // 自定义的回调函数, 默认值为 jQueryxxxx 格式
+                jsonpCallback: 'success',
+                success: function (res) {
+                    console.log(res);
+                }
+            });
+
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-13 17:17:14
+ * @LastEditTime: 2021-09-13 17:38:50
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \04-CSS案例\08-链接伪类选择器.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /*
+    * 1.为访问的链接 a:link, 把没有点击过的( 访问过的 ) 连接选出来
+    */
+    a:link {
+      color: rgb(219, 27, 27);
+      text-decoration: none;
+    }
+
+    /*
+    * 2. a:visited, 选择点击过的( 访问过的 )链接
+    */
+    a:visited {
+      color: orange;
+    }
+
+    /*
+    * 3. a:hover, 选择鼠标经过的那个链接
+    */
+    a:hover {
+      color: skyblue;
+    }
+
+    /*
+    * 4. a:active, 选择的是我们鼠标正在按下,还没有弹起鼠标的那个链接.
+    */
+    a:active {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="http://www.com">小猪佩奇0</a>
+  <a href="01-emment语法.html">小猪佩奇00</a>
+  <ul>
+    <li>小猪佩奇1</li>
+    <li>小猪佩奇2</li>
+    <li>小猪佩奇3</li>
+  </ul>
+
+</body>
+
+</html>

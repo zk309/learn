@@ -1,0 +1,46 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-11-17 09:34:26
+ * @LastEditTime: 2021-11-17 09:42:13
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \09-CSS高级\10-单行溢出文字显示省略号.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      width: 150px;
+      height: 80px;
+      background-color: pink;
+      margin: 100px auto;
+      /* 这个单词的意思是如果文字显示不开, 自动换行 */
+      /* white-space: normal; */
+      /* 1.这个单词的意思是如果文字显示不开也, 强制一行内显示 */
+      white-space: nowrap;
+      /* 2.溢出隐藏 */
+      overflow: hidden;
+      /* 3.文字溢出的时候用省略号来显示 */
+      text-overflow: ellipsis;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    啥也不说, 此处省略一万字
+  </div>
+</body>
+
+</html>

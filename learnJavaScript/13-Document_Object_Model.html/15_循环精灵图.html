@@ -1,0 +1,80 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-01 01:42:39
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-01 02:21:04
+ * @FilePath: \learnJavaScript\13-DOM\15_循环精灵图.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 300px;
+            margin: 10px auto;
+        }
+
+        li {
+            float: left;
+            width: 24px;
+            height: 24px;
+            list-style: none;
+            background-color: pink;
+            margin-right: 18px;
+            margin-bottom: 10px;
+            background: url(./images/sprite.png) no-repeat center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <script>
+        // 案例分折
+        // 首先精灵图图片排列有规律的
+        // 核心思路: 利用for循环, 修改精灵图片的背景位置background-position
+        // 剩下的就是考验你的数学功底了
+        // 让循环里面的i索引号 * 44 就是每个图片的y坐标
+
+        // 1. 获取元素
+        var li = document.querySelectorAll('li');
+
+        for (var i = 0; i < li.length; i++) {
+            // 让索引号 乘以 44 就是每个li 的背景 y 坐标 index 就是我们的y坐标.
+            var index = i * 44;
+            li[i].style.backgroundPosition = '0 -' + index + 'px';
+        }
+    </script>
+</body>
+
+</html>

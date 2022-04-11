@@ -1,0 +1,55 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-31 11:53:08
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-31 12:30:50
+ * @FilePath: \18_Ajax\04_服务器对外提供的资源.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // 列举网页常见的资源: 
+            // 文本内容, Image 图片, Audio 音频, Video 视频.
+
+            // 数据也是资源:
+            // 网页中的数据, 也是服务器对外提供的一种资源, 例如股票数据, 各行业排行榜等.
+
+            // 1. HTML 是网页的骨架;
+            // 2. CSS 是网页的颜值;
+            // 3. JavaScript 是网页的行为;
+            // 4. 数据 则是网页的灵魂;
+            // 骨架, 颜值, 行为皆为数据服务; 数据, 在网页无处不在;
+
+            // 网页中如何请求数据?
+            // 数据, 也是服务器对外提供的一种资源, 只要是资源, 必然要通过 请求-处理-响应 的方式进行获取.
+            // 如果在网页中请求服务器上的数据资源, 则需要用到 XMLHttpRequest 对象.
+            // XMLHttpRequest (简称 xhr) 是浏览器提供的 js 成员, 通过它, 可以请求服务器上的数据资源;
+            // 最简单的用法: var xhrObj = new XMLHttpRequest();
+
+            // 资源的请求方式:
+            // 客户端请求服务器时, 请求的方式有很多种, 最常见的有两种请求方式分别为 get 和 post 请求.
+            // 1. get 请求通常用于获取服务端资源 (向服务器要资源)
+            // 例如, 根据 URL 地址, 从服务器获取 HTML文件, CSS文件, js文件, 图片文件, 数据资源等.
+            // 2. post 请求通常用于向服务器提交数据 (往服务器发送资源)
+            // 例如, 登陆时向服务器提交的登录信息, 注册时向服务器提交的注册信息, 添加用户时向服务器提交的用户信息等各种数据提交操作.
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

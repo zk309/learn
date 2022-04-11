@@ -1,0 +1,57 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-24 04:08:24
+ * @LastEditTime: 2021-10-13 16:06:40
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \06-CSS案例\11-浮动布局练习.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .box {
+      width: 1534px;
+      height: 364px;
+      background-color: pink;
+      margin: 0 auto;
+    }
+
+    .box li {
+      width: 371px;
+      height: 364px;
+      background-color: red;
+      float: left;
+      margin-right: 16px;
+    }
+
+    .box .last {
+      margin-right: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="box">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li class="last">4</li>
+  </ul>
+</body>
+
+</html>

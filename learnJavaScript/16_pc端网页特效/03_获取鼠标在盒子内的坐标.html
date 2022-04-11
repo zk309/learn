@@ -1,0 +1,57 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-15 09:36:03
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-15 09:49:15
+ * @FilePath: \learnJavaScript\16_pc端网页特效\03_获取鼠标在盒子内的坐标.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function () {
+
+            // 案例分析:
+            // 1. 我们在盒子内点击，想要得到鼠标距离盒子左右的距离；
+            // 2. 首先得到鼠标在页面中的坐标(e.pageX, e.pageY);
+            // 3. 其次得到盒子在页面中的距离(box.offsetLeft, box.offsetTop);
+            // 4. 用鼠标距离页面的坐标减去盒子在页面中的距离，得到鼠标在盒子内的坐标;
+            // 5. 如果想要移动一下鼠标，就要获取最新的坐标，使用鼠标移动事件 mousemove;
+
+            const box = document.querySelector('.box');
+            box.addEventListener('mousemove', function (evt) {
+                var x = evt.pageX - this.offsetLeft;
+                var y = evt.pageY - this.offsetTop;
+                console.log(x, y);
+                box.innerHTML = '鼠标在盒子的x坐标是' + x + '，y坐标是' + y + '.';
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

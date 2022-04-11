@@ -1,0 +1,72 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-02-27 17:28:04
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-02-27 23:23:40
+ * @FilePath: \learnJavaScript\13-DOM\07_操作元素内容.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto;
+        }
+
+        div,
+        p {
+            margin: 20px auto;
+            width: 300px;
+            height: 100px;
+            line-height: 100px;
+            background-color: pink;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击显示时间</button>
+    <div></div>
+    <p></p>
+
+    <script>
+        // 点击按钮， 显示时间
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        var p = document.querySelector('p');
+
+        btn.onclick = function () {
+            div.innerText = getDate();
+        }
+
+        p.innerHTML = getDate();
+
+        // 封装一个 Date 日期对象
+        function getDate() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var dates = date.getDate();
+            var day = date.getDay();
+            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            var re = '当前时间为: ' + year + '年' + month + '月' + dates + '日 ' + arr[day];
+            return re;
+        }
+    </script>
+</body>
+
+</html>

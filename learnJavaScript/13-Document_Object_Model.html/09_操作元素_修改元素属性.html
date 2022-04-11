@@ -1,0 +1,59 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-02-27 23:55:14
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-02-28 00:25:20
+ * @FilePath: \learnJavaScript\13-DOM\09_操作元素_修改元素属性.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 300px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <button id="yao">姚广孝</button>
+        <button id="liu">刘伯温</button>
+        <br>
+        <img src="./images/yaoguangxiao.jpg" alt="" title="姚广孝">
+    </div>
+
+    <script>
+        // 获取元素
+        var yao = document.querySelector('#yao');
+        var liu = document.querySelector('#liu');
+        var img = document.querySelector('img');
+        console.log(yao);
+        console.log(liu);
+        console.log(img);
+
+        yao.onclick = function () {
+            img.src = './images/yaoguangxiao.jpg';
+            img.title = '姚广孝';
+        }
+        liu.onclick = function () {
+            img.src = './images/liubowen.jpg';
+            img.title = '刘伯温';
+        }
+    </script>
+</body>
+
+</html>

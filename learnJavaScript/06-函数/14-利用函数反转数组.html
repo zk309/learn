@@ -1,0 +1,36 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-06 16:20:28
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-06 16:37:01
+ * @FilePath: \learnJavaScript\06-函数\14-利用函数反转数组.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 利用函数反转函数 reverse
+    function reverse(arr) {
+      var newArr = []; // 关键在于创建一个新的数组
+      for (var i = arr.length - 1; i >= 0; i--) {
+        newArr[newArr.length] = arr[i];
+      }
+      return newArr
+    }
+    var re = reverse([1, 2, 3, 4, 5, 6]);
+    console.log(re);
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

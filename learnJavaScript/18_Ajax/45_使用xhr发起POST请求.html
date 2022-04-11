@@ -1,0 +1,48 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-06 11:18:20
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-06 11:40:36
+ * @FilePath: \18_Ajax\45_使用xhr发起post请求.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // 使用xhr发起 POST 请求
+            // 步骤:
+            // 1. 创建 xhr 对象;
+            // 2. 调用 xhr.open() 函数;
+            // 3. 设置 Content-Type 属性 (固定写法);
+            // 4. 调用 xhr.send() 函数, 同时指定要发送的数据;
+            // 5. 监听 xhr.onreadystatechange 事件;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://www.liulongbin.top:3006/api/addbook');
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send('bookname=神曲&author=但丁&publisher=北京图书出版社');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    console.log(xhr.responseText);
+                }
+            }
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

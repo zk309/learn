@@ -1,0 +1,56 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-23 14:01:06
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-23 14:09:13
+ * @FilePath: \learnJavaScript\17_jQuery\17_jQuery类操作与className的区别.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .one {
+            margin: 20px auto;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        .two {
+            border-radius: 10px;
+        }
+    </style>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        $(function () {
+
+            // 类操作与 className 的区别:
+            // 原生 js 中 className 会覆盖原先里面的类名;
+            // jQuery 里面类操作只是对指定类进行操作, 不影响原先的类名;
+
+            // const div = document.querySelector('div');
+            // div.className = 'two';
+
+            $("div").addClass("two");
+        })
+    </script>
+</head>
+
+<body>
+    <div class="one"></div>
+</body>
+
+</html>

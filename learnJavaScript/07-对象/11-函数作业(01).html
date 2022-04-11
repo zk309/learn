@@ -1,0 +1,59 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-15 12:59:18
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-26 23:30:49
+ * @FilePath: \learnJavaScript\07-对象\11-函数作业(01).html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 1. 写一个函数, 实现反转任意数组
+    function reverseArr(arr) {
+      var newArr = [];
+      for (var i = arr.length - 1; i >= 0; i--) {
+        newArr[newArr.length] = arr[i]
+      };
+      return newArr;
+    }
+    var re1 = reverseArr([255, 54, 5, 4, 8, 9, 6]);
+    console.log([255, 54, 5, 4, 8, 9, 6]); // (7) [255, 54, 5, 4, 8, 9, 6]
+    console.log(re1); // (7) [6, 9, 8, 4, 5, 54, 255]
+
+    // 2. 写一个函数, 实现对数字数组的排序, 冒泡排序
+    // 从小到大排序
+    var arr2 = [1, 21, 84, 21, 12, 85, 11]; // 长度是 7
+    function sortArr(arr) {
+      // 外层循环-趟数
+      for (var i = 0; i <= arr.length - 1; i++) {
+        // 内层循环-次数
+        for (var j = 0; j <= arr.length - 1 - i; j++) {
+          if (arr[j] > arr[j + 1]) {
+            // 交换两个变量
+            var temp = null;
+            temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+          }
+        }
+      }
+      return arr;
+    };
+    var re2 = sortArr(arr2);
+    console.log(arr2); // (7) [1, 11, 12, 21, 21, 84, 85]
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

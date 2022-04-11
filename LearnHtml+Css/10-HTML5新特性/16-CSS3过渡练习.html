@@ -1,0 +1,65 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-02-09 11:20:51
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-02-09 20:32:23
+ * @FilePath: \LearnHtml+Css\10-HTML5新特性\16-CSS3过渡练习.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .bar {
+      margin: 20px auto;
+      padding: 1px;
+      width: 300px;
+      height: 20px;
+      border: 1px solid pink;
+      border-radius: 7px;
+    }
+
+    .bar_in {
+      position: relative;
+      width: 50%;
+      height: 100%;
+      background-color: red;
+      border-radius: 7px;
+      /* 过渡属性: */
+      transition: width 1s linear;
+    }
+
+    .bar:hover .bar_in {
+      width: 100%;
+    }
+
+    span {
+      position: absolute;
+      left: 50%;
+      top: 22px;
+    }
+
+    .bar span:last-child {
+      left: 52%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bar">
+    <div class="bar_in"></div>
+  </div>
+</body>
+
+</html>

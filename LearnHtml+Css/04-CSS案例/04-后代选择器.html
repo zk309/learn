@@ -1,0 +1,64 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-13 12:29:23
+ * @LastEditTime: 2021-09-13 13:02:40
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \04-CSS案例\04-后代选择器.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ol li {
+      color: pink;
+    }
+
+    ol li a {
+      color: red;
+      text-decoration: none;
+    }
+
+    .box .one {
+      color: blue;
+    }
+
+    .box .footer {
+      background-color: #0f0;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <ol>
+    <li>我是 ol 的孩子1</li>
+    <li>我是 ol 的孩子2</li>
+    <li>我是 ol 的孩子3</li>
+    <li><a href="#">我是孙子.</a></li>
+  </ol>
+  <ul>
+    <li>我是 ul 的孩子1</li>
+    <li>我是 ul 的孩子2</li>
+    <li>我是 ul 的孩子3</li>
+    <li><a href="#">不会变化</a></li>
+  </ul>
+  <div class="box">
+    <ul>
+      <li class="one">我是第1个</li>
+      <li>我是第2个</li>
+      <li>我是第3个</li>
+      <li>我是第4个</li>
+      <li>我是第5个</li>
+    </ul>
+    <div class="footer"></div>
+  </div>
+</body>
+
+</html>

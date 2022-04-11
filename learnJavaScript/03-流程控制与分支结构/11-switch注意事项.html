@@ -1,0 +1,45 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2021-12-13 15:22:16
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2021-12-13 15:37:37
+ * @FilePath: \03-流程控制与分支结构\11-switch注意事项.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // switch 注意事项
+    var num = 1;
+    switch (num) {
+      case 1:
+        console.log(1);
+        // break;
+      case 2:
+        console.log(2);
+        // break;
+      case 3:
+        console.log(3);
+        break;
+      default:
+        console.log('没有匹配的选项.');
+        break;
+    }
+    // 1. 我们开发里面, 表达式我们经常写成变量;
+    // 2. 我们 num 的值和 case 里面的值先匹配的时候是全等, 必须是值和数据类型一致才可以, num === 1;
+    // 3. break 如果当前的 case 里面没有 break, 则不会退出 switch, 是继续执行下一个 case;
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

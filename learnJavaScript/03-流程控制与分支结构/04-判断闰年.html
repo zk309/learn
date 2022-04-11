@@ -1,0 +1,32 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2021-12-13 10:23:16
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2021-12-13 10:25:38
+ * @FilePath: \03-流程控制与分支结构\04-判断闰年.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    var year = prompt("请输入年份:");
+    if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+      alert(year + '是闰年.');
+    } else {
+      alert(year + '是平年.');
+    }
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

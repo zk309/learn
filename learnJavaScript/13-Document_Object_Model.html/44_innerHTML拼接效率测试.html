@@ -1,0 +1,38 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-08 13:24:41
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-08 13:39:17
+ * @FilePath: \learnJavaScript\13-DOM\44_innerHTML拼接效率测试.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function fn() {
+            var d1 = +new Date();
+
+            for (var i = 0; i < 1000; i++) {
+                document.body.innerHTML += '<div style="width:100px; height:2px; border:1px solid pink"></div>'
+            }
+
+            var d2 = +new Date();
+            return d2 - d1;
+        }
+        var time = fn();
+        console.log(time); // 698
+    </script>
+</body>
+
+</html>

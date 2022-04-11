@@ -1,0 +1,44 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2021-12-30 11:32:57
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-26 10:57:24
+ * @FilePath: \learnJavaScript\05-数组Array\07-新增数组元素方法.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 1. 新增数组元素, 修改 length 长度
+    var arr = ['a', 'b', 'c'];
+    console.log(arr.length); // 3
+    arr.length = 5;
+    console.log(arr); // (5) ['a', 'b', 'c', empty × 2]
+    console.log(arr[3]); // undefined
+    console.log(arr[4]); // undefined
+
+    // 2. 新增数组元素, 修改索引号, 追加数组元素
+    var arr1 = ['a', 'b', 'c'];
+    arr1[3] = 'pink';
+    console.log(arr1); // (4) ['a', 'b', 'c', 'pink']
+    arr1[4] = 'skyblue';
+    console.log(arr1); // (5) ['a', 'b', 'c', 'pink', 'skyblue']
+    arr1[0] = 'yellow'; // 这是替换原来的数组元素
+    console.log(arr1); // (5) ['yellow', 'b', 'c', 'pink', 'skyblue']
+    arr1 = '有点意思';
+    console.log(arr1); // 不要直接给数组名赋值, 否则里面的数组元素都没有了. 
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-06 09:32:00
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-06 09:44:47
+ * @FilePath: \18_Ajax\42_GET请求携带参数的本质.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // GET 请求携带参数的本质：
+            // 无论使用 $.ajax(), 还是使用 $.get(), 又或者直接使用 xhr 对象发起 GET 请求，当需要携带参数的时候，本质上，都是直接将参数以查询字符串的形式，
+            // 追加到 URL 地址的后面，发送到服务器的。
+
+            // $.get('http://www.liulongbin.top:3006/api/getbooks', {
+            //     id: 1,
+            //     bookname: '西游记'
+            // }, function (res) {
+            //     console.log(res); // {status: 200, msg: '获取图书列表成功', data: Array(1)}
+            // });
+            // 等价于：
+            $.get('http://www.liulongbin.top:3006/api/getbooks?id=1&bookname=西游记', function (res) {
+                console.log(res); // {status: 200, msg: '获取图书列表成功', data: Array(1)}
+            });
+
+
+            // $.ajax({
+            //     method: "GET",
+            //     url: "http://www.liulongbin.top:3006/api/getbooks",
+            //     data: {
+            //         id: 2,
+            //         bookname: '红楼梦'
+            //     },
+            //     success: function (res) {
+            //         console.log(res);
+            //     }
+            // });
+            // 等价于：
+            $.ajax({
+                method: "GET",
+                url: "http://www.liulongbin.top:3006/api/getbooks?id=2&bookname=红楼梦",
+                success: function (res) {
+                    console.log(res);
+                }
+            });
+
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

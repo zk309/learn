@@ -1,0 +1,47 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-03 12:40:41
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-26 15:17:42
+ * @FilePath: \learnJavaScript\06-函数\05-利用函数求任意两个数的和.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 1. 利用函数求任意两个数的和
+    function getSum(num1, num2) {
+      console.log(num1 + num2);
+    }
+    getSum(1, 100); // 101
+    getSum(3, 8); // 11
+
+    // 2. 利用函数求任意两个数之间的和
+    function getSums(start, end) {
+      var sum = null;
+      for (var i = start; i <= end; i++) {
+        sum += i;
+      }
+      console.log(sum);
+    }
+    getSums(1, 100); // 5050
+    getSums(1, 10); // 55
+
+    // 3. 注意点:
+    // (1) 多个参数之间用逗号隔开;
+    // (2) 形参可以看作是不用声明的变量;
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

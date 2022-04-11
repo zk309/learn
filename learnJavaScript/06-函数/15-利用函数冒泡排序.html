@@ -1,0 +1,42 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-06 16:40:44
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-06 16:52:08
+ * @FilePath: \learnJavaScript\06-函数\15-利用函数冒泡排序.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 利用函数进行冒泡排序 sort()
+    function sort(arr) {
+      for (var i = 0; i < arr.length - 1; i++) {
+        for (var j = 0; j < arr.length - i - 1; j++) {
+          if (arr[j] > arr[j + 1]) {
+            var temp = null;
+            temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+          }
+        }
+      }
+      return arr;
+    }
+    var arr = sort([9, 8, 7, 3]);
+    console.log(arr);
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

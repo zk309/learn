@@ -1,0 +1,43 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-19 14:01:57
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-19 15:13:49
+ * @FilePath: \learnJavaScript\10-内置对象-Array\08-数组去重案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 有一个数组 ['a','b','c','a','b','d','c'], 要求去除数组中重复的元素.
+    var arr = ['a', 'b', 'c', 'a', 'b', 'd', 'c'];
+
+    // 封装函数
+    function unique(arr) {
+      var newArr = [];
+      for (var i = 0; i < arr.length; i++) {
+        // 如果 indexOf() == -1, 则意味着找不到, 则添加到 newArr
+        if (newArr.indexOf(arr[i]) == -1) {
+          newArr[newArr.length] = arr[i];
+        }
+      }
+      return newArr;
+    }
+
+    var res = unique(arr);
+    console.log(res);
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

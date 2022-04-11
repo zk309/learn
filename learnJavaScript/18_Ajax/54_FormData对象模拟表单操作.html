@@ -1,0 +1,49 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-07 12:12:55
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-07 12:40:57
+ * @FilePath: \18_Ajax\54_FormData对象模拟表单操作.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // Ajax 操作往往用来提交表单数据, 为了方便表单操作, HTML5 新增了一个 FormData 对象, 可以模拟表单操作:
+
+            var fd = new FormData();
+            fd.append('uname', '刘一');
+            fd.append('upwd', 123456);
+            // console.log(fd);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://www.liulongbin.top:3006/api/formdata');
+            // xhr.setRequestHeader('Content-Type', 'multipart/form-data');
+            xhr.send(fd);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var res = JSON.parse(xhr.responseText);
+                    console.log(res);
+                }
+            }
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

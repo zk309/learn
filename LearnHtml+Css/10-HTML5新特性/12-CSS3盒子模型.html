@@ -1,0 +1,49 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-02-07 17:34:44
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-02-07 21:39:59
+ * @FilePath: \LearnHtml+Css\10-HTML5新特性\12-CSS3盒子模型.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      /* CSS3 中可以通过 box-sizing 来指定盒模型, 
+      有2个值: 即可指定为 content-box(默认值), border-box, 
+      这样我们计算盒子大小的方式发生了改变.*/
+      box-sizing: border-box;
+    }
+
+    div {
+      margin: 10px auto;
+      padding: 10px;
+      width: 200px;
+      height: 200px;
+      border: 10px solid black;
+    }
+
+    /* 很奇怪, body div:last-child 不行, body div:first-child 却可以. */
+    body div:first-child {
+      background-color: pink;
+      box-sizing: content-box;
+    }
+  </style>
+</head>
+
+<body>
+  <div>小猪</div>
+  <div>佩奇</div>
+</body>
+
+</html>

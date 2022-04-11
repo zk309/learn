@@ -1,0 +1,35 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-17 10:13:51
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-17 10:28:39
+ * @FilePath: \learnJavaScript\16_pc端网页特效\08_设备像素比.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./09-flexible分析.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+
+            // 网页在 PC 端 和移动端的 设备像素比 不一样
+            // PC 端：1.25
+            // 移动端：2.0000000298023224
+            console.log(window.devicePixelRatio);
+        })
+    </script>
+</head>
+
+<body>
+    <a href="javaScript:;">链接</a>
+</body>
+
+</html>

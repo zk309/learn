@@ -1,0 +1,52 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-14 16:10:00
+ * @LastEditTime: 2021-09-14 16:51:14
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \04-CSS案例\13-元素显示模式转换.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    a {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      /*把 <a> 行内元素转化为块级元素*/
+      display: block;
+    }
+
+    div {
+      width: 300px;
+      height: 100px;
+      background-color: purple;
+      /*  把 div 块级元素转化为行内元素. */
+      display: inline;
+    }
+
+    span {
+      width: 100px;
+      height: 100px;
+      background-color: skyblue;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#">金星阿姨</a>
+  <a href="#">金星阿姨</a>
+  <div>我是块级元素</div>
+  <div>我是块级元素</div>
+  <span>行内元素转化为行内块元素</span>
+  <span>行内元素转化为行内块元素</span>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-22 15:42:10
+ * @LastEditTime: 2021-09-22 19:59:18
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \05-CSS案例\23-案例2-快报模块.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .box {
+      width: 248px;
+      height: 165px;
+      border: 2px solid #8194A4;
+      margin: 50px auto;
+    }
+
+    /*品优购快报*/
+    .title {
+      color: #999B98;
+      height: 30px;
+      line-height: 30px;
+      font-size: 18px;
+      border-bottom: 1px dashed #C7D4DD;
+      padding-left: 10px;
+    }
+
+    /*特惠*/
+    .box>ul {
+      line-height: 24px;
+      padding-top: 6px;
+    }
+
+    .box>ul>li>a {
+      text-decoration: none;
+      color: #7B777B;
+      font-size: 12px;
+      padding-left: 15px;
+    } 
+
+    .box>ul>li>a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <p class="title">品优购快报</p>
+    <ul>
+      <li><a href="#">[特惠] 爆款耳机五折秒</a></li>
+      <li><a href="#">[特惠] 爆款耳机五折秒</a></li>
+      <li><a href="#">[特惠] 爆款耳机五折秒</a></li>
+      <li><a href="#">[特惠] 爆款耳机五折秒</a></li>
+      <li><a href="#">[特惠] 爆款耳机五折秒</a></li>
+    </ul>
+  </div>
+</body>
+
+</html>

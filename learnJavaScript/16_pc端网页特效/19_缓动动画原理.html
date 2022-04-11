@@ -1,0 +1,74 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-18 13:15:29
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-18 13:49:56
+ * @FilePath: \learnJavaScript\16_pc端网页特效\19_缓动动画原理.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            position: absolute;
+            left: 0;
+            top: 30px;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function () {
+
+            // 缓动动画就是让元素运动速度有所变化, 最常见的是让速度慢慢停下来.
+            // 思路:
+            // 1. 让盒子每次移动的距离慢慢变小, 速度就会慢慢落下来;
+            // 2. 核心算法: (目标值 - 现在的位置) / 10  ,作为每次移动的距离步长;
+            // 3. 停止的条件: 让当前盒子等于目标位置就停止定时器;
+            // 4. 注意步长值,需要取整;
+
+            function animate(obj, distance) {
+
+                // 2. 清除上一轮的定时器, 只执行一个定时器
+                clearInterval(obj.timer);
+                // 1. 给当前对象添加属性;
+                obj.timer = setInterval(function () {
+                    // 缓动动画的核心算法: (目标值 - 现在的位置) / 10 = 每次移动的距离步长
+                    var step = Math.ceil((distance - obj.offsetLeft) / 50);
+                    console.log(step);
+                    if (obj.offsetLeft >= distance) {
+                        clearInterval(obj.timer);
+                    }
+                    obj.style.left = obj.offsetLeft + step + 'px';
+                }, 15)
+            }
+            const box = document.querySelector('.box');
+            const btn = document.querySelector('button');
+
+            btn.addEventListener('click', function () {
+                animate(box, 800)
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button>点击我, 让盒子移动.</button>
+    <div class="box"></div>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-11 10:16:36
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-11 10:30:59
+ * @FilePath: \18_Ajax\85_Git文件的状态.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // 工作区中的每一个文件可能都有 4 种状态, 这四种状态共分为两大类
+            // 1. 未跟踪( Untracked ) 不被 Git 所管理的文件
+            // 2. 已被 Git 管理; (已修改, 已暂存, 未修改)
+            // Git 操作的终极结果: 让工作区中的文件都处于 "未修改" 的状态.
+
+            // 检查文件的状态
+            // 可以使用 git status 命令查看文件处于什么状态
+            // 在状态报告中可以看到新建的 index.html 文件出现在 Untracked files (未跟踪的文件) 下面.
+            // 未跟踪的文件意味着 Git 在之前的快照 (提交) 中没有这些文件; Git 不会自动将之纳入跟踪范围, 除非明确地告诉他 "我们需要使用 Git 跟踪管理该文件"
+
+            // 已精简的方式显示文件状态
+            // 使用 git status 输出的状态报告很详细, 但有些繁琐, 如果希望精简的方式显示文件的状态, 可以使用如下两条完全等价的命令, 其中 -s 是 --short 的简写形式
+            // git status -s
+            // git status --short
+            // 为跟踪的文件前面有红色的 ?? 标记
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

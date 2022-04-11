@@ -1,0 +1,50 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-11 10:53:51
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-15 12:27:47
+ * @FilePath: \learnJavaScript\14_事件高级\13_获取鼠标在页面中的坐标.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 1200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        // 鼠标事件对象
+        document.addEventListener('click', function (evt) {
+
+            // 主意：这些属性都没有单位。
+
+            // client 鼠标在可视区的 x 和 y 坐标
+            console.log(evt.clientX);
+            console.log(evt.clientY);
+            console.log('------------------');
+
+            // page 鼠标在页面文档的 x 和 y 坐标, IE9+ 支持
+            console.log(evt.pageX);
+            console.log(evt.pageY);
+            console.log('------------------');
+
+            // screen 鼠标在电脑屏幕的 x 和 y 坐标
+            console.log(evt.screenX);
+            console.log(evt.screenY);
+        })
+    </script>
+</body>
+
+</html>

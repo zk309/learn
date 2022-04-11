@@ -1,0 +1,48 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-21 20:46:39
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-21 20:59:52
+ * @FilePath: \learnJavaScript\16_pc端网页特效\30_记住用户名案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.addEventListener('load', function () {
+
+            // 1. 获取元素
+            const user = document.querySelector('#user');
+            const remember = document.querySelector('#remember');
+
+            remember.addEventListener('change', function () {
+                // alert(1)
+                if (remember.checked) {
+                    localStorage.setItem('user', user.value);
+                } else {
+                    localStorage.removeItem('user');
+                }
+            })
+
+            if (localStorage.getItem('user')) {
+                user.value = localStorage.getItem('user');
+                remember.checked = true;
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <input type="text" id="user"><br />
+    <input type="checkbox" name="" id="remember"> 记住我
+</body>
+
+</html>

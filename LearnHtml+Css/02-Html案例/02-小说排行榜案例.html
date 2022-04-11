@@ -1,0 +1,167 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-03 09:47:52
+ * @LastEditTime: 2021-09-19 13:51:48
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Html案例02\01-小说排行榜案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      width: 500px;
+      height: 249px;
+    }
+
+    th {
+      height: 35px;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid pink;
+      /* 合并相邻的边框 */
+      border-collapse: collapse;
+      font-size: 14px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <table align="center" border="1" cellspacing="0" height="400" width="400" cellpadding="10">
+    <colgroup>
+      <col>
+      <col style="background-color: yellow;">
+      <col style="background-color: brown;">
+      <col style="background-color: rgb(207, 125, 125);">
+      <col style="background-color: rgb(108, 172, 231);">
+      <col style="background-color: rgb(236, 178, 178);">
+    </colgroup>
+    <!--thead-->
+    <thead>
+      <tr>
+        <th>排名</th>
+        <th>关键词</th>
+        <th>趋势</th>
+        <th>今日搜索</th>
+        <th>最近七日</th>
+        <th>相关链接</th>
+      </tr>
+    </thead>
+    <!--tbody-->
+    <tbody>
+      <!--1.鬼吹灯-->
+      <tr>
+        <td>1</td>
+        <td>鬼吹灯</td>
+        <!--图像标签-->
+        <td><img src="img/趋势1.jpg" alt="" width="20"></td>
+        <td>211</td>
+        <td>100</td>
+        <td>
+          <!--外部链接-->
+          <a href="https://tieba.baidu.com/f?kw=%B9%ED%B4%B5%B5%C6&fr=ala0&loc=rec" target="_blank">贴吧</a>
+          <a href="https://baike.baidu.com/pic/鬼吹灯/10790/1/1c950a7b02087bf40ad13ff35f9b402c11dfa9ec61da?fr=lemma&ct=single#aid=1&pic=1c950a7b02087bf40ad13ff35f9b402c11dfa9ec61da"
+            target="_blank">图片</a>
+          <a href="https://baike.baidu.com/item/鬼吹灯/10790?fr=aladdin" target="_blank">百科</a>
+        </td>
+      </tr>
+      <!--2.盗墓笔记-->
+      <tr>
+        <td>2</td>
+        <td>盗墓笔记</td>
+        <td><img src="img/趋势2.jpg" alt="" width="20"></td>
+        <td>124</td>
+        <td>678432</td>
+        <td>
+          <a href="https://tieba.baidu.com/f?kw=%B5%C1%C4%B9%B1%CA%BC%C7&fr=ala0&loc=rec" target="_blank">贴吧</a>
+          <a href="https://baike.baidu.com/pic/盗墓笔记/21859/1/203fb80e7bec54e791cfe0a5b3389b504fc26a6e?fr=lemma&ct=single#aid=1&pic=203fb80e7bec54e791cfe0a5b3389b504fc26a6e"
+            target="_blank">图片</a>
+          <a href="https://baike.baidu.com/item/盗墓笔记/21859?fr=aladdin" target="_blank">百科</a>
+        </td>
+      </tr>
+      <!--3.西游记-->
+      <tr>
+        <td>3</td>
+        <td>西游记</td>
+        <td><img src="img/趋势2.jpg" alt="" width="20"></td>
+        <td>212</td>
+        <td>7654</td>
+        <td>
+          <a href="https://tieba.baidu.com/f?kw=%CE%F7%D3%CE%BC%C7&fr=ala0&loc=rec" target="_blank">贴吧</a>
+          <a href="https://baike.baidu.com/pic/西游记/5723/1/b7fd5266d01609248d763e43db0735fae6cd3412?fr=lemma&ct=single#aid=1&pic=b7fd5266d01609248d763e43db0735fae6cd3412"
+            target="_blank">图片</a>
+          <a href="https://baike.baidu.com/item/西游记/5723?fr=aladdin" target="_blank">百科</a>
+        </td>
+      </tr>
+      <!--4.东游记-->
+      <tr>
+        <td>4</td>
+        <td>东游记</td>
+        <td><img src="img/趋势2.jpg" alt="" width="20"></td>
+        <td>23</td>
+        <td>75654</td>
+        <td>
+          <a href="https://tieba.baidu.com/f?kw=%B6%AB%D3%CE%BC%C7&fr=ala0&tpl=5" target="_blank">贴吧</a>
+          <a href="https://baike.baidu.com/pic/东游记/10461211/1/9f2f070828381f309afa1fefa9014c086f06f091?fr=lemma&ct=single#aid=1&pic=9f2f070828381f309afa1fefa9014c086f06f091"
+            target="_blank">图片</a>
+          <a href="https://baike.baidu.com/item/东游记/10461211?fr=aladdin#分集剧情" target="_blank">百科</a>
+        </td>
+      </tr>
+      <!--5.甄嬛传-->
+      <tr>
+        <td>5</td>
+        <td>甄嬛传</td>
+        <td><img src="img/趋势1.jpg" alt="" width="20"></td>
+        <td>121</td>
+        <td>7676</td>
+        <td>
+          <a href="https://tieba.baidu.com/f?kw=%BA%F3%B9%AC%D5%E7%8B%D6%B4%AB%B5%E7%CA%D3%BE%E7&fr=ala0&tpl=5"
+            target="_blank">贴吧</a>
+          <a href="https://baike.baidu.com/pic/甄嬛传/4701562/1/95eef01f3a292df5aed9a49bb0315c6034a87321?fr=lemma&ct=single#aid=1&pic=95eef01f3a292df5aed9a49bb0315c6034a87321"
+            target="_blank">图片</a>
+          <a href="https://baike.baidu.com/item/甄嬛传/4701562?fr=aladdin" target="_blank">百科</a>
+        </td>
+      </tr>
+      <!--6.水浒传-->
+      <tr>
+        <td>6</td>
+        <td>水浒传</td>
+        <td><img src="img/趋势2.jpg" alt="" width="20"></td>
+        <td>212</td>
+        <td>7654</td>
+        <td>
+          <a href="https://tieba.baidu.com/f?kw=%CB%AE%E4%B0&fr=ala0&loc=rec" target="_blank">贴吧</a>
+          <a href="https://baike.baidu.com/pic/中国古典名著·水浒传/5748928/1/09fa513d269759ee0fbdaebfb4fb43166c22dfd1?fr=lemma&ct=single#aid=1&pic=09fa513d269759ee0fbdaebfb4fb43166c22dfd1"
+            target="_blank">图片</a>
+          <a href="https://baike.baidu.com/item/中国古典名著·水浒传/5748928?fr=aladdin" target="_blank">百科</a>
+        </td>
+      </tr>
+      <!--7.三国演义-->
+      <tr>
+        <td>7</td>
+        <td>三国演义</td>
+        <td><img src="img/趋势2.jpg" alt="" width="20"></td>
+        <td>212</td>
+        <td>7654</td>
+        <td>
+          <a href="https://tieba.baidu.com/f?kw=%C8%FD%B9%FA%D1%DD%D2%E5&fr=ala0&loc=rec" target="_blank">贴吧</a>
+          <a href="https://baike.baidu.com/pic/三国演义/5782/1/a6efce1b9d16fdfaaf51419e70c59b5494eef01fcd22?fr=lemma&ct=single#aid=1&pic=a6efce1b9d16fdfaaf51419e70c59b5494eef01fcd22"
+            target="_blank">图片</a>
+          <a href="https://baike.baidu.com/item/三国演义/5782?fr=aladdin" target="_blank">百科</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>

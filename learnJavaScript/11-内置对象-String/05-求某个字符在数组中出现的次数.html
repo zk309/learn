@@ -1,0 +1,39 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-23 13:53:55
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-02-26 08:49:13
+ * @FilePath: \learnJavaScript\11-内置对象-String\05-求某个字符在数组中出现的次数.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 求数组中 ['pink','blue','red','hotpink','red','green','red'], red 出现的次数以及位置.
+        var arr = ['pink', 'blue', 'red', 'hotpink', 'red', 'green', 'red'];
+        var index = arr.indexOf('red'); // 2
+        var count = 0;
+        // 'red' 出现的下标集合
+        var str = '';
+        while (index !== -1) {
+            count++;
+            str += index + ' ';
+            index = arr.indexOf('red', index + 1);
+        }
+        console.log('red 出现的下标集合: ' + str); // red 出现的下标集合: 2 4 6
+        console.log('red 出现的次数是: ' + count); // red 出现的次数是: 3
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-24 12:12:22
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-24 12:43:38
+ * @FilePath: \learnJavaScript\17_jQuery\26_jQuery属性操作.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        $(function () {
+
+            // 1. 设置或获取元素固有属性值 prop()
+            // 获取属性语法:  prop("属性")
+            console.log($("a").prop("href")); // http://www.itcast.cn/
+            $("input").change(function () {
+                console.log($(this).prop("checked"));
+            })
+
+            // 设置属性语法:  prop("属性", "属性值")
+            console.log($("a").prop("href", "http://www.bilibili.com"));
+            console.log('--------------------');
+
+
+
+            // 2. 设置或获取元素自定义属性值 attr()
+            // 获取属性语法: attr("属性") // 类似原生 getAttribute()
+            console.log($("div").attr("index")); // 1
+
+            // 设置属性语法: attr("属性", "属性值") // 类似原生 setAttribute()
+            $("div").attr("index", 6);
+            console.log('--------------------');
+
+
+
+            // 数据缓存 data()
+            // data() 方法可以在指定的元素上存取数据, 并不会修改 DOM 元素结构, 不会显示。一旦页面刷新,之前存放的数据都被移除。
+            // 附加数据语法:  data("name", "value");
+            $("span").data("user", "刘一");
+
+            // 获取数据语法: data("name");
+            console.log($("span").data("user")); // 刘一
+
+            // 还可以读取 HTML5 自定义属性 data-index 得到的是数字型;
+            console.log($("div").data("index")); // 2
+        })
+    </script>
+</head>
+
+<body>
+    <a href="http://www.itcast.cn" title="都挺好">都挺好</a>
+    <input type="checkbox" name="" id="" checked>
+    <div index="1" data-index="2">我是div</div>
+    <span>123</span>
+</body>
+
+</html>

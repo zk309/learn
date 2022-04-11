@@ -1,0 +1,84 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-18 09:48:43
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-18 13:30:34
+ * @FilePath: \learnJavaScript\16_pc端网页特效\18_动画函数给不同元素记录不同定时器.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+
+        .box1 {
+            top: 150px;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function () {
+
+            // 简单动画函数封装, 需要传递两个参数: 动画对象 和 动画移动到的距离
+
+            // 动画函数给不同元素记录不同定时器
+            // 如果多个元素都使用这个动画函数, 每次都要 var 声明定时器.
+            // 我们可以给不同元素使用不同的定时器(自己专门用自己的定时器);
+            // 核心原理: 利用 JS 是一门动态语言, 可以很方便给当前对象添加属性.
+            // var obj = {};
+            // obj.timer 
+
+            function animate(obj, distance) {
+                // 2. 清除上一轮的定时器, 只执行一个定时器
+                clearInterval(obj.timer);
+                // 1. 给当前对象添加属性;
+                obj.timer = setInterval(function () {
+                    if (obj.offsetLeft >= distance) {
+                        clearInterval(obj.timer);
+                    }
+                    obj.style.left = obj.offsetLeft + 1 + 'px';
+                }, 30)
+            }
+
+
+            var box = document.querySelector('.box');
+            animate(box, 300);
+
+            var box1 = document.querySelector('.box1');
+            var btn = document.querySelector('button');
+            // 问题: 点击次数有多, box1 的速度越快, 最后超出指定的距离.s
+            btn.addEventListener('click', function () {
+                animate(box1, 500);
+            })
+
+            console.dir(box);
+        })
+    </script>
+</head>
+
+<body>
+    <button>box1</button>
+    <div class="box"></div>
+    <div class="box1"></div>
+</body>
+
+</html>

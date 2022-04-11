@@ -1,0 +1,65 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-26 09:30:16
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-26 09:47:31
+ * @FilePath: \learnJavaScript\17_jQuery\31_创建,添加,删除元素操作.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        $(function () {
+
+            // 创建元素
+            // 语法: $("<li></li>")
+            var li = $("<li>我是创建的li.</li>");
+
+            console.log('---------------');
+
+            // 添加元素
+            // 1. 内部添加  
+            // element.append("内容") 类似于原生的 appendChild()
+            // $("ul").append(li);
+
+            // element.prepend("内容") 类似于原生的 insertBefore()
+            // $("ul").prepend(li);
+
+            // 2. 外部添加
+            // element.after("内容")  把内容放入目标元素后面
+            // $("ul").after(li);
+
+            // element.before("内容")  把内容放入目标元素前面
+            // $("ul").before(li);
+
+            console.log('-----------------');
+
+            // 删除元素
+            // 1. element.remove()  删除匹的元素(本身)
+            // $("ul").remove();
+
+            // 2. element.empty()  删除匹配的元素集合中所有的子节点
+            // $("ul").empty();
+
+            // 3. element.html("")  清空匹配的元素内容
+            $("ul").html("");
+        })
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li>原先的li</li>
+    </ul>
+</body>
+
+</html>

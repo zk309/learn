@@ -1,0 +1,38 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-07 09:54:32
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-07 10:00:58
+ * @FilePath: \learnJavaScript\40_节点操作之克隆节点.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <script>
+        var ul = document.querySelector('ul');
+        // node.cloneNode(); 括号为空或者false， 浅拷贝，只复制标签，不赋值里面的子节点。
+        // node.cloneNode(true); 括号为true, 深拷贝，复制标签里面子节点。
+        var lili = ul.children[0].cloneNode(true);
+        ul.appendChild(lili);
+    </script>
+</body>
+
+</html>

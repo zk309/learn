@@ -1,0 +1,64 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-23 17:59:29
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-02-26 09:00:22
+ * @FilePath: \learnJavaScript\11-内置对象-String\07-统计出现最多的字符以及次数.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 来判断一个对象是否有该属性
+        // var o = {
+        //   age: 1
+        // };
+        // if (o['age']) {
+        //   console.log('有该属性.');
+        // } else {
+        //   console.log('没有该属性.');
+        // }
+
+
+
+        var str = 'aabjducndeydbopquybcd';
+        var obj = {};
+
+        for (var i = 0; i < str.length; i++) {
+            var chars = str.charAt(i); // 字符串中的每一个字符
+            // 如果没有该属性, 则设置该属性 == 1; 如果有该属性, 则属性值加一;
+            if (obj[chars]) {
+                obj[chars]++;
+            } else {
+                obj[chars] = 1;
+            }
+        }
+        console.log(obj); // {a: 2, b: 3, j: 1, d: 4, u: 2, …}
+        // 遍历对象, for...in 循环, 求出现次数最多的字符和次数.
+        var ch = null;
+        var max = 0;
+        for (var k in obj) {
+            // k 是属性名
+            // obj[k] 是属性值
+            if (obj[k] > max) {
+                max = obj[k];
+                ch = k;
+            }
+        }
+        console.log('出现次数最多的字符是' + ch + ', 出现次数是:' + max); // 出现次数最多的字符是d, 出现次数是:4
+        console.log(k); // q ?
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

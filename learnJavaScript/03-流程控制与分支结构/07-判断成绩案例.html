@@ -1,0 +1,44 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2021-12-13 11:20:29
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-26 09:07:24
+ * @FilePath: \learnJavaScript\03-流程控制与分支结构\07-判断成绩案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 伪代码: (思路)
+    // 按照从大到小的思路
+    // 弹出 prompt输入框, 让用户输入分数 (score), 把这个值取过来保存到变量中;
+    // 使用多分支 if-else-if 语句来分别判断输出不同的值
+
+
+    var score = prompt('请输入您的分数:');
+    if (score >= 90) {
+      alert('A');
+    } else if (score >= 80) {
+      alert('B');
+    } else if (score >= 70) {
+      alert('C');
+    } else if (score >= 60) {
+      alert('D');
+    } else {
+      alert('E');
+    }
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

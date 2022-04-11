@@ -1,0 +1,36 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2021-12-06 23:22:52
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-25 22:43:03
+ * @FilePath: \learnJavaScript\01-JavaScript基础\09-进制.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    for (var i = 1; i <= 100; i++) {
+      if (2 ** i >= 1677) {
+        console.log(i); // 11
+        console.log(2 ** (i - 1)); // 1024
+        console.log(i - 1); // 10
+        console.log(2 ** i); // 2048
+        console.log(i); // 11
+        break; // 结束循环, 意味着只执行一次.
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-10 20:16:29
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-28 11:13:00
+ * @FilePath: \learnJavaScript\14_事件高级\09_阻止默认行为(事件).html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="https://www.bilibili.com/?utm_source=gold_browser_extension" target="_blank">bilibili</a>
+    <form action="http://www.baidu.com" target="_blank">
+        <input type="submit" value="提交" name="sub">
+    </form>
+
+    <script>
+        // 阻止默认行为（事件） 让链接不跳转 或者让提交按钮不提交
+
+        // 1. 获取元素
+        const a = document.querySelector('a');
+        const form = document.querySelector('form');
+
+        // a.addEventListener('click', function (evt) {
+        //     evt.preventDefault();
+        // })
+        // form.addEventListener('click', function (evt) {
+        //     evt.preventDefault();
+        // })
+
+        // 低版本 IE 浏览器的写法：
+        // a.onclick = function (evt) {
+        //     evt.returnValue;
+        // }
+
+        // return false 也能阻止默认行为 没有兼容性问题 特点： return 后面的代码不执行了，最要命的是只限于传统的注册方式.
+        a.onclick = function (evt) {
+            return false;
+            console.log(1);
+        }
+        form.onclick = function (evt) {
+            return false;
+            console.log(1);
+        }
+    </script>
+</body>
+
+</html>

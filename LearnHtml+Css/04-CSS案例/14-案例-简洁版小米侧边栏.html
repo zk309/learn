@@ -1,0 +1,78 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-14 22:42:50
+ * @LastEditTime: 2021-09-20 13:50:20
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \04-CSS案例\14-案例-简洁版小米侧边栏.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 200px;
+      height: 300px;
+      background-color: #535758;
+      border-radius: 10px;
+    }
+
+    .box>ul>a>li {
+      /* width: 100%; */
+      height: 43px;
+      display: block;
+      font: normal 200 16px/43px 'Microsoft YaHei';
+      padding: 0 16px;
+      /* text-indent: 1em; */
+    }
+
+    .box>ul>a {
+      color: snow;
+      text-decoration: none;
+    }
+
+    .box>ul>a>li:hover {
+      background-color: #ff6f00;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <ul>
+      <a href="#">
+        <li>手机 电话卡</li>
+      </a>
+      <a href="#">
+        <li>电视 盒子</li>
+      </a>
+      <a href="#">
+        <li>笔记本 平板</li>
+      </a>
+      <a href="#">
+        <li>出行 穿戴</li>
+      </a>
+      <a href="#">
+        <li>智能 路由器</li>
+      </a>
+      <a href="#">
+        <li>健康 儿童</li>
+      </a>
+      <a href="#">
+        <li>耳机 音箱</li>
+      </a>
+    </ul>
+  </div>
+</body>
+
+</html>

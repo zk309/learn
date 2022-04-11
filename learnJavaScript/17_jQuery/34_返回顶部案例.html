@@ -1,0 +1,77 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-26 17:27:04
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-26 17:46:37
+ * @FilePath: \learnJavaScript\17_jQuery\34_返回顶部案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 2000px;
+        }
+
+        .back {
+            display: none;
+            position: fixed;
+            right: 30px;
+            bottom: 100px;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+        }
+
+        .container {
+            margin: 400px auto;
+            width: 900px;
+            height: 500px;
+            background-color: skyblue;
+        }
+    </style>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        $(function () {
+
+            // 页面滚动到 .container 部分, 返回顶部显示.
+            var top = parseInt($(".container").offset().top);
+            // console.log(top);
+            $(window).scroll(function () {
+                if ($(document).scrollTop() >= top) {
+                    $(".back").fadeIn(500);
+                } else {
+                    $(".back").fadeOut(500);
+                }
+            });
+
+            // 点击 .back, 返回顶部
+            $(".back").click(function () {
+                // 自定义动画 animated, 注意只能元素做动画.
+                $('html, body').animate({
+                    scrollTop: 0
+                });
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="back">返回顶部</div>
+    <div class="container"></div>
+</body>
+
+</html>

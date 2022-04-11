@@ -1,0 +1,88 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-17 11:14:29
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-26 12:40:43
+ * @FilePath: \learnJavaScript\16_pc端网页特效\11_元素滚动 scroll 系列.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 1200px;
+            width: 2000px;
+        }
+
+        .box {
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+            border: 2px solid #ccc;
+            overflow: scroll;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function () {
+
+            // scroll 翻译过来就是滚动的, 我们使用 scroll 系列的相关属性可以动态的得到该元素的大小,滚动距离等.
+
+            // scroll 系列属性:
+            // element.scrollTop  返回被卷上去的上侧距离,返回数值不带单位;
+            // element.scrollLeft 返回被卷上去的左侧距离,返回数值不带单位;
+            const box = document.querySelector('.box');
+            console.log(box.scrollTop); // 0
+            console.log(box.scrollLeft); // 0
+
+            console.log('-----------------');
+
+            // element.scrollWidth 返回自身实际的宽度, 不含边框, 返回数值不带单位.
+            // element.scrollHeight 返回自身实际的高度, 不含边框, 返回数值不带单位.
+            console.log(document.body.scrollWidth); // 2000
+            console.log(document.body.scrollHeight); // 1200
+
+            console.log('-----------------');
+
+            // 如果浏览器的高(或宽)度不足以显示整个页面时, 会自动出现滚动条, 当滚动条向下滚动时, 页面上面被隐藏掉的高度,
+            // 我们就称为页面被卷去的头部. 滚动条在滚动时会触发 onscroll 事件.
+            document.addEventListener('scroll', function () {
+                console.log(window.pageYOffset);
+                console.log(window.pageXOffset);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi consectetur corrupti consequuntur voluptatibus
+        ut, deserunt eum repellendus at autem nam? Ex omnis velit, quibusdam itaque tempore minima perferendis repellat.
+        Corporis.
+        Aspernatur iure voluptate ipsam quidem sed deserunt facilis tenetur, ratione, sint repudiandae explicabo
+        accusamus? Sequi, nisi iste? Dolores nobis omnis suscipit placeat, deserunt excepturi esse, expedita, vitae
+        temporibus eum eos?
+        Et laboriosam dignissimos fuga, quos molestiae corrupti quo veritatis vitae est harum quis, dicta eligendi
+        temporibus optio amet nisi quaerat. Dignissimos enim laborum eligendi ab debitis adipisci libero, cupiditate
+        qui?
+        Soluta corrupti sint excepturi, ad vel perferendis impedit commodi quidem minus iure velit quisquam provident
+        harum amet porro ut praesentium autem facere sed? Sed natus eveniet expedita, consequuntur suscipit reiciendis?
+        Error consectetur, sit incidunt tenetur earum voluptatum quaerat id nobis, quas dignissimos delectus veritatis
+        dicta unde natus accusantium deserunt facilis adipisci deleniti, inventore quo? Expedita a quam officiis tempora
+        neque?
+    </div>
+</body>
+
+</html>

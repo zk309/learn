@@ -1,0 +1,61 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-03 19:07:24
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-26 15:31:30
+ * @FilePath: \learnJavaScript\06-函数\10-函数返回值注意事项.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 函数返回值注意事项:
+
+    // 1. return 终止函数
+    function getSum(num1, num2) {
+      return num1 + num2; // return 后面的代码不会被执行
+      alert('我是不会被执行的哦!');
+    }
+    console.log(getSum(1, 2)); // 3
+
+    // 2. return 只能返回一个值
+    function fn(num1, num2) {
+      return num1, num2; // 返回的结果是最后一个值
+    }
+    console.log(fn(1, 9)); // 9
+
+    // 3. return 利用数组返回多个值
+    function getResult(num1, num2) {
+      return [num1 + num2, num1 - num2, num1 * num2, num1 / num2];
+    }
+    var re = getResult(1, 2);
+    console.log(re); // (4) [3, -1, 2, 0.5]
+    for (var i = 0; i < re.length; i++) {
+      console.log(re[i]);
+    }
+
+    // 4. 我们函数如果有 return, 则返回的是 return 后面的值, 如果函数没有 return, 则返回 undefined
+    function fn1() {
+      return 666;
+    }
+    console.log(fn1()); // 666
+
+    function fn2() {
+
+    }
+    console.log(fn2()); // undefined
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

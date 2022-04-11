@@ -1,0 +1,48 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-18 11:45:18
+ * @LastEditTime: 2021-09-18 12:07:13
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \05-CSS案例\06-权重的叠加.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /*
+    复合选择器会有权重叠加的问题;
+    权重虽然会叠加, 但是永远不会有进位;
+    */
+
+    /* ul li 的权重: 0, 0, 0, 1 + 0, 0, 0, 1 = 0, 0, 0, 2  */
+    ul li {
+      color: red;
+    }
+
+    /* li 的权重: 0, 0, 0, 1*/
+    li {
+      color: yellow;
+    }
+
+    /* .nav li 的权重: 0, 0, 1, 0 + 0, 0, 0, 1 = 0, 0, 1, 1 */
+    .nav li {
+      color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="nav">
+    <li>大猪蹄子</li>
+    <li>大猪蹄子</li>
+    <li>大猪蹄子</li>
+  </ul>
+</body>
+
+</html>

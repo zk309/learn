@@ -1,0 +1,62 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-02-28 09:41:43
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-02-28 10:08:38
+ * @FilePath: \learnJavaScript\13-DOM\10_分时问候.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <img src="" alt="">
+
+    <script>
+        // 案例:分时显示不同图片,显示不同向候语
+        // 根据不同时间,页面显示不同图片,同时显示不同的问候语。
+        // 如果上午时间打开页面,显示上午好,显示上午的图片。
+        // 如果下午时间打开页面,显示下午好,显示下午的图
+        // 如果晚上时间打开页面,显示晚上好,显示上的图片。
+
+        // 获取当前小时
+        var timer = new Date();
+        var hovers = timer.getHours();
+        // console.log(hovers);
+
+        // 判断当前小时，页面显示不同内容和图片
+        var div = document.querySelector('div');
+        var img = document.querySelector('img');
+        if (hovers < 12) {
+            div.innerHTML = '早上好！';
+            img.src = './images/z.jpg';
+        } else if (hovers < 18) {
+            div.innerHTML = '下午好！';
+            img.src = './images/x.jpg';
+        } else {
+            div.innerHTML = '晚上好！';
+            img.src = './images/w.jpg';
+        }
+    </script>
+</body>
+
+</html>

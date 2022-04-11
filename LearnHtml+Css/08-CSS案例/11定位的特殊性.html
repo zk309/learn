@@ -1,0 +1,45 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-10-29 22:37:19
+ * @LastEditTime: 2021-10-29 22:44:04
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \08-CSS案例\11定位的特殊性.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    span {
+      /* 行内元素添加绝对或者固定定位, 可以直接设置高度和宽度. */
+      position: absolute;
+      top: 100px;
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+    }
+
+    div {
+      /* 块级元素添加绝对或者固定定位, 如果不给宽度或者高度, 默认大小是内容的大小. */
+      position: absolute;
+      background-color: skyblue;
+    }
+  </style>
+</head>
+
+<body>
+  <span>行内元素</span>
+  <div>块级元素</div>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-17 22:17:26
+ * @LastEditTime: 2021-09-17 22:51:36
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \05-CSS案例\03-行高的继承.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      color: pink;
+      /* font: 12px/24px "Microsoft YaHei"; */
+      font: 12px/1.5 "Microsoft YaHei";
+    }
+
+    div {
+      /* 子元素继承了父元素 body 的行高的 1.5  */
+      /* 这个 1.5 就是当前元素文字大小 font-size 的1.5倍, 所以当前的 div 的行高是 21 像素. */
+      font-size: 14px;
+    }
+
+    p {
+      /* 1.5*16=24 */
+      font-size: 16px;
+    }
+
+    /*
+    当前 li 的行高: 12*1.5=18
+    */
+  </style>
+</head>
+
+<body>
+  <div>粉红色的回忆</div>
+  <p>粉红色的回忆</p>
+  <ul>
+    <li>我没有指定文字大小</li>
+  </ul>
+</body>
+
+</html>

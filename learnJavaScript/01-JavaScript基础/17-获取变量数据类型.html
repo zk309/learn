@@ -1,0 +1,41 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2021-12-09 15:08:25
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-25 22:53:38
+ * @FilePath: \learnJavaScript\01-JavaScript基础\17-获取变量数据类型.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    var num = 10;
+    console.log(typeof num); // number
+    var str = 'pink';
+    console.log(typeof str); // string
+    var flag = true;
+    console.log(typeof flag); // boolean
+    var vari = undefined;
+    console.log(typeof vari); // undefined
+    var timer = null;
+    console.log(typeof timer); // object, 注意 typeof null 是 object;
+
+    // 注意 prompt() 方法得到的结果是字符串型
+    var age = prompt('请输入您的年龄:');
+    console.log(age);
+    console.log(typeof age); // string
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

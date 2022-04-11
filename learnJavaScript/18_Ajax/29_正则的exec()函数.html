@@ -1,0 +1,40 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-05 11:59:56
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-05 12:33:01
+ * @FilePath: \18_Ajax\29_正则的exec()函数.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // exec() 函数用于检索字符串中的正则表达式的匹配.
+            // 如果字符串中有匹配的值, 则返回该匹配值, 否则返回 null.
+            // RegExpObj.exec(string);
+
+            // demo:
+            var str = 'hello';
+            var pattern = /o/;
+            var result = pattern.exec(str);
+            console.log(result); // (1) ['o', index: 4, input: 'hello', groups: undefined]
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-10 21:44:12
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-10 21:57:55
+ * @FilePath: \learnJavaScript\14_事件高级\10_阻止事件冒泡.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .father {
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .son {
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        父盒子
+        <div class="son">子盒子</div>
+    </div>
+
+    <script>
+        // 阻止事件冒泡
+        // 标准 evt.stopPropagation();
+        // 低版本 IE 写法：Window.evt.cancelBubble = true;
+
+        const father = document.querySelector('.father');
+        const son = document.querySelector('.son');
+
+        // DOM 标准写法：
+        // father.addEventListener('click', function () {
+        //     console.log(2);
+        // }, false);
+        // son.addEventListener('click', function (evt) {
+        //     console.log(1);
+        //     // 阻止事件冒泡
+        //     evt.stopPropagation();
+        // }, false);
+
+        // 低版本 IE 写法：
+        father.onclick = function (evt) {
+            console.log(2);
+        }
+        son.onclick = function (evt) {
+            console.log(1);
+            evt.cancelBubble = true;
+        }
+
+        // 阻止事件冒泡的兼容性解决方案：
+        // if (e && e.stopPropagation) {
+        //     e.stopPropagation();
+        // } else {
+        //     Window.event.cancelBubble = true;
+        // }
+    </script>
+</body>
+
+</html>

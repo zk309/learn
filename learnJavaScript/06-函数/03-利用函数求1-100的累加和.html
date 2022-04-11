@@ -1,0 +1,38 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-02 18:47:08
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-26 15:11:04
+ * @FilePath: \learnJavaScript\06-函数\03-利用函数求1-100的累加和.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 利用函数计算 1~100 之间的累加和
+    // 1. 声明函数
+    function getSum() {
+      var sum = null;
+      for (var i = 1; i <= 100; i++) {
+        sum += i;
+      }
+      console.log(sum);
+    }
+    // 2. 调用函数
+    getSum(); // 5050
+    getSum(); // 5050
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

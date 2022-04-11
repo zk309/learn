@@ -1,0 +1,47 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-17 10:49:14
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-17 11:06:58
+ * @FilePath: \learnJavaScript\16_pc端网页特效\10_pageshow事件和load事件.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.addEventListener('pageshow', function (evt) {
+
+            // 下面三种情况都会刷新页面触发 load 事件；
+            // 1. a 标签的超链接；
+            // 2. F5 或者刷新按钮 (强制刷新);
+            // 3. 前进后退按钮
+
+            // 但是，火狐，有个特点，有个 "往返缓存"，这个缓存不仅保存着页面数据，还保存了 DOM 和 JavaScript 的状态；
+            // 实际上是将整个页面都保存在了内存里。
+
+            // 所以,此时后退按钮不能刷新页面.
+
+            // 此时,可以使用 pageshow 事件来触发, 这个事件在页面显示时触发, 无论页面是否来自缓存. 
+            // 在重新加载页面中, pageshow 会在 load 事件 load 事件触发后触发;
+            // 根据事件对象中的 persisted 来判断是否是缓存中的页面触发 pageshow 事件
+            // 注意,这个事件给 window 添加
+
+            alert('pageshow');
+            console.log(evt.pageshow);
+        })
+    </script>
+</head>
+
+<body>
+    <a href="http://bilibili.com">链接</a>
+</body>
+
+</html>

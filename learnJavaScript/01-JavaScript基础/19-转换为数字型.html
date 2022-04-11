@@ -1,0 +1,45 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2021-12-09 21:26:02
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2021-12-09 21:37:27
+ * @FilePath: \01\19-转换为数字型.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 1. parseInt(变量) 可以把字符型的转换为数字型,得到的是整数;
+    console.log(parseInt('3.14')); // 3
+    console.log(parseInt('3.99')); // 3
+    console.log(parseInt('3.99px')); // 3
+    console.log(parseInt('rem3.99px')); // NaN
+    // 2. parseFloat(变量) 可以把字符型的转换为数字型,得到的是浮点数, 小数;
+    console.log(parseFloat('3.14')); // 3.14
+    console.log(parseFloat('3.99')); // 3.99
+    console.log(parseFloat('3.99px')); // 3.99
+    console.log(parseFloat('rem3.99px')); // NaN
+    // 3. 利用 Number(变量)
+    var str = '123';
+    console.log(Number(str)); // 123
+    console.log(Number('12px')); // NaN
+    console.log(Number('12')); // 12
+    // 4. 利用了算数运算 - * /
+    console.log('12' - 0); // 12
+    console.log('12' * 1); // 12
+    console.log('12' / 1); // 12
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

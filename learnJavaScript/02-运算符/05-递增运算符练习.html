@@ -1,0 +1,40 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2021-12-10 11:02:25
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-26 08:27:13
+ * @FilePath: \learnJavaScript\02-运算符\05-递增运算符练习.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    var a = 10;
+    ++a; // 11
+    var b = ++a + 2; // 12+2
+    console.log(b); // 14
+
+    var c = 10;
+    c++; // 11
+    var d = c++ + 2; // 11 + 2
+    console.log(d); // 13
+
+    var e = 10;
+    var f = e++ + ++e; // 相当于, 10 + 1+(10+1), 注意后一个 e, 已经变成了(10+1)
+    console.log(f); // 22
+    console.log(e); // 12 
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

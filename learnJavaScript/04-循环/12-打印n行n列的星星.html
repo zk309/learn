@@ -1,0 +1,38 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2021-12-20 11:13:28
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2021-12-20 11:20:55
+ * @FilePath: \learnJavaScript\04-循环\12-打印n行n列的星星.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 打印 n 行 n 列的星星
+    var rows = prompt('请输入行数:');
+    var cols = prompt('请输入列数:');
+    var str = '';
+
+    for (var i = 1; i <= rows; i++) {
+      for (var j = 1; j <= cols; j++) {
+        str += '✦';
+      }
+      str += '\n';
+    }
+
+    console.log(str);
+  </script>
+</body>
+
+</html>

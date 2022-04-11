@@ -1,0 +1,40 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-03 08:10:22
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-03 08:23:41
+ * @FilePath: \18_Ajax\18_表单的同步提交及问题.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // 如果使用表单提交数据，则会导致以下两个问题：
+            // 1. <form> 同步提交后，整个页面会发生跳转，跳转到 action URL 所指向的地址，用户体验很差。
+            // 2. <form> 表单同步提交后，页面之前的状态和数据会丢失。
+
+            // 解决方案：表单只负责采集数据，Ajax 负责将数据提交到服务器。
+        })
+    </script>
+</head>
+
+<body>
+    <form action="/login">
+        <input type="text" name="user_name" />
+        <input type="password" name="password" />
+        <button type="submit">提交</button>
+    </form>
+
+</body>
+
+</html>

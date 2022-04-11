@@ -1,0 +1,67 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-08 09:13:51
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-26 17:41:41
+ * @FilePath: \learnJavaScript\06-函数\24-预解析.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 问题一:
+    // console.log(num); // num is not defined
+
+    // 问题二:
+    // console.log(num); // undefined
+    // var num = 10;
+    // 相当于执行以下代码:
+    var num;
+    console.log(num); // undefined
+    num = 10;
+
+    // 问题三:
+    // fn(); // 11
+    // function fn() {
+    //   console.log(11);
+    // };
+    // 相当于执行以下代码:
+    function fn() {
+      console.log(11); // 11
+    };
+    fn();
+
+    // 问题四:
+    // fun(); // fun is not a function
+    // var fun = function () {
+    //   console.log('222');
+    // };
+    // 相当于执行以下代码:
+    // 函数表达式的调用, 必须写在函数表达式的下面;
+    var fun;
+    fun(); // fun is not a function
+    fun = function () {
+      console.log('222');
+    };
+
+    // 1. 我们 js 引擎运行 js 分为两步: 预解析和代码执行
+    // (1) 预解析: JS 引擎会把 JS 里面所有的 var 以及 function 提升到当前作用域的最前面;
+    // (2) 代码执行: 按照书写的顺序从上往下执行;
+    // 2. 预解析分为 变量预解析(变量提升) 和 函数预解析(函数提升).
+    // (1) 变量提升, 就是把所有的变量声明提升到当前作用域的最前面, 不提升赋值操作;
+    // (2) 函数提升, 就是把所有的函数声明提升到当前作用域的最前面, 不调用函数;
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

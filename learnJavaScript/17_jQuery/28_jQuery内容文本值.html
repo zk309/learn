@@ -1,0 +1,59 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-24 19:32:39
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-25 09:17:03
+ * @FilePath: \learnJavaScript\17_jQuery\28_jQuery内容文本值.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        $(function () {
+            // 1. 普通元素内容 html() (相当于原生 innerHTML())
+            // html() 获取元素的内容
+            console.log($("div").html()); // <span>我是内容</span>
+
+            // html("内容")  设置元素的内容
+            $("div").html("<a href='javaScript:;'>123</a>");
+
+
+            console.log('---------------');
+
+            // 2. 普通元素文本内容 text() (相当于原生 innerText())
+            // text()  获取元素的文本内容
+            console.log($("div").text()); // 123123
+
+            // text("文本内容") 设置元素的文本内容
+            $("div").text("Hello!");
+
+
+            console.log('----------------');
+
+            // 3. 表单的值 val() (相当于原生的 value())
+            // val() 获取表单的值
+            console.log($("input").val()); // 请输入内容
+
+            // val("文本内容") 设置表单的值
+            $("input").val("Hello!");
+        })
+    </script>
+</head>
+
+<body>
+    <div>
+        <span>我是内容</span>
+    </div>
+    <input type="text" value="请输入内容">
+</body>
+
+</html>

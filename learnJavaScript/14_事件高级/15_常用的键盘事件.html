@@ -1,0 +1,39 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-11 13:53:52
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-11 13:59:21
+ * @FilePath: \learnJavaScript\14_事件高级\15_常用的键盘事件.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 键盘按下
+        document.addEventListener('keydown', function () {
+            console.log('keydown');
+        });
+        // 键盘按下，不识别功能键，比如，ctrl,shift,左右箭头
+        document.addEventListener('keypress', function () {
+            console.log('keypress');
+        });
+        // 键盘松开
+        document.addEventListener('keyup', function () {
+            console.log('keyup');
+        });
+        // 三个事件的执行顺序：keydown--keypress--keyup
+    </script>
+</body>
+
+</html>

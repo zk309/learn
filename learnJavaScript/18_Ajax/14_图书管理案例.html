@@ -1,0 +1,178 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-01 10:38:54
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-02 08:36:48
+ * @FilePath: \18_Ajax\14_图书管理案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-3.4.1-dist/css/bootstrap.css">
+    <style>
+        body {
+            padding-top: 15px;
+        }
+    </style>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // 1. 渲染图书列表
+            getBookList();
+            // 渲染图书列表函数
+            function getBookList() {
+                // 1. 发起 ajax 请求获取图书列表数据;
+                // 2. 获取列表数据是否成功;
+                // 3. 渲染页面结构;
+                // 4. 循环拼接字符串;
+                // 5. 渲染表格结构;
+                $.get("http://www.liulongbin.top:3006/api/getbooks", function (res) {
+                    console.log(res);
+                    if (res.status !== 200) return alert('获取图书列表失败.');
+                    var rows = [];
+                    $.each(res.data, function (index, ele) {
+                        rows.push(
+                            '<tr><td>' + ele.id + '</td>  <td>' + ele.bookname +
+                            '</td> <td>' + ele.author + '</td> <td>' + ele.publisher +
+                            '</td> <td><a href="javaScript:;" class="del" data-index = ' +
+                            ele.id + '>删除</a></td></tr>'
+                        )
+                    });
+                    // console.log(rows);
+                    $(".table tbody").empty().append(rows.join(''));
+                });
+            };
+
+
+            // 2. 添加图书表格
+            // 如果 书名, 作者, 出版社为空, 弹出提示窗口.
+            // 将各个 input 的值赋给 data, 然后将 data 作为参数传递给 addBook();
+            // 弹出相应请求的信息
+            // 重新渲染页面数据.
+            // 清空 input 的 value 值;
+            $("#addBtn").on("click", function (evt) {
+                // console.log(1);
+                var bookName = $("#iptbookName").val().trim();
+                var author = $("#iptauthor").val().trim();
+                var publisher = $("#iptpublisher").val().trim();
+
+                if (bookName == '' || author == '' || publisher == '') {
+                    $("#iptbookName, #iptauthor, #iptpublisher").val('');
+                    return alert("书名, 作者, 出版社不能为空或者为空格.");
+                }
+
+                // console.log(1);
+                var data = {
+                    author: author,
+                    bookname: bookName,
+                    publisher: publisher
+                };
+                // console.log(data);
+                addBook(data);
+            });
+            // 添加图书函数
+            function addBook(data) {
+                $.post("http://www.liulongbin.top:3006/api/addbook", data,
+                    function (res) {
+                        console.log(res);
+                        if (res.status !== 201) {
+                            alert(res.msg);
+                        }
+                        getBookList();
+                        $("#iptbookName, #iptauthor, #iptpublisher").val('');
+                    })
+            };
+
+
+            // 3. 删除图书列表
+            $("tbody").on("click", ".del", function (evt) {
+                // console.log(1);
+                var id = $(this).attr("data-index");
+                console.log(id);
+                delBook(id);
+            })
+            // 删除图书函数
+            function delBook(data) {
+                $.get("http://www.liulongbin.top:3006/api/delbook", {
+                        id: data
+                    },
+                    function (res) {
+                        console.log(res);
+                        if (res.status !== 200) {
+                            alert(res.msg);
+                        }
+                        getBookList();
+                    })
+            };
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- 添加图书的 panel 面板 -->
+        <!-- bs3-panel:primary -->
+        <!-- 使 input 和 button 一行内显示, 添加 .form-inline -->
+        <div class="panel panel-primary form-inline">
+            <div class="panel-heading">
+                <h3 class="panel-title">添加新图书</h3>
+            </div>
+            <div class="panel-body">
+                <!-- bs3-input-group:addon:text -->
+                <div class="input-group">
+                    <div class="input-group-addon">书名:</div>
+                    <input type="text" class="form-control" id="iptbookName" placeholder="请输入书名:">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-addon">作者:</div>
+                    <input type="text" class="form-control" id="iptauthor" placeholder="请输入作者:">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-addon">出版社:</div>
+                    <input type="text" class="form-control" id="iptpublisher" placeholder="请输入出版社:">
+                </div>
+                <!-- bs3-button:primary  -->
+                <button type="button" class="btn btn-primary" id="addBtn">添加</button>
+
+            </div>
+        </div>
+
+        <!-- 图书的表格 -->
+        <!-- bs3-table:bordered -->
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>书名</th>
+                    <th>作者</th>
+                    <th>出版社</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td>1</td>
+                    <td>西游记</td>
+                    <td>吴承恩</td>
+                    <td>北京图书出版社</td>
+                    <td><a href="javaScript:;">删除</a></td>
+                </tr> -->
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+
+</html>

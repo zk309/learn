@@ -1,0 +1,76 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-25 11:50:32
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-25 12:21:14
+ * @FilePath: \learnJavaScript\17_jQuery\30_jQuery遍历对象each().html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        $(function () {
+
+            // 如果针对于同一类元素做不同操作，需要用到遍历元素（类似for，但是比for强大）
+
+            // 1. each() 方法遍历元素
+            // each() 主要遍历 DOM 元素
+            // 回调函数第一个参数一定是索引号 可以自己指定索引号号名称
+            // 回调函数第二个参数一定是 dom元素对象 也是自己命名
+            var arr = ['pink', 'hotpink', 'skyblue'];
+            var sum = null;
+            $(".item").each(function (index, domEle) {
+                console.log(index); // 0 1 2
+                console.log(domEle); // (div DOM 元素)
+
+                // DOM 对象转换为 jQuery 对象: $(DOM对象)
+                $(domEle).css("color", arr[index]);
+
+                // 所有的 div 里面的数字相加.
+                sum += parseInt($(domEle).text());
+            });
+            console.log(sum); // 6
+
+
+            console.log('----------------');
+            // 2. $.each() 方法遍历元素
+            // $.each() 主要用于数据处理, 比如数组, 对象.
+            $.each($(".item"), function (i, ele) {
+                console.log(i); // 0 1 2
+                console.log(ele); // (div DOM 元素)
+            })
+            console.log('------------------');
+            // 数组:
+            $.each(arr, function (i, ele) {
+                console.log(i); // 0 1 2
+                console.log(ele); // pink  hotpink  skyblue
+            });
+            console.log('------------------');
+            // 对象:
+            $.each({
+                user: '刘一',
+                age: 12
+            }, function (i, ele) {
+                console.log(i); // user age
+                console.log(ele); // 刘一  12
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+</body>
+
+</html>

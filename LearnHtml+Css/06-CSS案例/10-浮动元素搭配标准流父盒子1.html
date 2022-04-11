@@ -1,0 +1,57 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-23 23:12:19
+ * @LastEditTime: 2021-10-13 16:03:27
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \06-CSS案例\10-浮动元素搭配标准流父盒子.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 1000px;
+      height: 570px;
+      background-color: pink;
+      margin: 0 auto;
+    }
+
+    .left {
+      /* width: 290px;
+      height: 570px; */
+      width: 20%;
+      height: 100%;
+      background-color: red;
+      float: left;
+    }
+
+    .right {
+      /* width: 1235px;
+      height: 570px; */
+      width: 80%;
+      height: 100%;
+      background-color: green;
+      float: left;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="left">左盒子</div>
+    <div class="right">右盒子</div>
+  </div>
+</body>
+
+</html>

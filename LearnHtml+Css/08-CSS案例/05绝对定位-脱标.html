@@ -1,0 +1,42 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-10-25 14:24:49
+ * @LastEditTime: 2021-10-29 21:50:15
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \08-CSS案例\04绝对定位-脱标.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 绝对定位不再占有原先的位置 ( 脱标 ); */
+    div {
+      width: 200px;
+      height: 200px;
+    }
+
+    .son {
+      position: absolute;
+      top: 0;
+      right: 100px;
+      background-color: pink;
+    }
+
+    .girl {
+      background-color: hotpink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="son"></div>
+  <div class="girl"></div>
+</body>
+
+</html>

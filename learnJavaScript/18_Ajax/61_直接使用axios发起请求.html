@@ -1,0 +1,76 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-08 09:57:21
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-08 10:34:46
+ * @FilePath: \18_Ajax\61_直接使用axios发起请求.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./axios.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // axios 也提供了类似于 jQuery 中 $.ajax() 的函数, 语法如下:
+            // axios({
+            //     method: '请求类型',
+            //     url: '请求的URL地址',
+            //     data: {
+            //         POST数据
+            //     },
+            //     params: {
+            //         GET数据
+            //     }
+            // }).then(callback);
+
+            // 使用 axios() 发起 GET 请求
+            document.querySelector('#btnGET').addEventListener('click', function (evt) {
+                // console.log(1);
+                axios({
+                    method: 'GET',
+                    url: 'http://www.liulongbin.top:3006/api/get',
+                    params: {
+                        name: '张三',
+                        age: 95
+                    }
+                }).then(function (res) {
+                    console.log(res);
+                    console.log(res.data);
+                })
+            });
+
+            // 使用 axios() 发起 POST 请求
+            document.querySelector('#btnPOST').addEventListener('click', function (evt) {
+                // console.log(1);
+                axios({
+                    method: 'POST',
+                    url: 'http://www.liulongbin.top:3006/api/post',
+                    data: {
+                        location: '北京',
+                        address: '昌平'
+                    }
+                }).then(function (res) {
+                    console.log(res);
+                    console.log(res.data);
+                })
+            });
+
+        })
+    </script>
+</head>
+
+<body>
+    <input type="button" value="使用 axios() 发起 GET 请求" id="btnGET"><br /><br />
+    <input type="button" value="使用 axios() 发起 POST 请求" id="btnPOST">
+</body>
+
+</html>

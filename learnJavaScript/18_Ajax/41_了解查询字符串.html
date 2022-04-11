@@ -1,0 +1,42 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-06 09:17:51
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-06 09:23:07
+ * @FilePath: \18_Ajax\41_查询字符串.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // 什么是查询字符串?
+            // 定义: 查询字符串(URL 参数)是指在 URL 的末尾加上用于向服务器发送信息的字符串(变量);
+            // 格式: 将英文的 ? 放在 URL 的末尾, 然后再加上 参数=值, 想加上多个参数的话, 使用 & 符号进行分隔, 以这个形式,
+            //      可以将想要发送给服务器的数据添加到 URL 中.
+
+            // 不带参数的 URL 地址
+            xhr.open('GET', 'http://www.liulongbin.top:3006/api/getbooks');
+            // 带一个参数的 URL 地址
+            xhr.open('GET', 'http://www.liulongbin.top:3006/api/getbooks?id=1');
+            // 带两个参数的 URL 地址
+            xhr.open('GET', 'http://www.liulongbin.top:3006/api/getbooks?id=1&bookname=西游记');
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

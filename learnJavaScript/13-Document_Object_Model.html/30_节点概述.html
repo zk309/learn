@@ -1,0 +1,43 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-05 08:54:13
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-05 08:58:17
+ * @FilePath: \learnJavaScript\13-DOM\30_节点概述.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 节点优点 -->
+    <div class="box">
+        <span class="erweima">x</span>
+    </div>
+    <span>我是span</span>
+    <div>我是div</div>
+    <ul>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+
+    <script>
+        var box = document.querySelector('.box');
+        console.dir(box);
+        // nodeName: "DIV"
+        // nodeType: 1
+        // nodeValue: null
+    </script>
+</body>
+
+</html>

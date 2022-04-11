@@ -1,0 +1,37 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-12 20:24:59
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-12 20:30:02
+ * @FilePath: \learnJavaScript\15_Browser_Object_Model.html\08_window.setInterval.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.addEventListener('load', function () {
+
+            // 1. setInterval
+            // 语法规范: window.setInterval(调用函数， 延时时间)
+            setInterval(function () {
+                console.log('输出');
+            }, 1000)
+
+            // 2. setTimeout() 延时时间到了，就去调用这个回调函数，只调用一次，就结束了这个定时器；
+            // 3. setInterval() 每隔这个延时时间，就去调用这个回调函数，会调用很多次，重复调用这个函数；
+        })
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

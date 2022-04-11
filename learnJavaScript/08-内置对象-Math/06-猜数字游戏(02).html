@@ -1,0 +1,51 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-16 10:55:10
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-27 11:51:54
+ * @FilePath: \learnJavaScript\08-内置对象-Math\06-猜数字游戏(02).html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 猜1-50之间的数字, 只有3次机会.
+    function getRandom(max, min) {
+      return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值
+    };
+
+    var random = getRandom(50, 1); // 1-50之间
+    console.log(random);
+    for (var i = 1; i <= 3; i++) {
+      var num = prompt('请输入你要猜的数字:');
+      // 判断
+      if (num > random) {
+        alert('您猜大了.\n你还有' + (3 - i) + '次机会.');
+      }
+      if (num < random) {
+        alert('您猜小了.\n你还有' + (3 - i) + '次机会.');
+      }
+      if (num == random) {
+        alert('您猜对了.')
+        break;
+      };
+      if (i == 3) {
+        alert('您的三次机会已用完.');
+        break;
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

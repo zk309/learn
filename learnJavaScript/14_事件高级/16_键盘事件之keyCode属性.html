@@ -1,0 +1,42 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-11 18:01:28
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-11 18:15:36
+ * @FilePath: \learnJavaScript\14_事件高级\16_键盘事件之keyCode属性.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 键盘事件对象中的 keyCode 属性可以得到相应键的 ASCII 码值
+        // 1. 常用 keydown 事件和 keyup 事件,返回的 ASCII 码值不区分字母大小写；
+        // 2. keypress 事件返回的 ASCII 码值区分字母大小写；
+
+        document.addEventListener('keydown', function (evt) {
+            console.log('keydown:' + evt.keyCode);
+            // 利用 keyCode 返回的 ASCII 码值来判断用户按下了哪个键
+            if (evt.keyCode == 65) {
+                alert('您按下了 a 键。')
+            } else {
+                alert('您没有按下 a 键。')
+            }
+        })
+        document.addEventListener('keypress', function (evt) {
+            console.log('keypress:' + evt.keyCode);
+        })
+    </script>
+</body>
+
+</html>

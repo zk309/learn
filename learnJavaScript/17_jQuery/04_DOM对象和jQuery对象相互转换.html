@@ -1,0 +1,41 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-22 17:46:45
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-25 11:58:47
+ * @FilePath: \learnJavaScript\17_jQuery\04_DOM对象和jQuery对象相互转换.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js" muted></script>
+    <script>
+        $(function () {
+
+            // 1. DOM 对象转换为 jQuery 对象: $(DOM对象)
+            // $('div');
+            const video = document.querySelector('video');
+            console.log(video);
+            console.log($(video));
+
+            // 2. jQuery 对象转换为 DOM 对象
+            // play() 方法是测试, 因为只有原生 JS 能使用;
+            // $(video)[0].play();
+            $(video).get(0).play();
+        })
+    </script>
+</head>
+
+<body>
+    <video src="./mov.mp4" muted></video>
+</body>
+
+</html>

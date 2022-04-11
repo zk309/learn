@@ -1,0 +1,60 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-18 09:48:43
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-18 10:04:48
+ * @FilePath: \learnJavaScript\16_pc端网页特效\16_动画原理.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function () {
+
+            // 核心原理: 通过定时器 setInterval() 不断移动盒子位置.
+            // 实现步骤:
+            // 1. 获得盒子当前位置;
+            // 2. 让盒子在当前位置加上1个移动距离;
+            // 3. 利用定时器不断重复这个操作;
+            // 4. 加一个结束定时器的条件;
+            // 5. 注意此元素需要添加定位, 才能使用 element.style.left;
+
+            const box = document.querySelector('.box');
+            var timer = setInterval(function () {
+                if (box.offsetLeft >= 500) {
+                    clearInterval(timer);
+                }
+                box.style.left = box.offsetLeft + 1 + 'px';
+            }, 30)
+        })
+    </script>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

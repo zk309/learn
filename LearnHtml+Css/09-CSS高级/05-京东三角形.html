@@ -1,0 +1,82 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-11-08 18:57:00
+ * @LastEditTime: 2021-11-08 19:18:58
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \09-CSS高级\05-京东三角形.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin: 20px auto;
+      background-color: pink;
+    }
+
+    .box span {
+      position: absolute;
+      right: 10px;
+      top: -39px;
+      width: 0;
+      height: 0;
+      /* 为了照顾兼容性. */
+      line-height: 0;
+      font-size: 0;
+      border: 20px solid transparent;
+      /* border-bottom-color: skyblue; */
+      border-bottom-color: pink;
+    }
+
+
+    .box1 {
+      position: relative;
+      width: 300px;
+      height: 100px;
+      background-color: pink;
+      margin: 20px auto;
+    }
+
+    .box1 span {
+      position: absolute;
+      right: 0;
+      margin-right: -40px;
+      top: 50px;
+      margin-top: -20px;
+      width: 0;
+      height: 0;
+      line-height: 0;
+      font-size: 0;
+      border: 23px solid transparent;
+      border-left-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <span></span>
+  </div>
+
+  <hr>
+
+  <div class="box1">
+    <span></span>
+  </div>
+</body>
+
+</html>

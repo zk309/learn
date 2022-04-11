@@ -1,0 +1,56 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-08 17:47:27
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-09 07:28:36
+ * @FilePath: \18_Ajax\64_了解JSONP.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // 什么是 JSONP ?
+            // JSONP (JSON width Padding) 是 JSON 的一种 '使用模式', 可用于解决浏览器的跨域数据访问的问题.
+
+            // JSONP 的实现原理?
+            // 通过 <script> 标签的 src 属性, 请求跨域的数据接口, 并通过函数调用的形式, 接收跨域接口响应回来的数据.
+
+            // JSONP 的缺点:
+            // 由于 JSONP 是通过 <script> 标签的 src 属性, 来实现跨域数据获取的, 所以, JSONP 只支持 GET 数据请求, 不支持 POST 请求;
+            // 注意: JSONP 和 Ajax 之间没有任何关系, 不能把 JSONP 请求数据的方式叫做 Ajax, 因为 JSONP 没有用到 XMLHttpRequest 这个对象.
+
+            $.ajax({
+                // method: 'GET',
+                url: 'http://www.liulongbin.top:3006/api/jsonp',
+                data: {
+                    user: '刘一',
+                    age: 10
+                },
+                dataType: 'jsonp',
+                // jsonp: 'callback',
+                // jsonpCallback: 'abc',
+                success: function (res) {
+                    console.log(res);
+                }
+            });
+
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

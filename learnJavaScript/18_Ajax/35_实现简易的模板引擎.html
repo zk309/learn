@@ -1,0 +1,59 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-05 19:09:15
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-05 19:31:43
+ * @FilePath: \18_Ajax\35_实现简易的模板引擎.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <script src="./jQuery.min.js"></script> -->
+    <script src="./36_template.js"></script>
+    <!-- 1. 定义模板结构; -->
+    <script type="text/html" id="tpl_user">
+        <div>姓名: {{ name }}</div>
+        <div>年龄: {{  age }}</div>
+        <div>性别: {{ gender  }}</div>
+        <div>地址: {{address  }}</div>
+    </script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // 实现步骤:
+            // 1. 定义模板结构;
+            // 2. 预调用模板引擎;
+            // 3. 封装 template 函数;
+            // 4. 导入并使用自定义的模板引擎;
+
+
+            // 定义数据
+            var data = {
+                name: '刘一',
+                age: 18,
+                gender: '男',
+                address: '北京昌平沙河'
+            }
+
+            // 调用模板函数
+            var str = template('tpl_user', data);
+
+            // 渲染 HTML 结构
+            document.querySelector('#user_box').innerHTML = str;
+        })
+    </script>
+</head>
+
+<body>
+    <div id="user_box"></div>
+</body>
+
+</html>

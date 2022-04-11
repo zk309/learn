@@ -1,0 +1,44 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-11-08 20:27:32
+ * @LastEditTime: 2021-11-16 20:45:19
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \09-CSS高级\07-用户界面样式--取消表单轮廓和防止拖拽文本域.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    input,
+    textarea {
+      /* 取消表单轮廓 */
+      outline: none;
+    }
+
+    /* 文本域 */
+    textarea {
+      resize: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 1.取消表单轮廓 -->
+  <input type="text">
+  <!-- 2.防止拖拽文本域 -->
+  <!-- 标签要写在一行, 否则会换行. -->
+  <textarea name="" id="" cols="30" rows="10"></textarea>
+</body>
+
+</html>

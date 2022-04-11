@@ -1,0 +1,51 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-02 16:08:08
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-26 15:03:11
+ * @FilePath: \learnJavaScript\06-函数\01-什么是函数.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 1. 求1~100的累加和
+    var sum = 0;
+    for (var i = 1; i <= 100; i++) {
+      sum += i;
+    }
+    console.log(sum); // 5050
+
+    // 2. 求10~50的累加和
+    var sum1 = 0;
+    for (var i = 10; i <= 50; i++) {
+      sum1 += i;
+    }
+    console.log(sum1); // 1230
+
+    // 3. 函数: 函数就是封装了一段可以被重复执行调用的代码块
+    // 目的: 就是让大量代码重复使用
+    function getSum(num1, num2) {
+      var sum = 0;
+      for (var i = num1; i <= num2; i++) {
+        sum += i;
+      }
+      console.log(sum);
+    }
+    getSum(1, 100); // 5050
+    getSum(10, 50); // 1230
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

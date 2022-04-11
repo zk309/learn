@@ -1,0 +1,55 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-06 08:18:43
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-06 11:44:25
+ * @FilePath: \18_Ajax\38_使用xhr发起GET请求.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // 使用 xhr 发起 GET 请求
+            // 步骤:
+            // 1. 创建 xhr 对象;
+            // 2. 调用 xhr.open() 函数;
+            // 3. 调用 xhr.send() 函数;
+            // 4. 监听 xhr.onreadystatechange 事件;
+
+            // 1. 创建 xhr 对象
+            var xhr = new XMLHttpRequest();
+            // 2. 调用 open() 函数, 指定 请求方式与 URL地址
+            xhr.open('GET', 'http://www.liulongbin.top:3006/api/getbooks');
+            // 3. 调用 send() 函数, 发起 Ajax 请求
+            xhr.send();
+            // 4. 监听 onreadystatechange 事件
+            xhr.onreadystatechange = function () {
+                // console.log(xhr);
+                // 4.1 监听 xhr 对象的 请求状态readyState 和 服务器响应的状态status
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // 4.2 打印服务器响应回来的数据
+                    console.log(xhr.responseText);
+                    console.log(xhr);
+                    console.log(xhr.responseText.status); // undefined
+                }
+            }
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

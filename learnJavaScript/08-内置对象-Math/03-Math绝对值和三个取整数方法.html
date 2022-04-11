@@ -1,0 +1,62 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-16 07:43:17
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-16 08:04:10
+ * @FilePath: \learnJavaScript\08-内置对象-Math\03-Math绝对值和三个取整数方法.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 1. 绝对值方法
+    console.log(Math.abs('-1'));; // 1, 隐式转换
+    console.log(Math.abs(-2));; // 2
+    console.log(Math.abs(null));; // 0
+    console.log(Math.abs("string"));; // NaN
+    console.log(Math.abs());; // NaN
+    console.log('---------------');
+
+    // 2. 三个取整方法
+    // (1) Math.floor() 向下取整
+    console.log(Math.floor(45.95)); // 45
+    console.log(Math.floor(45.05)); // 45
+    console.log(Math.floor(4)); // 4
+    console.log(Math.floor(-45.05)); // -46
+    console.log(Math.floor(-45.95)); // -46
+    console.log('-----------------------');
+
+    // (2) Math.ceil() 向上取整
+    console.log(Math.ceil(.95)); // expected output: 1
+    console.log(Math.ceil(4)); // expected output: 4
+    console.log(Math.ceil(7.004)); // expected output: 8
+    console.log(Math.ceil(-7.004)); // expected output: -7
+    console.log(Math.ceil(-5.5)); // expected output: -5
+    console.log(Math.ceil(null)); // expected output: -7
+    console.log('-----------------------');
+
+    // (3) Math.round() 函数返回一个数字四舍五入后最接近的整数.
+    var x;
+    x = Math.round(20.49); //20
+    console.log(x);
+    x = Math.round(20.5); //21
+    console.log(x);
+    x = Math.round(-20.5); //-20
+    console.log(x);
+    x = Math.round(-20.51); //-21
+    console.log(x);
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

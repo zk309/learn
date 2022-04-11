@@ -1,0 +1,45 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-10 10:18:35
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-12 10:58:55
+ * @FilePath: \learnJavaScript\07-对象\02-变量属性函数方法的区别.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    //1. 变量和属性的区别:
+    // 相同点: 都是用来存储数据的;
+    var num = 10;
+    var obj = {
+      age: 18
+    }
+    console.log(num); // 10
+    console.log(obj.age); // 18
+    // console.log(age); // age is not defined
+    // 不同点: 
+    // 变量单独声明并赋值, 使用的时候直接写变量名, 单独存在;
+    // 属性在对象里面, 不需要声明, 使用的时候必须是 对象.属性
+
+    // 2. 函数和方法的区别:
+    // 相同点: 
+    // 都是实现某种功能, 来做某件事.
+    // 不同点: 
+    // 函数都是单独声明, 并且调用的, 函数名() 单独存在;
+    // 方法在对象里面调用的时候 对象.方法()
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

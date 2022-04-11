@@ -1,0 +1,167 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-16 08:07:52
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-16 14:34:11
+ * @FilePath: \learnJavaScript\16_pc端网页特效\05_仿京东的放大镜效果.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 装有小图片的盒子 */
+        .box {
+            position: relative;
+            margin: 0 0 0 100px;
+            box-sizing: border-box;
+            width: 400px;
+            height: 400px;
+            border: 1px solid #ccc;
+        }
+
+        /* 遮罩层 */
+        .mask {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            opacity: .5;
+            cursor: move;
+        }
+
+        /* 右边的大盒子 */
+        .big {
+            display: none;
+            position: absolute;
+            left: 410px;
+            top: 0;
+            overflow: hidden;
+            width: 500px;
+            height: 500px;
+            /* background-color: pink; */
+            border: 2px solid #ccc;
+        }
+
+        /* 大图片 */
+        .pic {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function () {
+
+            // 1. 鼠标经过小图片盒子，黄色的遮罩层和大图片盒子显示；鼠标离开小图片盒子，黄色的遮罩层和大图片盒子隐藏；
+            // 使用鼠标事件：mouseover 和 mouseout
+
+            // 2. 黄色的遮挡层跟随鼠标功能；
+            // 使用鼠标事件：mousemove
+            // 把鼠标坐标给遮挡层不合适，因为遮挡层坐标以父盒子为准；
+            // 首先是获得鼠标在盒子的坐标；
+            // 之后把数值给遮挡层作为 left 和 top 值；
+            // 此时用到鼠标移动事件，但是还是在小图片盒子内移动；
+            // 发现遮罩层位置不对，需要再减去盒子自身高度和宽度的一半；
+            // 遮挡层不能超出小图片盒子范围；
+            // 如果小于0，就把坐标设置为0；
+            // 如果大于遮挡层最大移动距离，就把坐标设置为最大的移动距离；
+            // 遮挡层的最大移动距离：小图片盒子宽度 - 遮挡层盒子宽度；
+
+            // 3. 移动黄色遮罩层，大图片跟随移动功能；
+            // 求 大图片移动距离 公式：
+            //   遮罩层移动的距离 / 遮罩层最大移动距离 == 大图片移动距离 / 大图片最大移动距离
+            // 由此可以推导出公式： 大图片移动距离 == 遮罩层移动的距离 * 大图片最大移动距离 / 遮罩层最大移动距离。
+
+            const box = document.querySelector('.box');
+            const mask = document.querySelector('.mask');
+            const big = document.querySelector('.big');
+
+            // 1. 隐藏与显示
+            box.addEventListener('mouseover', function (evt) {
+                mask.style.display = 'block';
+                big.style.display = 'block';
+            })
+
+            box.addEventListener('mouseout', function (evt) {
+                mask.style.display = 'none';
+                big.style.display = 'none';
+            })
+
+            // 2. 遮罩层跟随鼠标
+            box.addEventListener('mousemove', function (evt) {
+                // 鼠标在盒子内的坐标
+                var x = evt.pageX - this.offsetLeft;
+                var y = evt.pageY - this.offsetTop;
+                // console.log(x, y);
+                // 发现遮罩层位置不对，需要再减去遮罩层自身高度和宽度的一半；
+                // 遮挡层不能超出小图片盒子范围；
+                // 如果 遮罩层的移动距离 小于0，就把坐标设置为0；
+                var maskX = x - mask.offsetWidth / 2;
+                var maskY = y - mask.offsetHeight / 2;
+                if (maskX <= 0) {
+                    maskX = 0;
+                }
+                if (maskY <= 0) {
+                    maskY = 0;
+                }
+                // 如果 遮罩层的移动距离 大于 遮挡层最大移动距离，就把坐标设置为最大的移动距离；
+                if (maskX >= box.offsetWidth - mask.offsetWidth) {
+                    maskX = box.offsetWidth - mask.offsetWidth;
+                }
+                if (maskY >= box.offsetHeight - mask.offsetHeight) {
+                    maskY = box.offsetHeight - mask.offsetHeight;
+                }
+                // 然后把值赋给 mask
+                mask.style.left = maskX + 'px';
+                mask.style.top = maskY + 'px';
+
+                // 3. 移动黄色遮罩层，大图片跟随移动功能；
+                // 公式： 大图片移动距离 == 遮罩层移动的距离 * 大图片最大移动距离 / 遮罩层最大移动距离。
+                // 遮罩层移动的距离:
+                //  maskX  maskY
+                // 大图片最大移动距离: 
+                var pic = document.querySelector('.pic');
+                var max2X = pic.offsetWidth - big.offsetWidth;
+                var max2Y = pic.offsetHeight - big.offsetHeight;
+                // 遮罩层最大移动距离：
+                var max1X = box.offsetWidth - mask.offsetWidth;
+                var max1Y = box.offsetHeight - mask.offsetHeight;
+                // 可得大图片的移动距离：
+                var bigX = maskX * max2X / max1X;
+                var bigY = maskY * max2Y / max1Y;
+                pic.style.left = -bigX + 'px';
+                pic.style.top = -bigY + 'px';
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <img src="./img/small.png" alt="">
+        <!-- 遮罩层 -->
+        <div class="mask"></div>
+        <!-- 右边的大盒子 -->
+        <div class="big">
+            <img src="./img/big.jpg" alt="" class="pic">
+        </div>
+    </div>
+</body>
+
+</html>

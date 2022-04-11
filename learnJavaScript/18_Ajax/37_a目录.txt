@@ -1,0 +1,5 @@
+1. 能够知道如何使用 XMLHttpRequest 发起 Ajax 请求;
+2. 能够知道如何封装自己的 Ajax 函数;
+3. 能够使用 XMLHttpRequest Level2 中提供的新特性;
+4. 能够知道 jQuery 中如何实现文件上传与 loading 的效果;
+5. 能够知道如何使用 axios 发起 Ajax 请求;

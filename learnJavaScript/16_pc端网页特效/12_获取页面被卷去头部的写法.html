@@ -1,0 +1,70 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-17 13:47:17
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-17 14:19:32
+ * @FilePath: \learnJavaScript\16_pc端网页特效\12_获取页面被卷去头部的写法.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 1200px;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function () {
+
+            // 获取被卷去头部通常有如下几种写法:
+
+            // 1. 声明了 DTD, 使用 document.documentElement.scrollTop
+            // document.addEventListener('scroll', function () {
+            //     console.log(document.documentElement.scrollTop);
+            // })
+
+            // 2. 未声明 DTD, 使用 document.body.scrollTop
+            // document.addEventListener('scroll', function () {
+            //     console.log(document.body.scrollTop);
+            // })
+
+            // 3. 新方法 window.pageYOffset 和 window.pageXOffset, IE9+ 支持
+            // document.addEventListener('scroll', function () {
+            //     console.log(window.pageYOffset);
+            // })
+
+            // 兼容性解决方案:
+            function getScroll() {
+                return {
+                    left: window.pageXOffset || document.documentElement.scrollLeft || document.body
+                        .scrollLeft || 0,
+                    top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop ||
+                        0
+                }
+            }
+            // 使用的时候: getScroll().left
+            document.addEventListener('scroll', function () {
+                console.log(getScroll().top);
+            })
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

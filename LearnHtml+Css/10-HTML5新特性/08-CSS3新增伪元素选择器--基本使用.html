@@ -1,0 +1,53 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-02-06 10:12:54
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-02-06 10:29:01
+ * @FilePath: \LearnHtml+Css\10-HTML5新特性\08-CSS3新增伪元素选择器--基本使用.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      margin: 0 auto;
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+
+    .box::before {
+      display: inline-block;
+      /* 必须要写的属性. */
+      content: "我";
+      width: 50px;
+      height: 50px;
+      background-color: skyblue;
+    }
+
+    .box::after {
+      /* 必须要写的属性. */
+      content: "小猪佩奇.";
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    是
+  </div>
+</body>
+
+</html>

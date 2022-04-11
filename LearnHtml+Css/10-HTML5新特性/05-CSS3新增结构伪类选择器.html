@@ -1,0 +1,60 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-02-05 20:10:42
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-02-05 20:16:53
+ * @FilePath: \LearnHtml+Css\10-HTML5新特性\05-CSS新增结构伪类选择器.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 1. 选择 ul 里面的第一个孩子 */
+    ul li:first-child {
+      background-color: pink;
+    }
+
+    /* 2. 选择 ul 里面的最后一个孩子 */
+    ul li:last-child {
+      background-color: pink;
+    }
+
+    /* 3. 选择 ul 里面的第 2 个孩子 */
+    ul li:nth-child(2) {
+      background-color: hotpink;
+    }
+
+    ul li:nth-child(5) {
+      background-color: hotpink;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>我是第1个孩子</li>
+    <li>我是第2个孩子</li>
+    <li>我是第3个孩子</li>
+    <li>我是第4个孩子</li>
+    <li>我是第5个孩子</li>
+    <li>我是第6个孩子</li>
+    <li>我是第7个孩子</li>
+    <li>我是第8个孩子</li>
+    <li>我是第9个孩子</li>
+    <li>我是第10个孩子</li>
+  </ul>
+</body>
+
+</html>

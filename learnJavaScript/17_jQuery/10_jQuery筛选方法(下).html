@@ -1,0 +1,61 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-23 08:01:55
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-26 19:04:42
+ * @FilePath: \17_jQuery\10_jQuery筛选方法(下).html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        $(function () {
+
+            // 1. 兄弟元素 siblings 除了自身元素之外的所有亲兄弟;
+            $('li.item').siblings('li').css('color', 'pink');
+
+            // 2. eq(),  第 n 个元素
+            var index = 2;
+            // (1) 我们可以利用选择器的方式选择
+            // $('ul li:eq(' + index + ')').css('color', 'skyblue');
+            // (2) 我们更推荐利用选择方法的方式选择
+            $("ul li").eq(index).css("color", "skyblue");
+
+            // 3. 判断是否有某个类名
+            console.log($("div:first").hasClass("current")); // true
+            console.log($("div:last").hasClass("current")); // false
+        })
+    </script>
+</head>
+
+<body>
+    <ol>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li class="item">我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+    </ol>
+    <ul>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+    </ul>
+    <div class="current">俺有current</div>
+    <div>俺木有current</div>
+</body>
+
+</html>

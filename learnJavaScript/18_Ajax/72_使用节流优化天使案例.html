@@ -1,0 +1,61 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-10 09:07:00
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-10 09:35:25
+ * @FilePath: \18_Ajax\72_使用节流优化天使案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .angel {
+            position: absolute;
+        }
+    </style>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // 1. 预定义一个 timer 节流阀
+            var timer = null;
+            $(document).on("mousemove", function (evt) {
+                // 3. 判断节流阀是否为空，如果不为空，则证明距离上次执行间隔不足 50 毫秒。
+                if (timer) return;
+
+                timer = setTimeout(function () {
+                    // 设置图片的位置
+                    $("#angel").css("left", evt.pageX + "px").css("top", evt.pageY + "px");
+                    // 2. 设置鼠标跟随效果后， 清空 timer 节流阀，方便下次开启延时器。
+                    timer = null;
+                }, 50)
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <img src="./img/angel.gif" alt="" class="angel" id="angel">
+</body>
+
+</html>

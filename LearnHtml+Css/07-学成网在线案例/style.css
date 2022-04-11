@@ -1,0 +1,601 @@
+/* 公共部分 */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #f3f5f7;
+}
+li {
+  list-style: none;
+  /* 前提是在 li 标签里面写 em 标签 */
+  position: relative;
+}
+em {
+  position: absolute;
+  top: 4px;
+  right: -4px;
+}
+a {
+  text-decoration: none;
+}
+/* 版心 */
+.area {
+  width: 1200px;
+  margin: auto;
+}
+
+
+
+/* header区域 */
+.header {
+  height: 45px;
+  /* 注意此地方会重叠 area 里面的 margin.  */
+  margin: 30px auto;
+  /* background-color: pink; */
+}
+/* logo 部分 */
+.logo {
+  float: left;
+  height: 45px;
+  width: 200px;
+  /* background-color: purple; */
+}
+/* 头部导航 nav  */
+.nav {
+  float: left;
+  /* 不需要, 将来再加一个导航不会影响. */
+  /* width: 260px;
+  height: 45px; */
+  margin-left: 70px;
+  /* background-color: skyblue; */
+}
+.nav ul li {
+  float: left; 
+  margin: 0 10px;
+}
+.nav ul li a {
+  /* 布局属性 */
+  display: block;
+  /* 自身属性 */
+  height: 45px;
+  padding: 0 10px;
+  /* 文本属性 */
+  line-height: 45px;
+  color: #050505;
+  font-size: 18px;
+  /* text-decoration: none; */
+}
+.nav ul li a:hover {
+  border-bottom: 2px solid #00a4ff;
+  color: #00a4ff;
+}
+/* search 搜索框 */
+.search {
+  float: left;
+  width: 363px;
+  height: 45px;
+  /* background-color: skyblue; */
+  margin-left: 88px;
+}
+.search input {
+  /* 布局属性 */
+  float: left;
+  /* 自身属性 */
+  width: 292px;
+  height: 42px;
+  border: 1px solid #00a4ff;
+  border-right: 0;
+  padding-left: 20px;
+  /* 文本属性 */
+  color: #dfe0e2;
+  font-size: 14px;
+}
+.search button {
+  /* 布局属性 */
+  float: right;
+  /* 自身属性 */
+  width: 50px;
+  height: 44px;
+  /* background-color: purple; */
+  background-image: url(images/btn.png);
+  /* button 自带边框, 需要手动清除 */
+  border: 0;
+}
+/* user 模块 */
+.user {
+  float: right;
+  margin-right: 57px;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #a7a8a9;
+}
+.user img {
+  /* 图片垂直居中 */
+  vertical-align: middle;
+}
+
+
+
+/* banner 区域 */
+/* 背景图 */
+.banner {
+  height: 421px;
+  background-color: #1c036c;
+}
+.banner .area {
+  height: 421px;
+  background: url(images/banner2.png) no-repeat top center;
+}
+/* subnav 区域 */
+.subnav {
+  float: left;
+  width: 189px;
+  height: 421px;
+  background: rgb(0, 0, 0, .3);
+}
+.subnav ul li {
+  height: 45px;
+  padding: 0 18px;
+  line-height: 45px;
+}
+.subnav ul li a {
+  color: #ffffff;
+  font-size: 14px;
+}
+.subnav ul li a span {
+  float: right;
+}
+.subnav ul li a:hover {
+  color: #0393d9;
+}
+/* course 模块 */
+.course {
+  float: right;
+  width: 229px;
+  height: 302px;
+  /* 浮动的盒子没有父子外边距塌陷的问题 */
+  margin-top: 52px;
+  background-color: #fff;
+}
+.course>h3 {
+  /* 自身属性 */
+  width: 230px;
+  height: 48px;
+  background-color: #9bceea;
+  /* 文本属性 */
+  color: #e7f3fa;
+  font-size: 18px;
+  text-align: center;
+  line-height: 48px;
+}
+.bd {
+  padding: 0 19px;
+}
+.bd ul li {
+  padding: 13px 0;
+  border-bottom: 1px solid #efefef;
+}
+.bd ul li h3 {
+  color: #4e4e4e;
+  font-size: 16px;
+}
+.bd ul li p {
+  color: #a5a5a5;
+  font-size: 12px;
+}
+.bd .more {
+  /* 布局属性 */
+  display: block;
+  /* 自身属性 */
+  width: 200px;
+  height: 40px;
+  border: 1px solid #22b0ff;
+  margin-top: 7px;
+  /* 文本属性 */
+  text-align: center;
+  line-height: 40px;
+  color: #00a4ff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+
+
+/* 精品推荐小模块 */
+.goods {
+  height: 60px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px 4px rgb(0, 0, 0, .1);
+  margin-top: 10px;
+  /* 行高会继承, 继承给三个孩子 */
+  line-height: 60px;
+}
+.goods h3 {
+  float: left;
+  margin-left: 35px;
+  color: #6bbfff;
+  font-size: 16px;
+  font-weight: 700;
+}
+.goods ul {
+  float: left;
+  margin-left: 35px;
+}
+.goods ul li {
+  float: left;
+}
+.goods ul li a {
+  padding: 0 30px;
+  border-left: 1px solid #bfbfbf;
+  font-size: 16px;
+  color: #454545;
+}
+.goods .mod {
+  float: right;
+  margin-right: 27px;
+  color: #00a4ff;
+  font-size: 14px;
+}
+
+
+
+/* 精品推荐模块 */
+.box {
+  margin-top: 36px;
+  overflow: hidden;
+}
+.box .box-hd {
+  height: 41px;
+}
+.box .box-hd h3 {
+  float: left;
+  color: #686969;
+  font-size: 20px;
+}
+.box .box-hd a {
+  float: right;
+  margin-top: 8px;
+  margin-right: 32px;
+  color: #a5a5a5;
+  font-size: 12px;
+}
+.box .box-bd ul {
+  width: 1225px;
+}
+.box .box-bd ul li {
+  /* 子绝父相 */
+  position: relative;
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 16px;
+  width: 229px;
+  height: 272px;
+  background-color: #fff;
+}
+.box .box-bd ul li em {
+  position: absolute;
+  top: 4px;
+  right: -4px;
+}
+.box .box-bd ul li > img {
+  width: 229px;
+  height: 156px;
+}
+.box .box-bd ul li h4 {
+  margin: 25px 20px 20px 25px;
+  color: #454545;
+  font-size: 14px;
+  font-weight: 400;
+}
+.box .box-bd ul li p {
+  margin-left: 24px;
+  margin-right: 20px;
+  color: #b8b8b8;
+  font-size: 12px;
+}
+.box .box-bd ul li span {
+  color: #ff9159;
+}
+
+
+
+/* 编程入门模块 */
+.box1 {
+  /* background-color: pink; */
+  overflow: hidden;
+}
+.box1 .box-hd {
+  height: 41px;
+  margin-top: 25px;
+}
+.box1 .box-hd h3{
+  float: left;
+  color: #494949;
+  font-size: 20px;
+}
+.box1 .box-hd ul {
+  margin-left: 350px;
+}
+.box1 .box-hd ul li {
+  float: left;
+}
+.box1 .box-hd ul li a {
+  margin-left: 72px;
+  color: #a7a8a9;
+  font-size: 16px;
+}
+.box1 .box-hd ul li a:hover {
+  color: #00a4ff;
+}
+.box1 .box-hd>a {
+  float: right;
+  margin-top: 5px;
+  margin-right: 31px;
+  color: #a5a5a5;
+  font-size: 12px;
+}
+.box1 .box-bd .one {
+  float: left;
+  width: 228px;
+  height: 392px;
+  background-image: url("./images/pic2.png");
+}
+.box1 .box-bd .two {
+  float: right;
+  width: 957px;
+  height: 98px;
+  background-image: url("./images/pic3.png");
+}
+.box1 .box-bd .three {
+  float: right;
+  width: 957px;
+  height: 269px;
+  /* background-color: green; */
+  margin-top: 27px;
+}
+.box1 .box-bd .three ul li {
+  float: left;
+  width: 229px;
+  height: 273px;
+  background-color: #fff;
+  margin-right: 13px;
+}
+.box1 .box-bd .three ul li:last-child{
+  margin-right: 0;
+}
+.box1 .box-bd .three ul li > img {
+  width: 229px;
+  height: 154px;
+}
+.box1 .box-bd .three ul li h4 {
+  margin: 25px 21px 20px 23px;
+  color: #050505;
+  font-size: 14px;
+}
+.box1 .box-bd .three ul li p{
+  margin-left: 23px;
+  color: #b8b8b8;
+  font-size: 12px;
+}
+.box1 .box-bd .three ul li p span {
+  color: #ff7c2d;
+}
+
+
+
+/* 数据分析师 */
+.box2 {
+  overflow: hidden;
+}
+.box2 .box-hd {
+  height: 41px;
+  margin-top: 42px;
+}
+.box2 .box-hd h3{
+  float: left;
+  color: #494949;
+  font-size: 20px;
+}
+.box2 .box-hd ul {
+  margin-left: 350px;
+}
+.box2 .box-hd ul li {
+  float: left;
+}
+.box2 .box-hd ul li a {
+  margin-left: 72px;
+  color: #a7a8a9;
+  font-size: 16px;
+}
+.box2 .box-hd ul li a:hover {
+  color: #00a4ff;
+}
+.box2 .box-hd>a {
+  float: right;
+  margin-top: 5px;
+  margin-right: 31px;
+  color: #a5a5a5;
+  font-size: 12px;
+}
+.box2 .box-bd .one {
+  float: left;
+  width: 228px;
+  height: 392px;
+  background-image: url("./images/pic5.png");
+}
+.box2 .box-bd .two {
+  float: right;
+  width: 957px;
+  height: 98px;
+  background-image: url("./images/pic6.png");
+}
+.box2 .box-bd .three {
+  float: right;
+  width: 957px;
+  height: 269px;
+  /* background-color: green; */
+  margin-top: 27px;
+}
+.box2 .box-bd .three ul li {
+  float: left;
+  width: 229px;
+  height: 273px;
+  background-color: #fff;
+  margin-right: 13px;
+}
+.box2 .box-bd .three ul li:last-child{
+  margin-right: 0;
+}
+.box2 .box-bd .three ul li > img {
+  width: 229px;
+  height: 154px;
+}
+.box2 .box-bd .three ul li h4 {
+  margin: 25px 21px 40px 23px;
+  color: #050505;
+  font-size: 14px;
+}
+.box2 .box-bd .three ul li p{
+  margin-left: 23px;
+  color: #b8b8b8;
+  font-size: 12px;
+}
+.box2 .box-bd .three ul li p span {
+  color: #ff7c2d;
+}
+
+
+
+/* 机器学习工程师模块 和 前端开发工程师模块*/
+.learn {
+  overflow: hidden;
+}
+.learn .learn-hd {
+  height: 41px;
+  margin-top: 42px;
+}
+.learn .learn-hd h3 {
+  float: left;
+  color: #686969;
+  font-size: 20px;
+}
+.learn .learn-hd ul {
+  margin-left: 350px;
+}
+.learn .learn-hd ul li {
+  float: left;
+}
+.learn .learn-hd ul li a{
+  margin-left: 72px;
+  color: #979898;
+  font-size: 16px;
+}
+.learn .learn-hd ul li a:hover{
+  color: #00a4ff;
+}
+.learn .learn-hd a {
+  float: right;
+  margin-top: 5px;
+  margin-right: 32px;
+  color: #a5a5a5;
+  font-size: 12px;
+}
+.learn .learn-bd ul li {
+  float: left;
+  width: 230px;
+  height: 270px;
+  background-color: #fff;
+  margin-right: 12px;
+}
+.learn .learn-bd ul li:last-child {
+  margin-right: 0;
+}
+.learn-bd ul li > img {
+  width: 229px;
+  height: 155px;
+}
+.learn-bd ul li h3 {
+  margin: 26px 23px 18px 22px;
+  color: #050505;
+  font-size: 14px;
+}
+.learn-bd ul li p {
+  margin-left: 22px;
+  color: #999999;
+  font-size: 12px;
+}
+.learn-bd ul li p span {
+  color: #ff7c2d;
+}
+
+
+
+/* footer 模块制作 */
+.footer {
+  height: 415px;
+  margin-top: 44px;
+  background-color: #fff;
+}
+.footer .area .left {
+  float: left;
+  margin: 31px 0 0 23px;
+}
+.footer .area .left img {
+  margin-bottom: 23px;
+}
+.footer .area .left p {
+  color: #666666;
+  font-size: 12px;
+}
+.footer .area .left a {
+  display: block;
+  width: 119px;
+  height: 36px;
+  border: 1px solid #00a4ff;
+  margin-top: 18px;
+  color: #00a4ff;
+  font-size: 16px;
+  text-align: center;
+  line-height: 36px;
+}
+.footer .area .right {
+  float: right;
+  margin-right: 31px;
+}
+.footer .area .right dl {
+  float: left;
+  margin-left: 130px;
+  margin-top: 35px;
+}
+.footer .area .right dl dt {
+  color: #6e6e6e;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+.footer .area .right dl dd a {
+  color: #333333;
+  font-size: 12px;
+}
+
+/* 编程入门 */
+.accidence {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  padding: 10px;
+  width: 135px;
+	height: 400px;
+	background-color: #ffffff;
+  
+}
+.accidence li a{
+  line-height: 36px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+}
+.accidence li a:hover {
+  color: #00a4ff;
+}

@@ -1,0 +1,67 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-10 18:45:03
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-10 22:03:55
+ * @FilePath: \learnJavaScript\14_事件高级\07_this和e.target的区别.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>123</div>
+    <ul>
+        <li>abc</li>
+        <li>abc</li>
+        <li>abc</li>
+    </ul>
+
+    <script>
+        // this 和 e.target的区别：
+        // this 返回的是绑定事件的对象(元素)，e.target 返回的是触发事件的对象(元素)；
+
+        // 1. 获取元素
+        const div = document.querySelector('div');
+        const ul = document.querySelector('ul');
+
+        // 点击 div 指向一样
+        div.addEventListener('click', function (event) {
+            console.log(event.target); // <div>123</div>
+            console.log(this); // <div>123</div>
+        })
+
+        // 点击 li，event.target 指向 li， this 指向 ul
+        ul.addEventListener('click', function (event) {
+            console.log(event.target); // <li>...</li>
+            console.log(this); // <ul>...</ul>
+            console.log(event.currentTarget); // <ul>...</ul>
+        })
+
+        // 兼容低版本 IE 浏览器的函数, 只能用 onclick
+        // div.onclick = function (e) {
+        //     e = e || Window.event;
+        //     var target = e.target || e.srcElement;
+        //     console.log(target);
+        // }
+
+        // 了解，e 事件对象有个和 this 相似的属性 e.currentTarget, 但是 IE6~8 不支持
+    </script>
+</body>
+
+</html>

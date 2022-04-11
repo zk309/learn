@@ -1,0 +1,46 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-11-05 18:48:35
+ * @LastEditTime: 2022-02-05 13:36:09
+ * @LastEditors: ZhangKe
+ * @Description: In User Settings Edit
+ * @FilePath: \LearnHtml+Css\08-CSS案例\17-显示隐藏之overflow溢出隐藏.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .peppa {
+      /* overflow: visible; */
+      /* 溢出隐藏  */
+      /* overflow: hidden; */
+      /* 溢出的部分显示滚动条, 不溢出也显示滚动条. */
+      /* overflow: scroll; */
+      /* 在需要的时候显示滚动条, 不溢出不显示滚动条.  */
+      overflow: auto;
+      width: 200px;
+      height: 200px;
+      border: 2px solid pink;
+      margin: 100px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="peppa">
+    红猪小妹是一只非常可爱的小粉红猪，她与弟弟乔治、爸爸、妈妈快乐地住在一起。粉红猪小妹最喜欢做的事情是玩游戏，
+    打扮的漂漂亮亮，渡假，以及住在小泥坑里快乐地跳上跳下。除了这些，她还喜欢到处探险，虽然有些时候会遇到一些小状况，但总可以化险为夷，而且都会带给大家意外的惊喜。
+  </div>
+</body>
+
+</html>

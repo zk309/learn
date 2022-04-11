@@ -1,0 +1,74 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-02 10:27:04
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-02 10:59:44
+ * @FilePath: \learnJavaScript\13-DOM\20_关闭广告案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 1000px;
+        }
+
+        .box {
+            position: sticky;
+            top: 10px;
+            margin: 0 auto;
+            width: 60%;
+            height: 100px;
+            background-color: pink;
+            text-align: center;
+            line-height: 100px;
+            font-size: 50px;
+        }
+
+        .box span {
+            position: absolute;
+            left: -15px;
+            top: 0;
+            background-color: skyblue;
+            width: 15px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        粘性广告
+        <span>x</span>
+    </div>
+
+    <script>
+        // 1. 获取元素
+        var box = document.querySelector('.box');
+        var span = document.querySelector('span');
+
+        // 2. 注册事件
+        // 3. 处理程序
+        span.onclick = function () {
+            box.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

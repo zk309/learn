@@ -1,0 +1,43 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-15 14:58:45
+ * @LastEditTime: 2021-09-15 20:17:45
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \04-CSS案例\17-背景平铺.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 500px;
+      height: 500px;
+      border: 1px solid red;
+      background-image: url(images/logo.png);
+      /* 1.背景图片不平铺 */
+      /* background-repeat: no-repeat; */
+      /* 2. 默认情况下, 背景图片是平铺的. */
+      /* background-repeat: repeat; */
+      /* 3. 沿着 x 轴平铺. */
+      /* background-repeat: repeat-x; */
+      /* 4. 沿着 y 轴平铺. */
+      background-repeat: repeat-y;
+      /*
+      * 页面元素既可以添加背景颜色也可以添加背景图片, 只不过背景图片会压住背景颜色.
+      */
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-12 20:43:51
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-12 21:06:37
+ * @FilePath: \learnJavaScript\15_Browser_Object_Model.html\09_倒计时案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 200px;
+        }
+
+        span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function () {
+
+            // 1. 获取元素
+            const hour = document.querySelector('.hour');
+            const minute = document.querySelector('.minute');
+            const second = document.querySelector('.second');
+
+            //输入时间的毫秒数
+            var schTime = +new Date('2022-3-13 0:00:00');
+            // 封装计算剩余时间的函数
+            function getTimers() {
+                // 截止到现在的时间毫秒数
+                var nowTime = +new Date();
+                // 剩余时间的毫秒数转化为秒数, 方便转换时间
+                var timers = (schTime - nowTime) / 1000;
+                console.log(timers);
+                // 计算小时
+                var h = parseInt(timers / 60 / 60 % 24);
+                h = h < 10 ? '0' + h : h;
+                hour.innerHTML = h;
+                // 计算分数
+                var m = parseInt(timers / 60 % 60);
+                m = m < 10 ? '0' + m : m;
+                minute.innerHTML = m;
+                // 计算当前秒数
+                var s = parseInt(timers % 60);
+                s = s < 10 ? '0' + s : s;
+                second.innerHTML = s;
+            }
+
+            getTimers(); // 为了使倒计时快速显示。
+            setInterval(getTimers, 1000);
+
+        })
+    </script>
+</head>
+
+<body>
+    <div>
+        <span class="hour">1</span>
+        <span class="minute">2</span>
+        <span class="second">3</span>
+    </div>
+</body>
+
+</html>

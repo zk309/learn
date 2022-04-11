@@ -1,0 +1,55 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-22 17:18:39
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-22 17:28:02
+ * @FilePath: \learnJavaScript\17_jQuery\03_jQuery对象和DOM对象.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            margin: 10px auto;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        $(function () {
+
+            // 1. DOM 对象: 用原生 js 获取过来的对象就是 DOM 对象;
+            var myDiv = document.querySelector('div');
+            console.dir(myDiv);
+
+            // 2. jQuery 对象: 用 jQuery 方式获取过来的对象是 jQuery 对象;  
+            // 本质: 通过 $ 把 DOM 元素进行了包装;
+            $('div');
+            console.dir($('div'));
+
+            // 3. jQuery 对象只能使用 jQuery 方法;
+            //    DOM 对象则只能使用原生的 JavaScript 属性和方法;
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

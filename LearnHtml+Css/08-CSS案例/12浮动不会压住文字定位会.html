@@ -1,0 +1,47 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-10-29 23:49:01
+ * @LastEditTime: 2021-11-17 11:10:45
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \08-CSS案例\12浮动不会压住文字定位会.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      /* 浮动不会压住文字,定位会 */
+      float: left;
+      /* position: absolute; */
+      /* position: fixed; */
+      /* position: relative; */
+      top: 100px;
+      width: 200px;
+      height: 100px;
+      background-color: pink;
+    }
+
+    /* p {
+      height: 100px;
+      width: 100px;
+    } */
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <p>大家好大家好大家好大家好大家好大家好大家好</p>
+</body>
+
+</html>

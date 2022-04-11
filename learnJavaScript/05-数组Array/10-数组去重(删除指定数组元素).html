@@ -1,0 +1,35 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-01 13:15:16
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-26 11:12:55
+ * @FilePath: \learnJavaScript\05-数组Array\10-数组去重(删除指定数组元素).html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 删除指定的数组元素 0
+    var arr = [2, 52, 0, 21, 52, 21, 0, 0, 0, 0];
+    var newArr = [];
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i] != 0) {
+        newArr[newArr.length] = arr[i];
+      }
+    }
+    console.log(newArr); // (5) [2, 52, 21, 52, 21]
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

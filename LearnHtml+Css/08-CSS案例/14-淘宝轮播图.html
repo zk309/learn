@@ -1,0 +1,115 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-11-04 15:40:40
+ * @LastEditTime: 2021-11-04 23:24:13
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \08-CSS案例\14-淘宝轮播图.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .tb-promo {
+      position: relative;
+      width: 520px;
+      height: 280px;
+      margin: 50px auto;
+    }
+
+    .tb-promo img {
+      width: 520px;
+      height: 280px;
+    }
+
+    /* 左右箭头公共类 */
+    .prev,
+    .next {
+      position: absolute;
+      top: 50%;
+      margin-top: -15px;
+      /* left: 0; */
+      /* 添加绝对定位可以直接设置宽度和高度. */
+      width: 20px;
+      height: 30px;
+      background-color: rgba(0, 0, 0, .5);
+      text-align: center;
+      line-height: 30px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    /* 左箭头类 */
+    .tb-promo .prev {
+      left: 0;
+      border-radius: 0 15px 15px 0;
+    }
+
+    /* 左箭头类 */
+    .tb-promo .next {
+      /* 如果一个盒子既有 left 属性, 也有 right 属性, 则默认会执行 left 属性. */
+      /* 同理, 如果一个盒子既有 top 属性, 也有 bottom 属性, 则默认会执行 top 属性. */
+      right: 0;
+      border-radius: 15px 0 0 15px;
+    }
+
+    /* 底侧小圆点 */
+    .promo-nav {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      margin-left: -35px;
+      width: 70px;
+      height: 13px;
+      background-color: rgba(255, 255, 255, .5);
+      border-radius: 10px;
+    }
+
+    .promo-nav li {
+      float: left;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #fff;
+      margin: 3px;
+    }
+
+    .promo-nav .active {
+      background-color: #ff500f;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="tb-promo">
+    <img src="./images/bg.jpg" alt="">
+    <!-- 左箭头 prev -->
+    <a href="#" class="prev">&lt;</a>
+    <!-- 右箭头 next -->
+    <a href="#" class="next">&gt;</a>
+    <!-- 底侧小圆点 -->
+    <ul class="promo-nav">
+      <li class="active"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</body>
+
+</html>

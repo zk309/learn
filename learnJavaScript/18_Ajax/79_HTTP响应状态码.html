@@ -1,0 +1,63 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-10 16:43:03
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-10 17:11:00
+ * @FilePath: \18_Ajax\79_HTTP响应状态码.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // 什么是 HTTP 响应状态码?
+            // HTTP响应状态码(HTTP Status Code), 也属于 HTTP 协议的一部分, 用来标识响应的状态.
+            // 响应状态会随着响应消息一起被发送至客户端浏览器, 浏览器根据服务器返回的响应状态码, 就能知道这次 HTTP 请求的结果是成功还是失败了.
+
+            // HTTP 状态码由三个十进制数字组成, 第一个十进制数字定义了状态码的类型, 后两个数字用来对状态码进行细分.
+            // HTTP 状态码共分为 5 种类型:
+            // 1**  信息, 服务器收到请求, 需要请求者继续执行操作(很少遇到)
+            // 2**  成功, 操作被成功接收并处理
+            // 3**  重定向, 需要进一步的操作以完成请求
+            // 4**  客户端错误, 请求包含语法错误或无法完成请求
+            // 5**  服务器错误, 服务器在处理请求的过程中发生了错误
+
+            // 2** 表示服务器已成功接收到请求并进行处理
+            // 200: OK   请求成功, 一般用于 GET 与 POST 请求
+            // 201: Created   已创建.成功请求并创建了新的资源, 通常用于 POST 或 PUT 请求.
+
+            // 3** 表示服务器要求客户端重定向, 需要客户端进一步的操作, 以完成资源的请求.
+            // 301: Moved Permanently   永久移动.请求的资源已被永久的移动到新的 URL, 返回信息会包括新的 URL, 浏览器会自动定向新的 URL, 今后任何新的请求都应使用 URL 代替.
+            // 302: Found   临时移动.与301类似, 但资源只是临时被移动, 客户端应继续使用原有 URL
+            // 304: Not Modified   未修改,所请求的资源未修改, 服务器返回此状态码时, 不会返回任何资源(响应消息中不包含响应体). 客户端通常会缓存访问过的资源.
+
+            // 4** 表示客户端的请求有非法内容, 从而导致这次请求失败.
+            // 400: Bad Request   1.语法有误, 当前请求无法被服务器理解, 除非进行修改, 否则客户端不应该重复提交这个请求.2. 请求参数有误
+            // 401: Unauthorized  当前请求需要用户验证
+            // 403: Forbidden   服务器已经理解请求, 但是拒绝执行它
+            // 404: Not Found   服务器无法根据客户端的请求找到资源(网页)
+            // 405: Request Timeout   请求超时, 服务器等待客户端发送的请求时间过长, 超时.
+
+            // 5** 表示服务器未能正常处理客户端的请求而出现意外错误.
+            // 500: Internal Server Error   服务器内部错误, 无法完成请求
+            // 501: Not Implemented   服务器不支持该请求方法, 无法完成请求, 只有 GET 和 HEAD 请求方法是要求每个服务器必须支持的, 其他请求方法在不支持的服务器上会返回 501
+            // 503: Service Unavailable   由于超载或系统维护, 服务器暂时的无法处理客户端的请求.
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

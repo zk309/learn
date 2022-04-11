@@ -1,0 +1,38 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2021-12-30 09:51:22
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2021-12-30 10:33:01
+ * @FilePath: \learnJavaScript\05-数组Array\04-计算数组的和以及平均值.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 1. 求数组[2,6,9,7] 里面所有元素的和以及平均值
+    // (1.) 声明一个求和变量 sum;
+    // (2.) 遍历这个数组, 把里面每个数组元素添加到 sum 里面;
+    // (3.) 用求和变量 sum 除以 数组的长度 可以得到数组的平均值;
+    var arr = [2, 6, 9, 7];
+    var sum = null;
+    var average = null;
+    for (var i = 0; i < arr.length; i++) {
+      sum += arr[i]; // 我们加的是数组元素 arr[i], 不是计数器 i
+    }
+    average = sum / arr.length;
+    console.log(sum, average); // 想要输出多个变量, 用逗号分割即可
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

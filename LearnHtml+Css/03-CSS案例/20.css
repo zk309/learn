@@ -1,0 +1,30 @@
+/*大标题*/
+h1 {
+  text-align: center;
+  font: normal 400 32px/28px 'Microsoft YaHei';
+}
+/*查询一行*/
+.inquire {
+  text-align: center;
+  font: 12px/28px 'Microsoft YaHei';
+}
+.inquire > span {
+  font-weight: 100;
+}
+.inquire > a {
+  text-decoration: none;
+}
+/*文字段落*/
+.p {
+  text-indent: 2em;
+  font: 16px/28px 'Microsoft YaHei';
+}
+/*图片盒子*/
+.img {
+  text-align: center;
+}
+/*结尾小字*/
+.ending {
+  font: normal 100 12px/28px 'Microsoft YaHei';
+  text-indent: 2em;
+}

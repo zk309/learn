@@ -1,0 +1,91 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-27 13:50:44
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-01 13:43:45
+ * @FilePath: \learnJavaScript\17_jQuery\35_jQuery事件处理on().html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            border-radius: 10px;
+        }
+
+        .current {
+            background-color: purple;
+        }
+    </style>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        $(function () {
+
+            // 单个事件注册
+            // $("div").click(function () {
+            //     $(this).css("background", "hotpink");
+            // });
+            // $("div").mouseenter(function () {
+            //     $(this).css("background", "skyblue");
+            // });
+
+
+
+            // 事件处理 on:
+            // 1. on() 方法优势: 可以绑定1个或者多个事件处理程序;
+            // $("div").on({
+            //     mouseenter: function () {
+            //         $(this).css("background", 'hotpink')
+            //     },
+            //     mouseleave: function () {
+            //         $(this).css("background", 'skyblue')
+            //     }
+            // });
+            // $("div").on("mouseenter mouseleave", function () {
+            //     $(this).toggleClass("current");
+            // })
+
+            // 2. on() 方法优势: 可以事件委派操作. 
+            // 事件委派的定义就是: 把原来加给子元素身上的事件绑定在父元素身上, 就是把事件委派给父元素.
+            // 在此之前有 bind() ,live(), delegate() 等方法处理事件绑定或者事件委派 ,最新版本的请用 on 替代它们。
+            // $("ul").on("click", "li", function () {
+            //     console.log(1);
+            // });
+
+            // 3. on() 方法优势: 
+            // 动态创建的元素, click() 不能绑定事件, on() 可以给动态生成的元素绑定事件.
+            var li = $("<li>我是创建的 li.</li>");
+            $("ol").on("click", "li", function () {
+                console.log(2);
+            });
+            $("ol").append(li);
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+    <ul>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+    </ul>
+    <ol>
+
+    </ol>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-06 21:12:51
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-06 21:30:02
+ * @FilePath: \18_Ajax\47_JSON的两种结构以及注意事项.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // JSON 就是用字符串来表示 JavaScript 的对象和数组, 所以, JSON 中包含对象和数组两种结构, 
+            // 通过这两种结构的相互嵌套, 可以表示各种复杂的数据结构.
+
+            // JSON 的对象结构:
+            // 对象结构在 JSON 中表示为 { } 括起来的内容, 数据结构为 { "key":value, "key":value, ...} 的键值对结构, 
+            // 其中, key 必须是使用英文的双引号包裹的字符串, value 的数据结构可以是 数字, 字符串, 布尔值, null, 数组, 对象 6种类型.
+            // {
+            //     "name": "张三",
+            //     "age": 28,
+            //     "gender": "男",
+            //     "address": null,
+            //     "hobby": ["吃饭", "睡觉", "打豆豆"]
+            // }
+
+            // JSON 的数组结构:
+            // 数组结构在 JSON 中表示为 [ ] 括起来的内容, 数据结构为 ["java", "javascript", 30, true ...]
+            // 数组中数据的类型可以是 数字, 字符串, 布尔值, null, 数组, 对象 6种类型.
+            // ["java", "javascript", 30, true ...]
+            // [ {"name": "张三", "age": 28}, {"name": "刘一", "age": 18} ]
+
+            // JSON 语法注意事项:
+            // 1. 属性名必须使用双引号包裹;
+            // 2. 字符串的值必须使用双引号包裹;
+            // 3. JSON 中不允许使用单引号表示字符串;
+            // 4. JSON 中不能写注释;
+            // 5. JSON 的最外层必须是对象或数组格式;
+            // 6. 不能使用 undefined 或 function函数 作为 JSON 的值;
+            // JSON 的作用:  在计算机与网络之间存储和传输数据;
+            // JSON 的本质:  用字符串来表示 JavaScript 对象数据或数组数据;
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

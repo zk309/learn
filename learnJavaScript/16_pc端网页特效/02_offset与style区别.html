@@ -1,0 +1,43 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-15 08:58:14
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-15 09:27:02
+ * @FilePath: \learnJavaScript\16_pc端网页特效\02_offset与style区别.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.addEventListener('load', function () {
+
+            // offset
+            // 1. offset 可以得到任意样式表中的样式值
+            // 2. offset 系列获得的数值是没有单位的；
+            // 3. offsetWidth 包含 padding+border+width
+            // 4. offsetWidth 等属性是只读属性，只能获取不能赋值；
+            // 5. 所以，我们想要获取元素大小位置，用 offset 更合适;
+
+            // style:
+            // 1. style 只能得到行内样式表中的样式值；
+            // 2. style.width 获得的是带有单位的字符串；
+            // 3. style.width 获得不包含 padding 和 border 的值；
+            // 4. style.width 是可读属性，可以获取也可以赋值；
+            // 5. 所以，我们想要给元素更改值，则需要用 style 改变；
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-12 11:38:54
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-12 11:46:48
+ * @FilePath: \learnJavaScript\15_Browser_Object_Model.html\01_BOM顶级对象window.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // window.document.querySelector()
+
+        // 全局作用域的变量和函数，都会变成 window 对象的属性和方法。
+        var num = 10;
+        console.log(num); // 10
+        console.log(window.num); // 10
+
+        function fn() {
+            return 12;
+        }
+        console.log(fn());
+        console.log(window.fn());
+
+        console.dir(window); // Window
+        // 注意，window 自带属性 window.name
+        console.log(window.name);
+    </script>
+</body>
+
+</html>

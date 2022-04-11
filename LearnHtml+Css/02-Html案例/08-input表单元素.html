@@ -1,0 +1,45 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-04 21:22:14
+ * @LastEditTime: 2021-09-05 19:58:22
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Html案例02\08-input表单元素.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="02-小说排行榜案例.html" method="GET">
+    <!-- text,文本框 用户可以在里面输入任何文字-->
+    <label for="user">用户名:</label>  <input type="text" name="userName" placeholder="请输入用户名" maxlength="5" id="user"> <br /><br />
+    <!--password,密码框 用户看不见输入的密码-->
+    <label for="password">密码:</label> <input type="password" name="password" id="password"> <br /><br />
+    <!-- radio,单选按钮 可以实现多选一-->
+    <!-- name 是表单元素名字, 这里性别单选按钮必须有相同的名字name, 才可以实现多选一 -->
+    <!-- 单选按钮和复选框可以设置 checked 属性, 当页面打开的时候就可以默认选中这个按钮. -->
+    性别: <label for="sexOne">男</label>  <input type="radio" name="sex" value="男" id="sexOne" checked> 
+          <label for="sexTwo">女</label> <input type="radio" name="sex" value="女" id="sexTwo"> <br /><br />
+    <!-- checkbox,复选框 可以实现多选-->
+    爱好: <label for="hobbyOne">吃饭</label>  <input type="checkbox" name="hobby" value="吃饭" checked="checked" id="hobbyOne"> 
+          <label for="hobbyTwo">睡觉</label>  <input type="checkbox" name="hobby" value="睡觉" id="hobbyTwo"> <br /><br />
+    <!-- 点击了提交按钮,可以把表单域 form 里面的表单元素里面的值,提交给后台服务器.-->
+    <input type="submit" value="免费注册">
+    <!-- 重置按钮可以还原表单元素初始的默认状态. -->
+    <input type="reset" value="重新设置"><br /><br />
+    <!-- 普通按钮 button, 后期结合 JS 搭配使用.-->
+    <input type="button" value="获取短信验证码"><br /><br />
+    <!--文件域,使用场景:上传文件使用的.-->
+    上传头像: <input type="file"><br /><br />
+    <!--定义图像形式的提交按钮-->
+    <input type="image" src="img/趋势1.jpg" width="20" height="20"> <br /><br />
+    <!--隐藏域在页面中对于用户是不可见的, 在表单中插入隐藏域的目的在于收集或发送信息, 以利用被处理表单的的程序所使用. -->
+    <input type="hidden">
+  </form>
+</body>
+</html>

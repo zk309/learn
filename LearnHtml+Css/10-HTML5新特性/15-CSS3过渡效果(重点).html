@@ -1,0 +1,51 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-02-08 23:49:11
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-02-09 00:09:05
+ * @FilePath: \LearnHtml+Css\10-HTML5新特性\15-CSS3过渡效果(重点).html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      margin: 10px auto;
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+
+      /* transition: 变化的属性 花费时间 运动曲线 何时开始; */
+      /* 后面两种可以省略. */
+      /* transition: width .5s ease 0s, height .5s ease 1s */
+      /* 如果想要写多个属性, 利用逗号进行分割. */
+      /* transition: width .5s, height .5s; */
+      /* 如果想要多个属性都变化, 属性写 all 就可以了. */
+      transition: all 0.5s;
+    }
+
+    div:hover {
+      width: 400px;
+      height: 400px;
+      background-color: skyblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+</body>
+
+</html>

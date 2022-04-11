@@ -1,0 +1,47 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-13 13:40:20
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-13 16:34:55
+ * @FilePath: \learnJavaScript\15_Browser_Object_Model.html\13_同步任务和异步任务.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.addEventListener('load', function () {
+
+            // JavaScript 语言的一大特点就是单线程，也就是说，同一个时间只能做一件事。
+            // 单线程就意味着，所有任务需要排队，前一个任务结束，才会执行后一个任务，这样所导致的问题是：
+            // 如果 JS 执行的时间过长，这样就会造成页面的渲染不连贯，导致页面渲染加载阻塞的感觉。
+
+            // 为了解决这个问题，利用多核 CPU 的计算能力，HTML5 提出 Web Worker 标准，允许 JavaScript 脚本创建多个线程。
+            // 于是，JS 中出现了同步和异步。
+
+            // 同步：
+            // 前一个任务结束后再执行后一个任务，程序的执行顺序与任务的排列顺序是一致的，同步的，比如做饭的同步做法：
+            // 我们要烧水煮饭，等水开了（10分钟之后），再去切菜，炒菜。
+
+            // 异步：
+            // 你在做一件事情时，因为这件事情会花费很长时间，在做这件事的同时，你还可以去处理其他事情。比如做饭的异步做法：
+            // 我们在烧水的同时，利用这 10 分钟，去切菜，炒菜。s
+
+            // 它们的本质区别：这条流水线上各个流程的执行顺序不同。
+
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

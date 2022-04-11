@@ -1,0 +1,46 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-06 20:14:29
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-06 20:30:08
+ * @FilePath: \learnJavaScript\13-DOM\38_节点操作之删除节点.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>删除</button>
+    <ul>
+        <li>li1</li>
+        <li>li2</li>
+        <li>li3</li>
+    </ul>
+
+    <script>
+        // 1. 获取元素
+        var btn = document.querySelector('button');
+        var ul = document.querySelector('ul');
+
+        // 2. 点击按钮，依次删除 ul 的子元素
+        btn.onclick = function () {
+            if (ul.children.length == 0) {
+                this.disabled = true;
+                return;
+            } else {
+                ul.removeChild(ul.children[0]);
+                return;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-18 00:07:31
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-18 00:16:44
+ * @FilePath: \learnJavaScript\16_pc端网页特效\15_mouseenter 和 mouseover的区别.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .father {
+            margin: 0 auto;
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+        }
+
+        .son {
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function () {
+
+            // mouseenter 和 mouseover 的区别:
+            // mouseover 鼠标经过自身盒子会触发, 经过子盒子还会触发;
+            // mouseenter 只会经过自身盒子触发;
+            // 之所以这样, 就是因为 mouseenter 不会冒泡;
+            // 跟 mouseenter 搭配, 鼠标离开 mouseleave 同样不会冒泡;
+
+            const father = document.querySelector('.father');
+            father.addEventListener('mouseenter', function () {
+                console.log(1);
+            });
+            father.addEventListener('mouseover', function () {
+                console.log(0);
+            });
+            father.addEventListener('mouseleave', function () {
+                console.log(2);
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+
+</html>

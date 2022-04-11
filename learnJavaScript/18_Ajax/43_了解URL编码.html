@@ -1,0 +1,41 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-06 10:09:42
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-06 10:22:04
+ * @FilePath: \18_Ajax\43_了解URL编码.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // 什么是 URL 编码？
+            // URL 地址中只允许出现英文相关的字母，标点符号，数字，因此，在 URL 地址中不允许出现中文字符。
+            // 如果 URL 中需要包含中文这样的字符，则必须对中文字符进行编码（转义）.
+            // URL 编码的原则：使用安全的字符(没有特殊用途或者特殊意义的可打印字符) 去表示那些不安全的字符。
+            // URL 编码原则的通俗理解：使用引文字符去表示非英文字符。
+            // 注意：中文一个汉字 == 三组百分号
+
+            // 'http://www.liulongbin.top:3006/api/getbooks?id=1&bookname=西游记'
+            // 编码之后：
+            // 'http://www.liulongbin.top:3006/api/getbooks?id=1&bookname=%E8%A5%BF%E6%B8%B8%E8%AE%B0'
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

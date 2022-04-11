@@ -1,0 +1,59 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-01-10 09:28:48
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-11 08:28:53
+ * @FilePath: \learnJavaScript\07-对象\01-利用字面量创建对象.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 1. 利用对象字面量创建对象 { }
+    // var obj = {}; // 创建了一个空的对象
+    var obj = {
+      uname: '张三',
+      age: 18,
+      sex: '男',
+      sayHi: function () {
+        console.log('hi~');
+      }
+    };
+    // (1) 里面的属性和方法我们采取键值对的形式. 键(属性名) : 值(属性值)
+    // (2) 多个属性或者方法中间用逗号隔开;
+    // (3) 方法冒号后面跟的是一个匿名函数;
+
+    // 2. 使用对象
+    // (1) 调用对象的属性, 我们一般采取 对象名.属性名 (. 我们理解为'的');
+    console.log(obj.uname); // 张三
+    // (2) 调用对象的属性, 还有一种方法  对象名['属性名']
+    console.log(obj['age']); // 18
+    // (3) 调用对象的方法 sayHi 对象名.方法名() 千万别忘记添加小括号
+    obj.sayHi(); // hi~
+
+
+    var obj = {
+      name: '可可',
+      type: 'Alaskan',
+      age: 5,
+      color: 'brownish',
+      getSkill: function () {
+        console.log('bark');
+        console.log('showFilm');
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

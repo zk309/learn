@@ -1,0 +1,53 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-09 08:51:36
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-09 09:08:09
+ * @FilePath: \18_Ajax\69_jQuery中 JSONP的实现过程.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jQuery.min.js"></script>
+</head>
+
+<body>
+    <button id="btn">jQuery 中 JSONP 的实现过程</button>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // jQuery 中的 JSONP, 也是通过 <script> 标签的 src 属性实现跨域数据访问的, 只不过, jQuery 采用的是动态创建和移除 <script> 标签的方式, 来发起 JSONP 数据请求.
+            // 1. 再发起 JSONP 请求的时候, 动态向 <header> 中的 append 一个 <script> 标签;
+            // 2. 在 JSONP 请求成功后, 动态从 <header> 中移除刚才 append 进去的 <script> 标签;
+            // 3. 需要在浏览器设置 Slow 3G 才能看见;
+
+            $('#btn').on('click', function (evt) {
+                // console.log(1);
+                $.ajax({
+                    url: 'http://www.liulongbin.top:3006/api/jsonp',
+                    data: {
+                        name: '赵六',
+                        age: 35
+                    },
+                    dataType: 'jsonp',
+                    jsonpCallback: 'success',
+                    success: function (res) {
+                        console.log(res);
+                    }
+                });
+
+            });
+
+        })
+    </script>
+</body>
+
+</html>

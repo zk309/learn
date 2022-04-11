@@ -1,0 +1,74 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-07 19:05:10
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-07 19:06:26
+ * @FilePath: \learnJavaScript\13-DOM\42_innerHTML在MDN的案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 600px;
+            height: 300px;
+            border: 1px solid black;
+            padding: 2px 4px;
+            overflow-y: scroll;
+            overflow-x: auto;
+        }
+
+        .log {
+            margin-top: 8px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div><strong>Log:</strong></div>
+        <div class="log"></div>
+    </div>
+
+
+    <script>
+        function log(msg) {
+            var logElem = document.querySelector(".log");
+
+            var time = new Date();
+            var timeStr = time.toLocaleTimeString();
+            logElem.innerHTML += timeStr + ": " + msg + "<br />";
+        }
+
+        log("Logging mouse events inside this container...");
+
+        function logEvent(event) {
+            var msg = "Event <strong>" + event.type + "</strong> at <em>" +
+                event.clientX + ", " + event.clientY + "</em>";
+            log(msg);
+        }
+
+        var boxElem = document.querySelector(".box");
+
+        boxElem.addEventListener("mousedown", logEvent);
+        boxElem.addEventListener("mouseup", logEvent);
+        boxElem.addEventListener("click", logEvent);
+        boxElem.addEventListener("mouseenter", logEvent);
+        boxElem.addEventListener("mouseleave", logEvent);
+    </script>
+</body>
+
+</html>

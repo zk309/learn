@@ -1,0 +1,105 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-21 10:32:06
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-21 20:25:29
+ * @FilePath: \learnJavaScript\16_pc端网页特效\29_本地存储之localStorage.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            width: 300px;
+            text-align: right;
+            /* border: 1px solid #ccc; */
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function () {
+
+            // 1. 生命周期永久有效, 除非手动删除, 否则关闭页面也会存在;
+            // 2. 可以多窗口(页面)共享(同意浏览器可以共享);
+            // 3. 以键值对的形式存储使用;
+
+            // 存储数据:
+            // localStorage.setItem(key, value);
+            // 获取数据:
+            // localStorage.getItem(key);
+            // 删除数据:
+            // localStorage.removeItem(key);
+            // 删除所有数据:
+            // localStorage.clear();
+
+            const user = document.querySelector('#user');
+            const psd = document.querySelector('#psd');
+            const set1 = document.querySelector('#set1');
+            const set2 = document.querySelector('#set2');
+            const get1 = document.querySelector('#get1');
+            const get2 = document.querySelector('#get2');
+            const rem1 = document.querySelector('#rem1');
+            const rem2 = document.querySelector('#rem2');
+            const cle = document.querySelector('#cle');
+
+            // 存储数据:
+            set1.addEventListener('click', function () {
+                localStorage.setItem('user', user.value);
+            });
+            set2.addEventListener('click', function () {
+                localStorage.setItem('password', psd.value);
+            });
+
+            // 获取数据:
+            get1.addEventListener('click', function () {
+                var user = localStorage.getItem('user');
+                console.log(user);
+            });
+            get2.addEventListener('click', function () {
+                var psd = localStorage.getItem('password');
+                console.log(psd);
+            });
+
+            // 删除数据:
+            rem1.addEventListener('click', function () {
+                localStorage.removeItem('user');
+            });
+            rem2.addEventListener('click', function () {
+                localStorage.removeItem('password');
+            });
+
+            // 删除所有数据:
+            cle.addEventListener('click', function () {
+                localStorage.clear();
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <form action="">
+        用户名: <input type="text" name="" id="user"><br />
+        密码: <input type="password" name="" id="psd"><br /><br />
+        <input type="button" id="set1" value="存储用户名">
+        <input type="button" id="set2" value="存储密码"><br /><br />
+        <input type="button" id="get1" value="获取用户名">
+        <input type="button" id="get2" value="获取密码"><br /><br />
+        <input type="button" id="rem1" value="删除用户名">
+        <input type="button" id="rem2" value="删除密码"><br /><br />
+        <input type="button" id="cle" value="删除所有数据">
+    </form>
+</body>
+
+</html>

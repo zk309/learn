@@ -1,0 +1,55 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-02 11:17:01
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-02 11:29:48
+ * @FilePath: \learnJavaScript\13-DOM\22_开关灯案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        input {
+            display: block;
+            margin: 50px auto;
+            width: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="开关灯">
+
+    <script>
+        // 1. 获取元素
+        var input = document.querySelector('input');
+        var body = document.body;
+        var flag = 0; // 0 是开灯状态， 1 是关灯状态。
+
+        // 2. 注册事件
+        // 3. 处理程序
+        input.onclick = function () {
+            if (flag == 0) {
+                body.style.backgroundColor = '#000';
+                flag = 1;
+            } else if (flag == 1) {
+                body.style.backgroundColor = '#fff';
+                flag = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>

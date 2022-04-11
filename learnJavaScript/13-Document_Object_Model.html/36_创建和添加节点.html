@@ -1,0 +1,40 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-06 12:29:56
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-06 17:22:36
+ * @FilePath: \learnJavaScript\13-DOM\36_创建和添加节点.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>li1</li>
+    </ul>
+
+    <script>
+        var ul = document.querySelector('ul');
+        // 1. 创建元素节点
+        var newLi = document.createElement('li');
+        // 2. 添加节点 node.appendChild(child)
+        var text1 = document.createTextNode('我是 createTextNode.');
+        newLi.appendChild(text1);
+        ul.appendChild(newLi);
+        // 3. 添加节点 node.insertBefore(child, 指定元素);
+        var newLi2 = document.createElement('li');
+        newLi2.innerHTML = '我是 innerHTML。'
+        ul.insertBefore(newLi2, ul.children[0]);
+    </script>
+</body>
+
+</html>

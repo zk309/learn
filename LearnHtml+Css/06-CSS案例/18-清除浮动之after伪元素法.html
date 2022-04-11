@@ -1,0 +1,74 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-25 15:32:12
+ * @LastEditTime: 2022-01-29 23:32:46
+ * @LastEditors: ZhangKe
+ * @Description: In User Settings Edit
+ * @FilePath: \LearnHtml+Css\06-CSS案例\18-清除浮动之after伪元素法.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .clearfix:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+    }
+
+    .clearfix {
+      /* IE6, IE7 专有 */
+      *zoom: 1;
+    }
+
+    .box {
+      width: 800px;
+      border: 1px solid blue;
+      margin: 0 auto;
+    }
+
+    .damao {
+      float: left;
+      width: 300px;
+      height: 200px;
+      background-color: purple;
+    }
+
+    .ermao {
+      float: left;
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+
+    .footer {
+      height: 200px;
+      background-color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box clearfix">
+    <div class="damao">大毛</div>
+    <div class="ermao">二毛</div>
+  </div>
+  <div class="footer"></div>
+
+  <script>
+  </script>
+</body>
+
+</html>

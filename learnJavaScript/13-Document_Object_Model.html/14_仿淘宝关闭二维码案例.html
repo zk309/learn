@@ -1,0 +1,70 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-03-01 00:55:29
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-03-01 01:06:35
+ * @FilePath: \learnJavaScript\13-DOM\14_仿淘宝关闭二维码案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            position: relative;
+            margin: 10px auto;
+            padding: 5px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ccc;
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+        }
+
+        strong {
+            position: absolute;
+            width: 15px;
+            height: 20px;
+            top: 0;
+            left: -17px;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="./images/tao.png" alt="">
+        <strong href="">x</strong>
+    </div>
+
+    <script>
+        // 1. 获取元素
+        var strong = document.querySelector('strong');
+        var box = document.querySelector('.box');
+
+        // 2. 注册事件 处理程序
+        strong.onclick = function () {
+            box.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

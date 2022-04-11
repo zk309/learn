@@ -1,0 +1,45 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2021-12-30 10:33:19
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-01-26 10:51:31
+ * @FilePath: \learnJavaScript\05-数组Array\05-求数组中的最大值.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    var arr = [2, 5, 85, 95, 265, 25, 25, 25, 78, 958, 225];
+
+    // 求数组中的最大值
+    var max = arr[0];
+    for (var i = 1; i < arr.length; i++) {
+      if (arr[i] > max) {
+        max = arr[i];
+      }
+    }
+    console.log('最大值为:' + max); // 最大值为:958
+
+    // 求数组中的最小值
+    var min = arr[0];
+    for (var i = 1; i < arr.length; i++) {
+      if (arr[i] < min) {
+        min = arr[i];
+      }
+    }
+    console.log('最小值为:' + min); // 最小值为:2
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
