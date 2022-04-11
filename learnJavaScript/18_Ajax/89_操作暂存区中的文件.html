@@ -1,0 +1,40 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-11 15:10:52
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-11 15:21:49
+ * @FilePath: \18_Ajax\89_操作暂存区中的文件.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // 向暂存区中一次性添加多个文件：(git add .)
+        // 如果需要被暂存的文件个数比较多，可以使用如下的命令，一次性将所有的新增和修改过的文件加入暂存区：
+        // git add .
+        // 注意：今后在项目开发中，会经常使用这个命令，将新增的修改过的文件加入暂存区。
+
+        // 取消暂存的文件：(git reset HEAD 要移除的文件名称)
+        // 如果需要从暂存区中移除对应的文件，可以使用如下的命令：
+        // git reset HEAD 要移除的文件名称
+
+        // 跳过使用暂存区域： (git commit -a -m "描述信息")
+        // Git 标准的工作流程是 工作区-->暂存区-->Git仓库，但有时候这么做略显繁琐，此时可以跳过暂存区，直接将工作区中的修改提交到 Git 仓库，这时候 Git 工作的流程简化为了 工作区-->Git仓库
+        // Git 提供了一个跳过使用暂存区域的方式，只要在提交的时候，给 git commit 加上 -a 选项，Git 就会自动把所有已经跟踪过的文件暂存起来一并提交，从而跳过 git add 步骤：
+        // git commit -a -m "描述信息"
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
