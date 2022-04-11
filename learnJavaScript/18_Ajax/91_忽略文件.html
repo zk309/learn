@@ -1,0 +1,59 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-11 21:53:56
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-11 23:11:27
+ * @FilePath: \18_Ajax\91_忽略文件.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // 忽略文件
+            // 一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表，在这种情况下，我们可以创建一个名为 .gitignore 的配置文件，列出要忽略的文件的匹配模式：
+            // 文件 .gitignore 的格式规范如下：
+            // 1. 以 # 开头的是注释；
+            // 2. 以 / 结尾的是目录；
+            // 3. 以 / 开头防止递归；
+            // 4. 以 ！ 开头表示取反；
+            // 5. 可以使用 glob 模式进行文件和文件夹的匹配 (glob 指简化了的正则表达式)
+
+            // 所谓的 glob 模式是指简化了的正则表达式：
+            // 1. *  匹配零个或多的任意字符；
+            // 2. [abc]  匹配任何一个列在方括号中的字符 (此案例匹配一个 a 或匹配一个 b 或匹配一个 c)
+            // 3. ?  之匹配一个任意字符；
+            // 4. 在方括号中使用短划线 - 分割两个字符，表示所有在这两个字符范围内的都可以匹配 (比如 [0-9] 表示匹配所有 0 到 9 的数字);
+            // 5. 两个星号 **   表示匹配任意中间目录 (比如 a/**/z 可以匹配 a/z, a/b/z 或 a/b/c/z 等...)
+
+            // .gitignore 文件的例子:
+            // # 忽略所有的 .a 文件
+            // *.a
+            // # 跟踪所有的 lib.a ，即使你在前面忽略了 .a 文件
+            // !lib.a
+            // # 只忽略当前目录下的 TODO 文件，而不忽略 subdir/TODO
+            // /TODO
+            // # 忽略任何目录下名为 build 的文件夹
+            // build/
+            // # 忽略 doc/notes.txt, 但不忽略 doc/server/arch.text
+            // doc/*.txt
+            // # 忽略 doc/ 目录及其所有子目录下的 .pdf 文件
+            // doc/**/*.pdf
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
