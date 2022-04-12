@@ -1,0 +1,41 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-12 12:09:27
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-12 12:28:25
+ * @FilePath: \18_Ajax\96_GitHub_Https上传代码到远程仓库.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // 远程仓库的两种访问方式:
+        // 1. HTTPS: 零配置; 但是每次访问仓库时, 需要重复输入 GitHub 的帐号和密码才能访问成功;
+        // 2. SSH: 需要进行额外的配置; 但是配置成功后, 每次访问仓库时, 不需要输入 GitHub 的帐号和密码;
+        // 注意: 在实际开发中, 推荐使用 SSH 的方式访问远程仓库;
+
+        // 基于 HTTPS 将本地仓库上传到 GitHub:
+        // 1. 本地没有现成的 Git 仓库:
+        // // 1.1 echo "# project_02" >> README.md ;使用终端命令创建 README.md 文档, 并写入初始内容为 #project_02
+        // // 1.2 git init, git add README.md, git commit -m "first_commit" ;初始化本地 Git 仓库, 并将文件的修改提交到本地的 Git 仓库中
+        // // 1.3 git remote add origin https://github.com/zk309/zk309.github.io.git ;将本地仓库和远程仓库进行关联,并把远程仓库命名为 origin
+        // // 1.4 git push -u origin master ;将本地仓库中的内容推送到远程的 origin 仓库中;
+        // 2. 本地有现成的 Git 仓库:
+        // // 2.1 git remote add origin https://github.com/zk309/zk309.github.io.git ;将本地仓库和远程仓库进行关联,并把远程仓库命名为 origin
+        // // 2.2 git push -u origin master ;将本地仓库中的内容推送到远程的 origin 仓库中;
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
