@@ -1,0 +1,51 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-13 06:45:36
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-13 07:07:08
+ * @FilePath: \18_Ajax\99_了解master分支和功能分支的概念.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // 分支的概念:
+        // 分支就是科幻电影里面的平行宇宙, 当你正在电脑前努力学习 Git 的时候, 另一个你正在另一个平行宇宙里努力学须 SVN.
+        // 如果两个平行宇宙互不干扰, 那对现在的你也没啥影响.
+        // 不过, 在某个时间点, 两个平行宇宙合并了, 结果, 你即学会 Git 又学会了 SVN.
+
+        // 分支在实际开发中的作用:
+        // 在进行多人协作开发的时候, 为了防止互相干扰, 提高协同开发的体验, 建议每个开发者都基于分支进行项目的开发, 例如:
+        // 每个独立的功能, 对应一个具体的分支, 分支之间互不影响, 能够提高开法的效率
+        // 登录功能开发测试完毕之后, 合并到 master 主分支
+        // 注册功能开发测试完毕之后, 合并到 master 主分支
+        // 支付功能开发测试完毕之后, 合并到 master 主分支
+
+        // master 主分支:
+        // 在初始化本地 Git 仓库的时候, Git 默认已经帮我们创建了一个名字叫做 master 的分支. 通常我们把这个 master 分支叫做主分支.
+        // 在实际开发中, master 主分支的作用是: 用来保存和记录整个项目已完成的功能代码.
+        // 因此, 不允许程序员直接在 master 分支上修改代码, 因为这样做的风险太高, 容易导致整个项目崩溃.
+
+        // 功能分支:
+        // 由于程序员不能直接在 master 分支上进行功能的分支, 所以就有功能分支的概念.
+        // 功能分支指的是专门用来开发新功能的分支, 它是临时从 master 主分支上分叉出来的, 当新功能开发且测试完毕之后, 最终需要合并到 master 主分支上:
+        // 每个独立的功能, 对应一个具体的分支, 分支之间互不影响, 能够提高开法的效率
+        // 登录功能开发测试完毕之后, 合并到 master 主分支
+        // 注册功能开发测试完毕之后, 合并到 master 主分支
+        // 支付功能开发测试完毕之后, 合并到 master 主分支
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
