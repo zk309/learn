@@ -4,7 +4,7 @@
  * @Author: ZhangKe
  * @Date: 2022-04-13 14:48:23
  * @LastEditors: ZhangKe
- * @LastEditTime: 2022-04-13 14:54:22
+ * @LastEditTime: 2022-04-13 18:38:49
  * @FilePath: \18_Ajax\104_上传分支&查看远程分支列表.html
 -->
 <!DOCTYPE html>
@@ -17,19 +17,19 @@
     <title>Document</title>
 
     <script>
-        // 将本地分支推送到远程仓库:
+        // 将本地分支推送到远程仓库: (git push -u origin payment:pay) (git push)
         // 如果是第一次将本地分支推送到远程仓库, 需要运行如下的命令:
         // # -u 表示把本地分支和远程分支进行关联, 只在第一次推动的时候需要带 -u 参数
-        // git push -u 远程仓库的别名 本地分支名称:远程分支名称
+        // git push -u 远程仓库的别名 本地分支名称:远程分支名称  (可以创建远程分支)
         // # 实际案例:
         // git push -u origin payment:pay
         // # 如果希望远程分支的名称和本地分支的名称保持一致, 可以对命令进行简化
         // git push -u origin payment
+        // 注意: 第一次推送分支需要带 -u 参数, 此后可以直接使用 git push 推送代码到远程分支.
 
-        // 如果是第一次,将本地仓库中的内容推送到远程的 origin 仓库中
-        // git push -u origin payment
-        // 而如果是第二次, 第三次 ...,将本地仓库中的最新内容推送到远程的 origin 仓库中
-        // git push
+        // 查看远程仓库中所有的分支列表
+        // 通过如下的命令. 可以查看远程仓库中, 所有的分支列表的信息:
+        // git remote show 远程仓库的名称(origin)
     </script>
 </head>
 

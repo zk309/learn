@@ -1,0 +1,49 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-13 19:04:31
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-13 19:53:30
+ * @FilePath: \18_Ajax\105_跟踪分支&拉取分支&删除远程分支.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // 跟踪分支: (git checkout -b 本地分支名称 远程仓库名称/远程分支名称) 
+        // 跟踪分支指的是: 从远程仓库中, 把远程分支下载到本地仓库中, 需要运行的命令如下:
+        // # 从远程仓库中, 把对应的远程分支下载到本地仓库中, 保持本地仓库和远程仓库名称相同.
+        // git checkout 远程分支的名称
+        // # 示例:
+        // git checkout pay
+        // # 从远程仓库中, 把对应的远程分支下载到本地仓库中, 并把下载的本地分支进行重命名.
+        // git checkout -b 本地分支名称 远程仓库名称/远程分支名称
+        // # 示例:
+        // git checkout -b payment origin-pay
+
+        // 拉取远程分支的最新的代码: (git pull)
+        // 可以使用如下的命令, 把远程分支最新的代码下载到本地对应的分支中:
+        // # 从远程仓库, 拉取当前分支最新的代码, 保持当前分支的代码和远程分支的代码一致
+        // git pull
+
+        // 删除远程分支: (git push origin --delete pay)
+        // 可以使用如下的命令, 删除远程仓库中指定的分支
+        // # 删除远程仓库中, 指定名称的远程分支
+        // git push 远程仓库名称 --delete 远程分支名称
+        // # 示例:
+        // git push origin --delete pay
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
