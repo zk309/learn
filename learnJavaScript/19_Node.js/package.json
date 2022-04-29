@@ -1,0 +1,33 @@
+{
+  "注释": {
+    "body-parser": "在 express@4.16.0 之前的版本中, 经常使用 body-parser 这个第三方中间件, 来解析请求体数据.",
+    "cors": "cors 是 Express 的一个第三方中间件. 通过安装和配置 cors 中间件, 可以很方便地解决跨域问题.",
+    "express": "可以方便、快速的创建 Web 网站的服务器或 API 接口的服务器。",
+    "moment": "使用 npm 包管理工具, 在项目中安装格式化时间的包 moment;",
+    "mysql": "MySQl 数据库",
+    "zk309": "开发属于自己的包",
+    "zk309-body-parse": "自己手动模拟一个类似于 express.urlencoded 这样的中间件, 来解析 POST 提交到服务器的表单数据."
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "moment": "^2.29.3",
+    "mysql": "^2.18.1",
+    "zk309": "^1.0.1",
+    "zk309-body-parse": "^1.0.0"
+  },
+  "name": "19_node",
+  "version": "1.0.1",
+  "main": "04_使用node运行js代码.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "webpack": "^5.72.0"
+  }
+}

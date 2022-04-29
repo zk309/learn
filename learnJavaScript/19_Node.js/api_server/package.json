@@ -1,0 +1,34 @@
+{
+  "name": "api_server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@escook/express-joi": "^1.0.0",
+    "@hapi/joi": "^17.1.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-jwt": "^5.3.3",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.2",
+    "mysql": "^2.18.1"
+  },
+  "注释": {
+    "@escook/express-joi": "安装 @escook/express-joi 中间件，来实现自动对表单数据进行验证的功能",
+    "@hapi/joi": "安装 @hapi/joi 包，为表单中携带的每个数据项，定义验证规则",
+    "bcryptjs": "为了保证密码的安全性，不建议在数据库以 明文 的形式保存用户密码，推荐对密码进行 加密存储",
+    "cors": "配置 cors 跨域",
+    "express": "^4.17.1",
+    "express-jwt": "配置解析 Token 的中间件",
+    "jsonwebtoken": "生成 JWT 的 Token 字符串",
+    "multer": "推荐使用 multer 来解析 multipart/form-data 格式的表单数据",
+    "mysql": "安装并配置 mysql 这个第三方模块，来连接和操作 MySQL 数据库"
+  }
+}

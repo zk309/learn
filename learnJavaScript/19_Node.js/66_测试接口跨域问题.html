@@ -1,0 +1,98 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-04-22 20:08:04
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-04-28 12:51:56
+ * @FilePath: \19_Node.js\66_测试接口跨域问题.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.0/jquery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // GET 请求
+            $('#getBtn').on('click', function (evt) {
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://127.0.0.1:8064/api/get',
+                    data: {
+                        userName: '张三',
+                        age: 30
+                    },
+                    success: (res) => {
+                        console.log(res);
+                    }
+                });
+            });
+
+            // POST 请求
+            $('#postBtn').on('click', function (evt) {
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://127.0.0.1:8064/api/post',
+                    data: {
+                        bookName: '水浒传',
+                        author: '施耐庵'
+                    },
+                    success: (res) => {
+                        console.log(res);
+                    }
+                });
+            });
+
+            // 使用火狐浏览器查看预检请求.
+
+            // DELETE 请求
+            $('#deleteBtn').on('click', function (evt) {
+                $.ajax({
+                    type: 'DELETE',
+                    url: 'http://127.0.0.1:8064/api/delete',
+                    data: {
+                        userName: '王五'
+                    },
+                    success: (res) => {
+                        console.log(res);
+                    }
+                });
+            });
+
+            // 使用 JSONP 发起 GET 请求
+            $('#jsonpBtn').on('click', function (evt) {
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://127.0.0.1:8064/api/jsonp', // 我也是醉了, 每次请求出现问题, 都是因为请求的地址写错了.
+                    dataType: 'JSONP', // 表示要发起 JSONP 请求.
+                    success: (res) => {
+                        console.log(res);
+                    }
+                });
+            });
+
+
+        });
+    </script>
+    <!-- JSONP 的原理: -->
+    <!-- <script>标签的src属性并不被同源策略所约束，所以可以获取任何服务器上脚本并执行。 -->
+    <!-- <script type="text/javascript" src="http://127.0.0.1:8070/static/index.css"></script> -->
+</head>
+
+<body>
+    <button id="getBtn" type="button">GET请求</button><br /><br />
+    <button id="postBtn">POST请求</button><br /><br />
+    <button id="deleteBtn">DELETE请求</button><br /><br />
+    <button id="jsonpBtn">使用 JSONP 发起 GET 请求</button><br /><br />
+
+    <iframe src="//bilibili.com" frameborder="1" width="900" height="900"></iframe>
+</body>
+
+</html>

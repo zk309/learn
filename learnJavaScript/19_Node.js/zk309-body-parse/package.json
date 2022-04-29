@@ -1,0 +1,8 @@
+{
+    "name": "zk309-body-parse",
+    "version": "1.0.0",
+    "main": "index.js",
+    "description": "模拟一个类似于 express.urlencoded() 这样的 Express 内置的中间件, 来解析 POST 提交到服务器的表单数据.",
+    "keywords": ["bodyParse"],
+    "license": "ISC"
+}

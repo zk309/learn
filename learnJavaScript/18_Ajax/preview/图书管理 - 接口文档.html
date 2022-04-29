@@ -1,0 +1,322 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h3 id="-">请求的根路径</h3>
+<blockquote>
+<p><a href="http://www.liulongbin.top:3006">http://www.liulongbin.top:3006</a></p>
+</blockquote>
+<h3 id="-">图书列表</h3>
+<ul>
+<li>接口URL：  /api/getbooks</li>
+<li>调用方式： GET</li>
+<li>参数格式：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>是否必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Number</td>
+<td>否</td>
+<td>图书Id</td>
+</tr>
+<tr>
+<td>bookname</td>
+<td>String</td>
+<td>否</td>
+<td>图书名称</td>
+</tr>
+<tr>
+<td>author</td>
+<td>String</td>
+<td>否</td>
+<td>作者</td>
+</tr>
+<tr>
+<td>publisher</td>
+<td>String</td>
+<td>否</td>
+<td>出版社</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应格式：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>数据名称</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>Number</td>
+<td>200 成功；500 失败；</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>对 status 字段的详细说明</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Array</td>
+<td>图书列表</td>
+</tr>
+<tr>
+<td>+id</td>
+<td>Number</td>
+<td>图书Id</td>
+</tr>
+<tr>
+<td>+bookname</td>
+<td>String</td>
+<td>图书名称</td>
+</tr>
+<tr>
+<td>+author</td>
+<td>String</td>
+<td>作者</td>
+</tr>
+<tr>
+<td>+publisher</td>
+<td>String</td>
+<td>出版社</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>返回示例：</li>
+</ul>
+<pre><code class="lang-json">{
+  &quot;status&quot;: 200,
+  &quot;msg&quot;: &quot;获取图书列表成功&quot;,
+  &quot;data&quot;: [
+    { &quot;id&quot;: 1, &quot;bookname&quot;: &quot;西游记&quot;, &quot;author&quot;: &quot;吴承恩&quot;, &quot;publisher&quot;: &quot;北京图书出版社&quot; },
+    { &quot;id&quot;: 2, &quot;bookname&quot;: &quot;红楼梦&quot;, &quot;author&quot;: &quot;曹雪芹&quot;, &quot;publisher&quot;: &quot;上海图书出版社&quot; },
+    { &quot;id&quot;: 3, &quot;bookname&quot;: &quot;三国演义&quot;, &quot;author&quot;: &quot;罗贯中&quot;, &quot;publisher&quot;: &quot;北京图书出版社&quot; }
+  ]
+}
+
+</code></pre>
+<h3 id="-">添加图书</h3>
+<ul>
+<li>接口URL：  /api/addbook</li>
+<li>调用方式： POST</li>
+<li>参数格式：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>是否必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bookname</td>
+<td>String</td>
+<td>是</td>
+<td>图书名称</td>
+</tr>
+<tr>
+<td>author</td>
+<td>String</td>
+<td>是</td>
+<td>作者</td>
+</tr>
+<tr>
+<td>publisher</td>
+<td>String</td>
+<td>是</td>
+<td>出版社</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应格式：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>数据名称</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>Number</td>
+<td>201 添加成功；500 添加失败；</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>对 status 字段的详细说明</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>返回示例：</li>
+</ul>
+<pre><code class="lang-json">{
+    &quot;status&quot;: 201,
+    &quot;msg&quot;: &quot;添加图书成功&quot;
+}
+</code></pre>
+<h3 id="-">删除图书</h3>
+<ul>
+<li>接口URL：  /api/delbook</li>
+<li>调用方式： GET</li>
+<li>参数格式：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>是否必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Number</td>
+<td>是</td>
+<td>图书Id</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>响应格式：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>数据名称</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>Number</td>
+<td>200 删除成功；500 未指定要删除的图书Id；501 执行Sql报错；502 要删除的图书不存在；</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>对 status 字段的详细说明</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>返回示例：</li>
+</ul>
+<pre><code class="lang-json">{
+    &quot;status&quot;: 200,
+    &quot;msg&quot;: &quot;删除图书成功！&quot;
+}
+</code></pre>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>
