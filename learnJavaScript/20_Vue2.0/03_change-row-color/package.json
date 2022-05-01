@@ -1,0 +1,49 @@
+{
+  "name": "03_change-row-color",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/plugin-proposal-decorators": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.6",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "less": "^4.1.1",
+    "less-loader": "^10.0.1",
+    "style-loader": "^3.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.42.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^3.11.2",
+    "zk309": "^1.0.1"
+  },
+  "注释": {
+    "dev": "开发环境中，运行 dev 命令。",
+    "build": "项目发布时，运行 build 命令。",
+    "@babel/core": "安装处理 JS 高级语法.",
+    "@babel/plugin-proposal-decorators": "安装处理 JS 高级语法.",
+    "babel-loader": "安装处理 JS 高级语法.",
+    "css-loader": "安装处理 .css 文件的 loader, 我就很服气, 一下安装两个包",
+    "file-loader": "打包处理样式表中与 url 路径相关的文件.",
+    "html-webpack-plugin": "生成 html 文件并自动引入打包后的 js 文件",
+    "less": "安装处理 .less 文件",
+    "less-loader": "安装处理 .less 文件",
+    "style-loader": "安装处理 css 文件的 loader, 我就很服气, 一下安装两个包",
+    "url-loader": "打包处理样式表中与 url 路径相关的文件.",
+    "webpack": "webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)",
+    "webpack-cli": "安装和配置webpack, 注意要使用 webpack-dev-server 的话, 版本请使用 4.9.2",
+    "webpack-dev-server": "webpack-dev-server使用内存来存储webpack开发环境下的打包文件，并且可以使用模块热更新，他比传统的http服务对开发更加简单高效。",
+    "zk309": "提供了格式化时间, HTMLEscape的功能."
+  }
+}
