@@ -4,8 +4,8 @@
  * @Author: ZhangKe
  * @Date: 2022-04-05 18:38:07
  * @LastEditors: ZhangKe
- * @LastEditTime: 2022-04-05 18:43:26
- * @FilePath: \18_Ajax\34_replace()替换为真值.html
+ * @LastEditTime: 2022-05-02 20:33:13
+ * @FilePath: \learnJavaScript\18_Ajax\34_模板引擎的简单原理.html
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +32,7 @@
             while (result = pattern.exec(str)) {
                 str = str.replace(result[0], data[result[1]]);
             };
-            console.log(str);
+            console.log(str); // <div>我是刘一, 今年18岁了.</div>
         })
     </script>
 </head>

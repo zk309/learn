@@ -4,7 +4,7 @@
  * @Author: ZhangKe
  * @Date: 2022-04-18 17:40:51
  * @LastEditors: ZhangKe
- * @LastEditTime: 2022-04-28 13:33:04
+ * @LastEditTime: 2022-05-02 08:55:51
  * @FilePath: \19_Node.js\33_解决npm下包慢的问题.js
  */
 // 为什么下包慢?
@@ -33,7 +33,7 @@
 
 
 
-// nrm 
+// nrm 工具：
 // 为了更方便的切换下包的镜像源, 我们可以安装 nrm 这个小工具, 利用 nrm 提供的终端命令, 可以快速查看和切换下包的镜像源.
 // # 通过 npm 包管理器, 将 nrm 安装为全局可用的工具
 // npm i nrm -g

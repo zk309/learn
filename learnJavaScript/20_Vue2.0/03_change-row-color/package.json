@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack server"
+    "dev": "webpack server",
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
     "@babel/core": "^7.14.6",
     "@babel/plugin-proposal-decorators": "^7.14.5",
     "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^5.2.6",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
@@ -29,11 +31,12 @@
     "zk309": "^1.0.1"
   },
   "注释": {
-    "dev": "开发环境中，运行 dev 命令。",
-    "build": "项目发布时，运行 build 命令。",
+    "dev": "开发环境中，运行 dev 命令",
+    "build": "项目发布时，运行 dev 命令",
     "@babel/core": "安装处理 JS 高级语法.",
     "@babel/plugin-proposal-decorators": "安装处理 JS 高级语法.",
     "babel-loader": "安装处理 JS 高级语法.",
+    "clean-webpack-plugin": "一个webpack插件，用来删除/清理你的构建文件夹",
     "css-loader": "安装处理 .css 文件的 loader, 我就很服气, 一下安装两个包",
     "file-loader": "打包处理样式表中与 url 路径相关的文件.",
     "html-webpack-plugin": "生成 html 文件并自动引入打包后的 js 文件",

@@ -4,18 +4,21 @@
  * @Author: ZhangKe
  * @Date: 2022-04-30 23:08:42
  * @LastEditors: ZhangKe
- * @LastEditTime: 2022-05-01 21:05:44
+ * @LastEditTime: 2022-05-02 13:11:16
  * @FilePath: \03_change-row-color\src\index.js
  */
 // 导入 jQuery
 import $ from 'jquery'
 // 如果某个模块中， 使用 from 接收到的成员为 undefined, 则不需要使用 from
 // 导入 .css 文件, 在 webpack 中, 一切皆模块, 都可以通过 ES6 导入语法进行 导入和 使用, 注意, 要写全后缀名.
-import './css/index.css';
+import '@/css/index.css';
 // 导入 .less 文件.
-import './css/index.less';
+import '@/css/index.less';
 // 导入图片
 import logo from './image/二哈.jpg';
+
+// 导入 info.js 文件， 测试 @ 的好处.
+import '@/js/test/info.js';
 
 // 把图片导入到 img 标签中
 $('.box').prop('src', logo);
@@ -38,5 +41,7 @@ window.addEventListener('load', function(evt) {
 
     // 4. 打印 Person 的静态属性 info
     console.log(Person.info);
+
+    console.log('!-_-!');
 
 })

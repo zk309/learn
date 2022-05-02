@@ -1,0 +1,39 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-05-02 20:38:47
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-05-02 20:50:11
+ * @FilePath: \20_Vue2.0\27_初始vue.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 1. 导入 vue 函数库，获得全局 Vue 构造函数 -->
+    <script src="./lib/vue-2.6.12.js"></script>
+    <!-- 2. 在页面中声明一个将要被 vue 所控制的 DOM 区域. -->
+    <!-- 3. 创建 vm 实例对象. (vue 实例对象)-->
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            const vm = new Vue({
+                el: '#app',
+                data: {
+                    userName: 'Hello vue!-_-!'
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="app">{{ userName }}</div>
+</body>
+
+</html>

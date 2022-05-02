@@ -4,7 +4,7 @@
  * @Author: ZhangKe
  * @Date: 2022-05-01 20:52:59
  * @LastEditors: ZhangKe
- * @LastEditTime: 2022-05-01 21:17:44
+ * @LastEditTime: 2022-05-02 16:28:53
  * @FilePath: \20_Vue2.0\13_使用babel处理js高级语法.js
  */
 
@@ -13,15 +13,15 @@
 // js 的高级语法：
 // 1. 定义了名为 info 的装饰器
 // function info(target) {
-//     // 2. 为目标添加静态属性 info
+//      2. 为目标添加静态属性 info
 //     target.info = 'Preson info'
 // }
 
-// // 3. 为 Person 类应用 info 装饰器
+//  3. 为 Person 类应用 info 装饰器
 // @info
 // class Person {}
 
-// // 4. 打印 Person 的静态属性 info
+//  4. 打印 Person 的静态属性 info
 // console.log(Person.info);
 
 // ------------------------------------------------------------------------
