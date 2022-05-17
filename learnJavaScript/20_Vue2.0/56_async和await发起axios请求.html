@@ -1,0 +1,65 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-05-05 15:54:33
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-05-05 16:38:21
+ * @FilePath: \20_Vue2.0\56_async和await发起axios请求.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.staticfile.org/axios/0.1.0/axios.min.js"></script>
+    <script>
+        window.addEventListener('load', (evt) => {
+
+            document.querySelector('#btn').addEventListener('click', async (evt) => {
+
+                // 如果调用某个方法的返回值是 Promise 实例，则前面可以添加 await.
+                // await 只能在被 async '修饰' 的方法中.
+                const result = await axios({
+                    method: 'POST',
+                    url: 'http://www.liulongbin.top:3006/api/post',
+                    data: {
+                        id: 1,
+                        name: '陈二',
+                    },
+                    params: {
+                        userName: 'cis'
+                    }
+                });
+                console.log(result);
+                // {message: 'POST请求测试成功', body: '{"id":1,"name":"陈二"}', query: {…}}
+            });
+
+            document.querySelector('#btn1').addEventListener('click', async (evt) => {
+
+                // 1. 调用 axios 之后，使用 async/await 进行简化；
+                // 2. 使用解构赋值，从 axios 封装的大对象中，把 data 属性结构出来.
+                // 3. 把结构出来的 data 属性，使用 : 进行重命名，一般都重命名为 { data: res }
+                const {
+                    data: res
+                } = await axios({
+                    method: 'GET',
+                    url: 'http://www.liulongbin.top:3006/api/getbooks',
+                });
+                console.log(res); // [{…}]
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <button id="btn">发起 post 请求</button>
+    <button id="btn1">发起 get 请求</button>
+</body>
+
+</html>

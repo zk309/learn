@@ -1,0 +1,52 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-05-03 08:57:09
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-05-04 13:05:24
+ * @FilePath: \20_Vue2.0\31_在插值表达式指令和属性绑定指令使用js语句.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+    <!-- 1. 导入 vue 函数库, 获得全局 vue 构造函数 -->
+    <!-- 2. 在页面声明一个将要被 vue 控制的 DOM 区域 -->
+    <!-- 3. 利用 vue 构造函数创建 vm 实例对象.  -->
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // <!-- 在 vue 提供的模板语法中，除了支持绑定简单的数据值之外，还支持 JavaScript 表达式的运算. -->
+            // 注意，只能写简单的 js 表达式， 如三元表达式，运算；不能写复杂的 js 语句。
+
+            const vm = new Vue({
+                el: '#app',
+                data: {
+                    info: '<h3>如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.</h3>',
+                    number: 12,
+                    ok: false,
+                    id: 5
+                }
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <h4>张三</h4>
+        <h4>年龄: {{ number + 2 }}</h4>
+        <h4>性别: {{ ok ? '男' : '女' }}</h4>
+        <h4>{{ info.split('').reverse().join('') }}</h4>
+        <h4 v-bind:title=" '你是第' + id + '个.' ">鼠标悬停到这.</h4>
+    </div>
+</body>
+
+</html>

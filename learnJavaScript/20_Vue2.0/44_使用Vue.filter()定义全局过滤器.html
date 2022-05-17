@@ -1,0 +1,73 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-05-04 20:54:09
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-05-04 21:10:27
+ * @FilePath: \20_Vue2.0\44_使用Vue.filter()定义全局过滤器.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // 全局过滤器:
+            // 在 filters 节点下定义的过滤器，称为 "私有过滤器"，因为它只能在当前 vm 实例所控制的 el 区域内使用.
+            // 如果希望在多个 vue 实例之间共享过滤器, 则可以按照如下的格式定义全局过滤器:
+
+            // Vue.filter() 方法接收两个参数:
+            // 第一个参数，是全局过滤器的 "名字"
+            // 第二个参数，是全局过滤器的 "处理函数"
+            Vue.filter('capitalize', (val) => {
+                return val.charAt(0).toUpperCase() + val.substring(1);
+            })
+
+            // 注意：如果全局过滤器和私有过滤器名字一致，此时按照就近原则，调用的是 "私有过滤器";
+
+            // 控制页面的 app1 区域:
+            const vm1 = new Vue({
+                el: '#app1',
+                data: {
+                    info: '<h3>如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.</h3>',
+                    message: 'hello, !-_-!',
+                },
+                methods: {
+                    pop_up() {
+                        alert('如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.');
+                    },
+                },
+            });
+
+            // 控制页面的 app2 区域:
+            const vm2 = new Vue({
+                el: '#app2',
+                data: {
+                    info: '<h3>如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.</h3>',
+                    message: 'vue, !-_-!',
+                },
+                methods: {
+                    pop_up() {
+                        alert('如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.');
+                    },
+                },
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="app1">{{ message | capitalize }}</div>
+    <div id="app2">{{ message | capitalize }}</div>
+</body>
+
+</html>

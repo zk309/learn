@@ -1,0 +1,70 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-05-03 11:07:33
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-05-04 23:11:52
+ * @FilePath: \20_Vue2.0\33_事件对象$event.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+    <!-- 1. 导入 vue 函数库，获得全局 vue 构造函数. -->
+    <!-- 2. 在页面声明将要被 vue 直接控制的区域. -->
+    <!-- 3. 利用 vue 构造函数, 创建 vm 实例对象. -->
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            const vm = new Vue({
+                el: '#app',
+                data: {
+                    info: '<h3>如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.</h3>',
+                    color: 'rgb(255,255,255)',
+                },
+                methods: {
+                    pop_up() {
+                        alert('如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.');
+                    },
+                    //  rgb(255,255,255) 随机数
+                    random() {
+                        var r = Math.floor(Math.random() * (255 - 0 + 1));
+                        var g = Math.floor(Math.random() * (255 - 0 + 1));
+                        var b = Math.floor(Math.random() * (255 - 0 + 1));
+                        // return console.log('rgb(' + r + ', ' + g + ', ' + b + ')');
+                        this.color = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+                        return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+                    },
+                    // 在 v-on 指令所绑定的事件处理函数, 如果不传参数, 默认接收到事件对象 event.
+                    // 如果传参，vue 提供了内置变量 $event, 它就是原生的事件对象 event
+                    // 实现随即变色
+                    get(n, evt) {
+                        console.log(n);
+                        var color = this.random();
+                        // console.log(color);
+                        evt.target.style.backgroundColor = color;
+                    }
+                },
+            });
+
+            console.log(vm);
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="点击我，随即变色。" v-on:click="get('!-_-!', $event)">
+        <h3>{{ color }}</h3>
+    </div>
+</body>
+
+</html>

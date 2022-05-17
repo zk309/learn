@@ -1,0 +1,110 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-05-03 21:39:58
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-05-04 10:31:32
+ * @FilePath: \20_Vue2.0\40_列表渲染指令.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/bootstrap.css">
+
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+        window.addEventListener('load', (evt) => {
+
+            // 列表渲染指令:
+            // vue 提供了 v-for 列表渲染指令，用来辅助开发者基于一个数组循环渲染一个列表结构. v-for 指令需要使
+            // 用 item in list 形式的特殊语法，其中：
+            // list  是待循环的数组;
+            // item   是被循环的每一项;
+
+            // v-for 指令还支持一个可选的第二参数，即当前项的索引, 语法格式为 (item, index) in list
+            // 注意，v-for 指令中的 item  项和 index 索引都是形参，可以根据需要进行重命名。例如 (user, i) in userList
+
+            const vm = new Vue({
+                el: '#app',
+                data: {
+                    info: '<h3>如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.</h3>',
+                    list: [{
+                            id: 151,
+                            userName: '刘一'
+                        },
+                        {
+                            id: 111,
+                            userName: '陈二'
+                        },
+                        {
+                            id: 981,
+                            userName: '张三'
+                        },
+                        {
+                            id: 154,
+                            userName: '李四'
+                        },
+                        {
+                            id: 871,
+                            userName: '王五'
+                        },
+                        {
+                            id: 815,
+                            userName: '赵六'
+                        },
+                        {
+                            id: 381,
+                            userName: '孙七'
+                        },
+                        {
+                            id: 871,
+                            userName: '周八'
+                        },
+                        {
+                            id: 841,
+                            userName: '吴九'
+                        },
+                        {
+                            id: 641,
+                            userName: '郑十'
+                        },
+                    ]
+                },
+                methods: {
+                    pop_up() {
+                        alert('如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.');
+                    },
+                },
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="app" class="container">
+        <!-- bootstrap 样式 -->
+        <table class="table table-bordered table-hover table-striped table-info">
+            <thead>
+                <th>索引</th>
+                <th>id</th>
+                <th>用户名</th>
+            </thead>
+            <tbody>
+                <tr v-for="(item, index) in list" v-bind:key="item.id">
+                    <td>{{ index }}</td>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.userName }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

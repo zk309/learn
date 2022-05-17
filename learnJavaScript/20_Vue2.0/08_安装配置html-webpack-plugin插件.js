@@ -4,7 +4,7 @@
  * @Author: ZhangKe
  * @Date: 2022-05-01 10:22:03
  * @LastEditors: ZhangKe
- * @LastEditTime: 2022-05-01 12:05:12
+ * @LastEditTime: 2022-05-06 09:15:03
  * @FilePath: \20_Vue2.0\08_安装配置html-webpack-plugin插件.js
  */
 // 安装 html-webpack-plugin 的目的: 
@@ -25,6 +25,7 @@
 //     filename: './index.html'  // 指定生成的文件的存放路径
 // })
 
+// 3. 在 webpack.config.js 文件下配置:
 // module.exports = {
 //     mode: 'development',
 //     plugins: [htmlPlugin], // 3. 通过 plugins 节点, 使 htmlPlugin 插件生效.

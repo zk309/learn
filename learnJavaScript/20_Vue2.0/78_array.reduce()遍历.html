@@ -1,0 +1,75 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-05-10 10:31:43
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-05-12 19:40:14
+ * @FilePath: \20_Vue2.0\78_array.reduce()遍历.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script>
+    window.addEventListener('load', (evt) => {
+
+      // console.log(1);
+      const arr = [{
+          id: 1,
+          name: '西瓜',
+          status: true,
+          price: 12,
+          count: 5
+        },
+        {
+          id: 2,
+          name: '西瓜',
+          status: false,
+          price: 42,
+          count: 7
+        },
+        {
+          id: 3,
+          name: '西瓜',
+          status: true,
+          price: 8,
+          count: 6
+        },
+      ];
+
+      // 需求，找出 status 为 true 的选项，然后计算价钱总数(price*count)
+
+      // arr.filter() + arr.forEach() 方法:
+      const res = arr.filter(item => item.status);
+      // console.log(res);
+      let a = 0;
+      res.forEach(item => {
+        a += item.price * item.count;
+      });
+      console.log(a); // 108
+
+      // arr.filter() + arr.reduce() 方法:
+      const result = arr.filter(item => item.status).reduce((old, fresh) => {
+        return old += fresh.price * fresh.count
+      }, 0);
+      console.log(result); // 108
+
+      // 简化写法：
+      const result1 =
+        arr.filter(item => item.status).reduce((old, fresh) => old += fresh.price * fresh.count, 0);
+      console.log(result1); // 108
+    });
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

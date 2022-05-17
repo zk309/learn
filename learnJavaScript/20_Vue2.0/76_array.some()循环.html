@@ -1,0 +1,58 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-05-10 09:08:00
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-05-10 10:40:19
+ * @FilePath: \20_Vue2.0\76_array.some()循环.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.addEventListener('load', (evt) => {
+
+            const arr = [
+                '荒呱',
+                '彼岸花呱',
+                '雪童子呱',
+                '玉藻前呱',
+                '御馔津呱',
+            ];
+
+            // 需求：找出对应项的下标
+
+            // forEach 一旦开始，无法在中间停止。
+            // arr.forEach((item, index) => {
+            //     console.log(1);
+            //     if (item === '玉藻前呱') {
+            //         console.log(index);
+            //     }
+            // });
+
+            // 在找到对应项后，通过 return true, 来终止循环。
+            // 要使用 {}, 则必须要使用 return;
+            arr.some((item, index) => {
+                console.log('!-_-!');
+                if (item === '玉藻前呱') {
+                    console.log(index);
+                    return true;
+                }
+            })
+
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

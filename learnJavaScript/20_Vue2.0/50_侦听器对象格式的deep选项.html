@@ -1,0 +1,64 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-05-05 10:33:44
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-05-05 10:42:45
+ * @FilePath: \20_Vue2.0\50_侦听器对象格式的deep选项.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            const vm = new Vue({
+                el: '#app',
+                // 数据
+                data: {
+                    info: '<h3>如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.</h3>',
+                    user: {
+                        name: '刘一'
+                    }
+                },
+                // 方法
+                methods: {
+                    pop_up() {
+                        alert('如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.');
+                    },
+                },
+                // 过滤器
+                filters: {
+                    // 
+                },
+                // 侦听器
+                watch: {
+                    user: {
+                        handler(newVal, oldVal) {
+                            console.log(newVal);
+                        },
+                        // 开启深度监听，只要对象中任何一个属性变化了，都会触发 "对象的侦听器".
+                        deep: true,
+                    }
+                }
+            });
+
+        })
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="user.name">
+    </div>
+</body>
+
+</html>

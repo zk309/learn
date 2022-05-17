@@ -4,7 +4,7 @@
  * @Author: ZhangKe
  * @Date: 2022-05-01 20:52:59
  * @LastEditors: ZhangKe
- * @LastEditTime: 2022-05-02 16:28:53
+ * @LastEditTime: 2022-05-05 18:10:02
  * @FilePath: \20_Vue2.0\13_使用babel处理js高级语法.js
  */
 
@@ -38,7 +38,7 @@
 
 // 3. 在项目根目录下， 创建名为 babel.config.js 的配置文件，定义 Babel 的配置项如下：(固定格式)
 // module.exports = {
-//     // 声明 babel 可用的插件, 注意要用 JSON 格式, 将来 webpack 再调用 babel-loader 的时候， 会先加载 plugin 插件来使用。
+//      声明 babel 可用的插件, 注意要用 JSON 格式, 将来 webpack 再调用 babel-loader 的时候， 会先加载 plugin 插件来使用。
 //     plugins: [["@babel/plugin-proposal-decorators", { "legacy": true }]]
 // }
 // Babel 官网：

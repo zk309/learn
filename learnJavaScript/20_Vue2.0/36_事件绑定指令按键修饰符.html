@@ -1,0 +1,71 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-05-03 15:58:01
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-05-04 16:00:54
+ * @FilePath: \20_Vue2.0\36_事件绑定指令按键修饰符.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        input {
+            display: block;
+            width: 240px;
+            height: 25px;
+            margin: 7px auto;
+            border-radius: 5px;
+        }
+    </style>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // <!-- 按下 esc 键清空 input -->
+            // <!-- 按下 enter 键，提交表单，清空 input -->
+
+            const vm = new Vue({
+                el: '#app',
+                data: {
+                    info: '<h3>如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.</h3>'
+                },
+                methods: {
+                    pop_up() {
+                        alert('如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.');
+                    },
+                    clearInput(evt) {
+                        console.log(evt);
+                        evt.target.value = '';
+                    },
+                    submit(evt) {
+                        console.log('提交成功!-_-!');
+                        this.clearInput(evt);
+                    }
+                },
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" placeholder="输入内容，然后按下 esc 键或 enter 键." v-on:keyup.esc="clearInput"
+            v-on:keyup.enter="submit">
+    </div>
+</body>
+
+</html>

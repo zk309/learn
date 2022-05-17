@@ -1,0 +1,91 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-05-05 14:05:37
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-05-05 14:52:03
+ * @FilePath: \20_Vue2.0\53_了解计算属性.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+        window.addEventListener('load', (evt) => {
+
+            const vm = new Vue({
+                // 被 vue 控制的区域
+                el: '#app',
+                // 数据
+                data: {
+                    info: '<h3>如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.</h3>',
+                    r: '255',
+                    g: '255',
+                    b: '255',
+                },
+                // 计算属性, 在定义的时候定义成方法格式。
+                // 计算属性指的是通过一系列运算之后，最终得到一个属性值。
+                // 这个动态计算出来的属性值可以被模板结构或 methods 方法使用。
+                computed: {
+                    rgb() {
+                        return `rgb(${this.r}, ${this.g}, ${this.b})`;
+                    }
+                },
+                // 方法
+                methods: {
+                    pop_up() {
+                        alert('如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.');
+                    },
+                    // 后台打印出最新的 rgb().
+                    show() {
+                        console.log(this.rgb);
+                    }
+                },
+                // 过滤器
+                filters: {
+                    capitalize(val) {
+                        var first = val.charAt(0).toUpperCase();
+                        return first + val.substring(1);
+                    },
+                },
+                // 侦听器
+                watch: {
+                    'user.name'(newVal) {
+                        console.log(newVal);
+                    },
+                },
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <span>r: </span><input type="text" v-model="r"><br><br>
+        <span>g: </span><input type="text" v-model="g"><br><br>
+        <span>b: </span><input type="text" v-model="b"><br>
+        <hr>
+        <div class="box" v-bind:style="{ backgroundColor: rgb }">
+            {{ rgb }}
+        </div>
+        <button v-on:click="show">按钮</button>
+    </div>
+</body>
+
+</html>

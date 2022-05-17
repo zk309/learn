@@ -4,8 +4,8 @@
  * @Author: ZhangKe
  * @Date: 2022-04-06 08:18:43
  * @LastEditors: ZhangKe
- * @LastEditTime: 2022-04-06 11:44:25
- * @FilePath: \18_Ajax\38_使用xhr发起GET请求.html
+ * @LastEditTime: 2022-05-07 21:10:42
+ * @FilePath: \learnJavaScript\18_Ajax\38_使用xhr发起GET请求.html
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +31,7 @@
             var xhr = new XMLHttpRequest();
             // 2. 调用 open() 函数, 指定 请求方式与 URL地址
             xhr.open('GET', 'http://www.liulongbin.top:3006/api/getbooks');
-            // 3. 调用 send() 函数, 发起 Ajax 请求
+            // 3. 调用 send() 函数, 发起 xhr 请求
             xhr.send();
             // 4. 监听 onreadystatechange 事件
             xhr.onreadystatechange = function () {

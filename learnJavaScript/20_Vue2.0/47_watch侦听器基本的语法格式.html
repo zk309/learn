@@ -1,0 +1,55 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-05-05 08:37:17
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-05-05 08:48:19
+ * @FilePath: \20_Vue2.0\47_watch监听器基本的语法格式.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            const vm = new Vue({
+                el: '#app',
+                data: {
+                    info: '<h3>如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.</h3>',
+                    userName: '模式你的部队擦一遍'
+                },
+                methods: {
+                    pop_up() {
+                        alert('如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.');
+                    },
+                },
+                // 侦听器
+                // watch 侦听器允许开发者监视数据的变化，从而针对数据的变化做特定的操作.
+                // 侦听器本质上是一个函数，要监视哪个数据的变化，就把数据名作为方法名即可。
+                // newVal 是 '变化后的新值'，oldVal 是 '变化前的值';
+                watch: {
+                    userName(newVal, oldVal) {
+                        console.log('!-_-!', newVal, oldVal);
+                    }
+                }
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model.lazy="userName">
+    </div>
+</body>
+
+</html>

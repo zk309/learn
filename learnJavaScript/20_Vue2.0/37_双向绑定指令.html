@@ -1,0 +1,61 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-05-03 17:12:50
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-05-03 18:59:44
+ * @FilePath: \20_Vue2.0\37_双向绑定指令.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // <!-- vue 提供了 v-model 双向数据绑定指令，用来辅助开发者在不操作 DOM 的前提下，快速获取表单的数据。 -->
+            const vm = new Vue({
+                el: '#app',
+                data: {
+                    info: '<h3>如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.</h3>',
+                    userName: '李四',
+                    city: 2
+                },
+                methods: {
+                    pop_up() {
+                        alert('如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.');
+                    },
+                },
+            });
+
+        })
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <h3>{{ userName }}</h3>
+        <hr>
+        <h3>v-bind: 数据变化，不会刷新 vm.</h3>
+        <input type="text" v-bind:value="userName">
+        <hr>
+        <h3>v-model: 数据变化，会自动刷新 vm，相应的也会自动刷新 view</h3>
+        <input type="text" v-model:value="userName">
+        <select name="" id="" v-model="city">
+            <option value="">请选择城市</option>
+            <option value="1">北京</option>
+            <option value="2">上海</option>
+            <option value="3">广州</option>
+            <option value="4">深圳</option>
+        </select>
+    </div>
+</body>
+
+</html>

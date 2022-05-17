@@ -4,7 +4,7 @@
  * @Author: ZhangKe
  * @Date: 2022-01-14 21:40:28
  * @LastEditors: ZhangKe
- * @LastEditTime: 2022-02-25 22:12:34
+ * @LastEditTime: 2022-05-03 09:01:35
  * @FilePath: \learnJavaScript\07-对象\06-构造函数创建对象-王者荣耀案例.html
 -->
 <!DOCTYPE html>
@@ -18,10 +18,10 @@
     <script>
         // 王者荣耀案例
         function Hero(uname, type, blood, attack) {
-            this.uname = uname;
-            this.type = type;
-            this.blood = blood;
-            this.attack = function (aru) {
+            this.uname = uname; // 名字
+            this.type = type; // 类型
+            this.blood = blood; // 血量
+            this.attack = function (aru) { // 攻击方式
                 return aru
             };
         }

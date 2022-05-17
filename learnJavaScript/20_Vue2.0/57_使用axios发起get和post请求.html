@@ -1,0 +1,53 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-05-05 16:40:22
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-05-10 11:59:22
+ * @FilePath: \20_Vue2.0\57_使用axios发起get和post请求.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.staticfile.org/axios/0.1.0/axios.min.js"></script>
+    <script>
+        window.addEventListener('load', (evt) => {
+
+            // 发起 GET 请求
+            document.querySelector('#btnGet').addEventListener('click', async (evt) => {
+                const {
+                    data: res
+                } = await axios.get('http://www.liulongbin.top:3006/api/getbooks', {
+                    params: {
+                        id: 1
+                    }
+                });
+                console.log(res); // [...]
+            });
+
+            // 发起 POST 请求
+            document.querySelector('#btnPost').addEventListener('click', async (evt) => {
+                const res = await axios.post('http://www.liulongbin.top:3006/api/addbook', {
+                    bookname: '神曲炼狱篇',
+                    author: '但丁',
+                    publisher: '浙江文艺出版社'
+                });
+                console.log(res); // {status: 201, msg: '添加图书成功'}
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button id="btnGet">发起 GET 请求</button>
+    <button id="btnPost">发起 POST 请求</button>
+</body>
+
+</html>

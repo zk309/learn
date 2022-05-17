@@ -3,3 +3,6 @@
 
 # 忽略 node_modules 文件夹
 node_modules/
+
+# 忽略 dist 打包文件夹
+dist/

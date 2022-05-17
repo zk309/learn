@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "zk309": "^1.0.1"
+  },
+  "注释": {
+    "zk309": "格式化时间"
+  },
+  "name": "20_vue2.0",
+  "version": "1.0.0",
+  "main": "01.工程化的概念.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

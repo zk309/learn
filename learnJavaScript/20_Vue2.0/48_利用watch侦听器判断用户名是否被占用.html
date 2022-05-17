@@ -1,0 +1,57 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-05-05 09:20:45
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-05-05 10:22:33
+ * @FilePath: \20_Vue2.0\48_利用watch监听器判断用户名是否被占用.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            const vm = new Vue({
+                el: '#app',
+                data: {
+                    info: '<h3>如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.</h3>',
+                    userName: '',
+                },
+                methods: {
+                    pop_up() {
+                        alert('如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.');
+                    },
+                },
+                // 侦听器:
+                watch: {
+                    userName(newVal) {
+                        if (newVal == '') return;
+                        // 发起 ajax 请求
+                        $.get('https://www.escook.cn/api/finduser/' + newVal, function (result) {
+                            console.log(result);
+                        })
+                    }
+                }
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="userName">
+    </div>
+</body>
+
+</html>

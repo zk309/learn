@@ -1,0 +1,51 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-05-04 21:37:01
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-05-04 21:44:16
+ * @FilePath: \20_Vue2.0\45_使用全局过滤器格式化时间.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/dayjs/1.4.1/dayjs.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            Vue.filter('formate', (timer) => {
+                return dayjs(timer).format('YYYY-MM-DD HH:mm:ss');
+            });
+
+            const vm = new Vue({
+                el: '#app',
+                data: {
+                    info: '<h3>如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.</h3>',
+                    timer: new Date(),
+                },
+                methods: {
+                    pop_up() {
+                        alert('如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.');
+                    },
+                },
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <h3>现在时间: {{ timer | formate }}</h3>
+    </div>
+</body>
+
+</html>

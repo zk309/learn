@@ -1,0 +1,42 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-05-05 15:25:29
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-05-05 15:36:23
+ * @FilePath: \20_Vue2.0\55_axios的基本使用.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.staticfile.org/axios/0.1.0/axios.min.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // 1. 调用 axios 方法得到的返回值是 Promise 对象
+            axios({
+                method: 'GET', // 请求方式
+                url: 'http://www.liulongbin.top:3006/api/getbooks', // 请求的地址
+                params: {
+                    id: 1
+                }, // URL 中查询的参数
+                // data: {},  // 请求体的参数
+            }).then((res) => {
+                console.log(res.data);
+            })
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-05-04 10:48:31
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-05-04 23:14:31
+ * @FilePath: \20_Vue2.0\42_品牌列表案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- bootstrap 框架： -->
+    <link rel="stylesheet" href="./lib/bootstrap.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        .container {
+            margin-top: 10px;
+        }
+
+        .alert {
+            position: absolute;
+            top: 10px;
+            left: 650px;
+            display: none;
+            width: 280px;
+        }
+    </style>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script src="./node_modules/zk309/src/dateFormat.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            const vm = new Vue({
+                el: '#app',
+                data: {
+                    info: '<h3>如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.</h3>',
+                    list: [{
+                            id: 1,
+                            name: '宝马',
+                            status: true,
+                            time: dateFormat()
+                        },
+                        {
+                            id: 2,
+                            name: '宝马',
+                            status: false,
+                            time: dateFormat()
+                        },
+                        {
+                            id: 3,
+                            name: '宝马',
+                            status: true,
+                            time: dateFormat()
+                        },
+                        {
+                            id: 4,
+                            name: '宝马',
+                            status: false,
+                            time: dateFormat()
+                        },
+                        {
+                            id: 5,
+                            name: '宝马',
+                            status: true,
+                            time: dateFormat()
+                        },
+                    ],
+                    bookName: '', // 要输入的车名, 既然写成了 bookName, 我也懒得改.
+                    flag: true, // 节流阀
+                    nextId: 6, // 下一个可用的 id 值
+                },
+                methods: {
+                    pop_up() {
+                        alert('如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.');
+                    },
+                    // 删除操作
+                    del(id) {
+                        console.log(id);
+                        this.list = this.list.filter(item => item.id !== id);
+                    },
+                    // 增加操作
+                    add() {
+                        if (this.flag) {
+                            if (this.bookName === '') {
+                                this.getAlert(); // 使用节流，使弹框在单位时间内触发一次.
+                            } else {
+                                // 添加车名
+                                this.list.push({
+                                    id: this.nextId,
+                                    name: this.bookName,
+                                    status: true,
+                                    time: dateFormat()
+                                });
+                                // 清空 input
+                                this.bookName = '';
+                                this.nextId++;
+                            }
+                        }
+                    },
+                    // 弹框方法
+                    getAlert() {
+                        this.flag = false;
+                        _this = this; // 卧槽，找了半天的问题，原因是 时间函数里面 this 默认为 window.
+                        $('.alert').slideDown(300);
+                        var timer = setTimeout(function () {
+                            $('.alert').slideUp(500);
+                            _this.flag = true;
+                        }, 1000);
+                    }
+                },
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <!-- 
+        bootstrap 类名：
+
+        card 卡片基础类
+        card-header 卡片头部
+        card-body 卡片主体
+        
+        form-row 表单行
+        align-items-center 弹性盒子元素在该行的侧轴（纵轴）上居中放置。
+        col-auto 列宽度自动分配
+        input-group 输入组
+        mb-2  *可取值为1~5，底部外边距取值分别为为 -0.25rem, -0.5rem, -1rem, -1.5rem, -3rem
+        input-group-prepend 输入组前
+        input-group-text 文本输入组
+        form-control 表单中的控制组件
+        btn 按钮基础类
+        btn-primary 主按钮
+        mb-2 *可取值为1~5，底部外边距取值分别为为 -0.25rem, -0.5rem, -1rem, -1.5rem, -3rem
+
+        table 普通表格
+        table-bordered 表格边框
+        table-hover 光标悬浮时，行样式变化
+        table-striped 条纹型表格
+        custom-control 自定义控件
+        custom-switch 自定义开关
+        custom-control-input 自定义输入控件
+        custom-control-label 自定义标签控件
+     -->
+    <div id="app" class="container">
+        <!-- 卡片区域 -->
+        <div class="card">
+            <!-- 卡片的头部 -->
+            <div class="card-header">添加品牌</div>
+            <!-- 卡片的主体 -->
+            <div class="card-body">
+                <!-- 添加品牌的表单区域 -->
+                <form action="javascript:;" v-on:click="add">
+                    <div class="form-row align-items-center">
+                        <div class="col-auto">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">品牌名称</div>
+                                </div>
+                                <input type="text" class="form-control" placeholder="请输入品牌名称:"
+                                    v-model.lazy.trim="bookName">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary mb-2">添加</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- 表格区域 -->
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">品牌名称</th>
+                    <th scope="col">状态</th>
+                    <th scope="col">创建时间</th>
+                    <th scope="col">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(item, index) in list" v-bind:key="item.id">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.name + item.id}}</td>
+                    <td>
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" name="" v-bind:id=" 'customSwitch' + item.id"
+                                class="custom-control-input" v-model="item.status">
+                            <!-- 写法一： -->
+                            <!-- <label for="customSwitch1" class="custom-control-label" v-if="item.status">已启用</label>
+                            <label for="customSwitch1" class="custom-control-label" v-if="!item.status">已禁用</label> -->
+                            <!-- 写法二： -->
+                            <label v-bind:for=" 'customSwitch' + item.id "
+                                class="custom-control-label">{{ item.status ? '已启用' : '已禁用' }}</label>
+                        </div>
+                    </td>
+                    <td>{{ item.time }}</td>
+                    <td><a href="javaScript:;" v-on:click="del(item.id)">删除</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="alert alert-warning alert-dismissible fade show">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>警告!</strong> 书名不能为空!-_-!
+        </div>
+    </div>
+</body>
+
+</html>

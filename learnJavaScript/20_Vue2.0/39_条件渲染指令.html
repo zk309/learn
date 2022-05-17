@@ -1,0 +1,63 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-05-03 19:03:07
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-05-04 23:12:55
+ * @FilePath: \20_Vue2.0\39_条件渲染指令.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            // 条件渲染指令:
+            // 1. v-show 的原理：动态为元素添加或移除 display:none 样式，来实现元素的现实和隐藏.
+            //                  如果要频繁的切换元素的显示状态，用 v-show 性能会更好.
+            // 2. v-if 的原理: 每次动态创建或移除元素, 实现元素的现实和隐藏.
+            //                 如果刚进入页面的时候，某些元素默认不需要被展示，而且后期这个元素很可能也不需要被展示出来，此时 v-if 性能更好.
+            // 3. 在实际开发中，绝大多数情况，不用考虑性能问题，直接使用 v-if 就好。
+
+            // v-else-if:
+            // v-else-if 指令，顾名思义，充当 v-if 的 'else-if 块', 可以连续使用;
+            // 注意：v-else-if 指令必须配合 v-if 指令一起使用，否则它将不会被识别!
+            const vm = new Vue({
+                el: '#app',
+                data: {
+                    info: '<h3>如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.</h3>',
+                    flag: true,
+                    type: 'A'
+                },
+                methods: {
+                    pop_up() {
+                        alert('如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.');
+                    },
+                },
+            });
+
+        })
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <h3 v-show="flag">我是 v-show 控制的元素。</h3>
+        <h3 v-if="flag">我是 v-if 控制的元素。</h3>
+        <hr>
+        <h3 v-if="type === 'A' ">优秀</h3>
+        <h3 v-else-if="type === 'B' ">良好</h3>
+        <h3 v-else-if="type === 'C' ">一般</h3>
+        <h3 v-else="type === 'D' ">差</h3>
+    </div>
+</body>
+
+</html>

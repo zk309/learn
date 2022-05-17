@@ -1,0 +1,53 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-05-03 12:45:45
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-05-03 13:08:20
+ * @FilePath: \20_Vue2.0\34_事件修饰符.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+    <!-- 1. 导入 vue 函数库，获得全局的 vue 构造函数。 -->
+    <!-- 2. 在页面指定将要被 vue 控制的 DOM 区域。 -->
+    <!-- 3. 利用 vue 构造函数创建 vm 实例对象. -->
+    <script>
+        window.addEventListener('load', function (evt) {
+
+            const vm = new Vue({
+                el: '#app',
+                data: {
+                    info: '<h3>如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.</h3>'
+                },
+                methods: {
+                    pop_up() {
+                        alert('如此美丽的框架，好像一门编程语言.就如一门编程语言般神奇.');
+                    },
+                    get(evt) {
+                        // evt.preventDefault(); // 原生 js 写法。
+                        console.log('!-_-!');
+                    }
+                },
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- vue 利用 事件修饰符，阻止默认行为. -->
+        <a href="http://www.bilibili.com" v-on:click.prevent="get">BiLiBiLi</a>
+    </div>
+</body>
+
+</html>
