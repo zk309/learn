@@ -1,0 +1,72 @@
+<!--
+ * @Descripttion: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @version: April 2021 (version 1.56)
+ * @Author: ZhangKe
+ * @Date: 2022-06-04 12:20:57
+ * @LastEditors: ZhangKe
+ * @LastEditTime: 2022-06-04 12:43:53
+ * @FilePath: \22_微信小程序\101_CSS变量案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 20px;
+    }
+
+    div {
+      border: 1px solid #ccc;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      margin-bottom: 20px;
+      width: 200px;
+      height: 400px;
+    }
+
+    .container div {
+      width: 180px;
+      height: 80px;
+    }
+  </style>
+  <style>
+    /* CSS 变量 */
+    html {
+      --main-bg-color: brown;
+      --main-bg-radius: 10px
+    }
+
+    .box1 {
+      background-color: var(--main-bg-color);
+      border-radius: var(--main-bg-radius);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+  </div>
+
+  <div class="container">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+  </div>
+</body>
+
+</html>

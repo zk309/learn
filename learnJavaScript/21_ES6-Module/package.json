@@ -1,0 +1,17 @@
+{
+  "type": "module",
+  "name": "21_es6-module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "01_了解 ES6 module规范.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "then-fs": "^2.0.0"
+  }
+}

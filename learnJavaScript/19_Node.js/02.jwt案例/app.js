@@ -4,7 +4,7 @@
  * @Author: ZhangKe
  * @Date: 2022-04-26 15:33:45
  * @LastEditors: ZhangKe
- * @LastEditTime: 2022-04-26 16:31:12
+ * @LastEditTime: 2022-05-20 10:14:35
  * @FilePath: \02.jwt案例\app.js
  */
 // 导入 express 模块
@@ -51,7 +51,7 @@ app.post('/api/login', function (req, res) {
   res.send({
     status: 200,
     message: '登录成功!-_-!',
-    // 调用 jwt.sign() 生成 jwt 字符串, 三个参数分别是: 用户信息对象, 加密密钥, 配置对象.
+    // 调用 jwt.sign() 生成 jwt 字符串, 三个参数分别是: 用户信息对象, 加密密钥, 配置对象(配置当前 token 的有效期。).
     // 为了安全性, 千万不要把密码加密到 token 字符中.
     token: jwt.sign({username: userinfo.username}, secretKey, { expiresIn: '30s' }) // 要发送给客户端的 token 字符串
   });

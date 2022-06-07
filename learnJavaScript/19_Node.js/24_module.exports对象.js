@@ -4,7 +4,7 @@
  * @Author: ZhangKe
  * @Date: 2022-04-17 12:13:25
  * @LastEditors: ZhangKe
- * @LastEditTime: 2022-04-17 12:33:00
+ * @LastEditTime: 2022-05-18 08:19:08
  * @FilePath: \19_Node.js\24_module.exports对象.js
  */
 // module.exports 对象
@@ -16,5 +16,5 @@
 
 const custom = require('./20_模块化概念');
 
-console.log(custom);
-console.log(custom.userName);
+console.log(custom); // { address: '天津', userName: '刘一' }
+console.log(custom.userName); // 刘一

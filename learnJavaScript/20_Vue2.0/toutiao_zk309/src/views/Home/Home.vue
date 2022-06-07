@@ -4,8 +4,8 @@
  * @Author: ZhangKe
  * @Date: 2022-05-15 17:42:01
  * @LastEditors: ZhangKe
- * @LastEditTime: 2022-05-17 18:20:23
- * @FilePath: \toutiao\src\views\Home\Home.vue
+ * @LastEditTime: 2022-05-30 14:36:10
+ * @FilePath: \learnJavaScript\20_Vue2.0\toutiao_zk309\src\views\Home\Home.vue
 -->
 <template>
   <div class="Home-container">
@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import { articleList } from '@/api/articleAPI.js' // 导入获取文章列表数据的 API
+import { articleList } from '@/api/articleAPI.js' // 按需导入获取文章列表数据的 API
 import ArticleInfo from '@/components/Article/ArticleInfo.vue' // 导入 ArticleInfo 子组件
 import _ from 'lodash' // 鲁大师提供了许多牛逼的函数, 节流, 防抖, 操作数组的一系列函数, 操作对象的一系列函数(对象的深拷贝和浅拷贝)
 let fn = null

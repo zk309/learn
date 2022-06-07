@@ -4,15 +4,17 @@
  * @Author: ZhangKe
  * @Date: 2022-05-14 09:41:00
  * @LastEditors: ZhangKe
- * @LastEditTime: 2022-05-15 11:45:02
- * @FilePath: \20_Vue2.0\93_动态路由id.js
+ * @LastEditTime: 2022-05-27 00:26:03
+ * @FilePath: \20_Vue2.0\93_动态路由id以及传参.js
  */
 // 动态路由指的是: 把 Hash 地址中可变的部分定义为参数项, 从而提高路由规则的复用性.
 // 在 vue-router 中使用英文的冒号 (:) 来定义路由的参数项.
+
+// 使用方式1:
 // demo1: 基本使用
 /*
   router/index.js:
-  // 路由中的动态参数以 : 进行声明, 冒号后面的是动态参数的名称.
+  路由中的动态参数以 : 进行声明, 冒号后面的是动态参数的名称. 这里的 :id 可以替换为 1, 2 或 3...
   { path: '/Movie/:id', component: Movie },
 
   movie.vue:
@@ -21,8 +23,10 @@
   <h3>Movie 组件 --- {{ this.$route.params.id }}</h3>
 */
 
+
+// 使用方式2:
 /*
-  demo2: 开启 props 传参
+  demo2: 开启 props 传参, 这里的 :id 可以替换为 1, 2 或 3...
   { path: '/Movie/:id', component: Movie, props: true },
 
    props: {
